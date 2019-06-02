@@ -99,13 +99,26 @@ zeroPad =
 
 titleStyle =
     [ Font.bold
-    , Font.size large
-    , Font.letterSpacing smallFloat
+    , Font.size xxl
+    , paddingEach { zeroPad | bottom = medium }
+    , Font.letterSpacing <| -(scaleFloat -4)
     ]
 
 
-italics =
-    [ Font.italic ]
+headerStyle =
+    [ Font.bold
+    , Font.italic
+    , Font.size xl
+    , paddingEach { zeroPad | bottom = small }
+    , Font.letterSpacing <| -(scaleFloat -5)
+    ]
+
+
+subHeaderStyle =
+    [ Font.bold
+    , Font.size large
+    , Font.letterSpacing smallFloat
+    ]
 
 
 
@@ -126,8 +139,14 @@ document =
                 textColumn [] stuff
         )
         (Mark.manyOf
-            [ header
-            , Mark.map (paragraph []) myText
+            [ subHeader
+            , header
+            , title
+            , Mark.map
+                (paragraph
+                    [ paddingEach { zeroPad | bottom = small } ]
+                )
+                myText
             ]
         )
 
@@ -136,10 +155,26 @@ document =
 ---- Blocks ----
 
 
+title =
+    Mark.block "Title"
+        (\children ->
+            paragraph titleStyle children
+        )
+        myText
+
+
 header =
     Mark.block "Header"
         (\children ->
-            paragraph titleStyle children
+            paragraph headerStyle children
+        )
+        myText
+
+
+subHeader =
+    Mark.block "SubHeader"
+        (\children ->
+            paragraph subHeaderStyle children
         )
         myText
 
@@ -203,8 +238,23 @@ source : String
 source =
     String.trim
         """
-    |> Header
+|> Title
+    Spöklinjerna
+
+|> Header
+    Spelarnas drag
+
+|> SubHeader
     KRAFT
 
-    /När du brukar kraft,/ slå+~kraft~ och välj bland alternativen. På 12+, tre. På 10--11, två. På 7--9, ett.
+    /När du brukar kraft,/ slå+~kraft~ och välj bland alternativen. 
+    På 12+, tre. På 10--11, två. På 7--9, ett.
+
+|> SubHeader
+    FINESS
+
+    /När du använder finess,/ slå+~finess~ och välj bland alternativen.
+    På 12+, tre. På 10--11, två. På 7--9, ett.
+
+    Nästa stycke.
 """
