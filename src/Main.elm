@@ -37,7 +37,7 @@ bookType =
 
 
 smallCaps =
-    googleFont "Cormorant SC" "400"
+    googleFont "Cormorant SC" "400, 700"
 
 
 
@@ -204,8 +204,7 @@ source =
     String.trim
         """
     |> Header
-    KÖTTFÄRSÅS
+    KRAFT
 
-    Vad *är* ~Köttfärssås~ /egentligen/?
-    Man hade länge tvivlat på -- men också bävat inför -- möjligheten att detta var sant. De kallade honom för "Tratten", men det gillade han inte.
+    /När du brukar kraft,/ slå+~kraft~ och välj bland alternativen. På 12+, tre. På 10--11, två. På 7--9, ett.
 """
