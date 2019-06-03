@@ -106,7 +106,7 @@ titleStyle =
 
 
 headerStyle =
-    [ Font.bold 
+    [ Font.bold
     , Font.size xl
     , paddingEach { zeroPad | bottom = small }
     , Font.letterSpacing <| -(scaleFloat -5)
@@ -141,7 +141,7 @@ document =
                 , padding large
                 ]
             <|
-                textColumn [centerX] stuff
+                textColumn [ centerX ] stuff
         )
         (Mark.manyOf
             [ subHeader
@@ -185,7 +185,6 @@ subHeader =
         myText
 
 
-
 myText : Mark.Block (List (Element msg))
 myText =
     let
@@ -211,27 +210,35 @@ myText =
         , inlines = []
         }
 
+
+
 ---- Tree ----
 
+
 list =
-  Mark.tree "List" renderList (Mark.map (paragraph []) myText)
+    Mark.tree "List" renderList (Mark.map (paragraph []) myText)
+
 
 renderList (Mark.Enumerated lst) =
-  let 
-      group =
-        case lst.icon of
-          Mark.Bullet ->
-            (\str -> el [] <| text ("* " ++ str))
-          Mark.Number ->
-            (\str -> el [] <| text ("1 " ++ str))
-  in
-  column [] (List.map renderItem lst.items)
+    let
+        group =
+            case lst.icon of
+                Mark.Bullet ->
+                    \str -> el [] <| text ("* " ++ str)
+
+                Mark.Number ->
+                    \str -> el [] <| text ("1 " ++ str)
+    in
+    column [] (List.map renderItem lst.items)
+
 
 renderItem (Mark.Item item) =
-  column []
-  [ column [] item.content
-  , renderList item.children
-  ]
+    column []
+        [ column [] item.content
+        , renderList item.children
+        ]
+
+
 
 ---- Main ----
 
@@ -411,8 +418,10 @@ source =
 
     Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och Ormkonungarnas Katakomber har inga fria bad. Pyttesmå röda vätteögon glöder i mörkret. Klapprande tänder och skarpa knivar väntar i mörkret.
     """
+
+
 blah =
-  """
+    """
     Nivå 1
     1: Vestibul
     En lång korridor med 4 öppna rum, 2 på varje sida. Hallen slutar vid en stor, tillbommad dörr som leder till 6: Falsk Gravkammare.
@@ -615,6 +624,8 @@ blah =
     43: Xiximanters förrum
     Ett utsökt huggen hall, veckad som insidan av en varelses strupe, upplyst av purpurfärgade, magiska ljus inlagda i väggarna. Xiximanter (sida 12) är en uråldrig ormfolksmagiker, rubbad men odödlig. Han ser ut som ett uttorkat människolik (med huggtänder) sammansmällt med en ormsvans vid midjan. Han bär en skrud som hänger i trasor och hans ögon är röda nålstick. Han är inte oresonlig och kommer hälsa sällskapet med “Var hälsade, tvåbeningar” när de kommer in i hans tillhåll. Xiximanter vill ha levande varelser, gärna intelligenta och allra helst magiker. Han är helt övertygad om att han är nära ett genombrott. Han tror också att ormfolkets imperium fortfarande härskar ovanför honom, att katakomberna är fulla av präster och att sällskapet måste vara barbariska besökare på kringvandring. Om han blir visad bevis på motsatsen blir han ursinnig.
     """
+
+
 rest =
     """
     44: Ingrediensförråd
@@ -625,7 +636,7 @@ rest =
     1 dryck för blygsam odödlighet (förlänger naturliga livslängden med 20+1T100 år)
     1 oförnimbart gift (smakar som en slumpmässig dekokt, men dödar (inget Räddningskast) på 1 minut.
     2 helande drycker
-    Lärdomar: använd diplomati. Vissa fiender kan resoneras med. Du kan bedriva handel i ett grottkomplex. Du kan förråda dina vänner.
+    Lärdomar: använd diplomati. Vissa fiender kan resoneras med. Du kan bedriva handel i ett grottkomplex. Du kan förråda dina vänner.
     46: Tronrum
     Den stora porten i änden av Basilisksalen är tillverkad av omslingrade stenormar. En orm saknas. Den kan hittas i 32: Åkallelserum. Om den sätts tillbaka, slingrar sig porten upp och blottlägger ett rum av röd sten, guld och speglar. De 8 handflatestora speglarna på trästativ är värda 10 ~gm~ styck om de säljs i en större stad. Tronen är värd 250 ~gm~, men att lyfta den kräver minst 3 personer. Den som sätter sig på den måste lyckas med ett Räddningskast mot Sinneskontroll eller åtrå landområden och erövring.
 
