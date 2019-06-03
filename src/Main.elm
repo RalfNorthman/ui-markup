@@ -147,6 +147,7 @@ document =
             [ subHeader
             , header
             , title
+            , list
             , Mark.map
                 (paragraph
                     [ paddingEach { zeroPad | bottom = small } ]
@@ -184,6 +185,7 @@ subHeader =
         myText
 
 
+
 myText : Mark.Block (List (Element msg))
 myText =
     let
@@ -209,7 +211,27 @@ myText =
         , inlines = []
         }
 
+---- Tree ----
 
+list =
+  Mark.tree "List" renderList (Mark.map (paragraph []) myText)
+
+renderList (Mark.Enumerated lst) =
+  let 
+      group =
+        case lst.icon of
+          Mark.Bullet ->
+            (\str -> el [] <| text ("* " ++ str))
+          Mark.Number ->
+            (\str -> el [] <| text ("1 " ++ str))
+  in
+  column [] (List.map renderItem lst.items)
+
+renderItem (Mark.Item item) =
+  column []
+  [ column [] item.content
+  , renderList item.children
+  ]
 
 ---- Main ----
 
@@ -219,7 +241,6 @@ viewErrors errors =
         errors
 
 
-main : Html msg
 main =
     case Mark.compile document source of
         Mark.Success html ->
@@ -284,9 +305,11 @@ source =
 |> Header
     Den här modulen är för:
 
-    Erfarna ~sl~ med nya spelare.
-    ~Sl~ som vill lära sig om design av dungar.
-    Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
+|> List
+    -- Erfarna ~sl~ med nya spelare.
+    -- ~Sl~ som vill lära sig om design av dungar.
+    -- Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
+
     Som en helt ny ~sl~ kan du ändå använda den här grottkomplexet och lära dig mycket från den, men den kommer omedelbart pröva dina färdigheter. Modulen kan även uppskattas av erfarna spelare.
 
 |> Header
