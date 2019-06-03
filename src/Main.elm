@@ -106,9 +106,8 @@ titleStyle =
 
 
 headerStyle =
-    [ Font.bold
+    [ smallCaps
     , Font.size xl
-    , paddingEach { zeroPad | bottom = small }
     , Font.letterSpacing <| -(scaleFloat -5)
     ]
 
@@ -150,7 +149,7 @@ document =
             , list
             , Mark.map
                 (paragraph
-                    [ paddingEach { zeroPad | bottom = small } ]
+                    [ paddingEach { zeroPad | bottom = medium } ]
                 )
                 myText
             ]
@@ -303,23 +302,22 @@ source =
 |> Header
     Introduktion
 
-    När du först startar Super Mario Bros så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen handledning. Spelet själv är en handledning. 
-
     Alla kan namnge ett klassiskt grottkomplex – Tomb of Horrors, Barrier Peaks, Ravenloft – men för att dessa moduler ska vara förståeliga behöver det finnas en slags introduktion. Tomb of Horrors och Death Frost Doom är båda reaktioner /på någonting/, men vad de är reaktioner /på/ finns inte riktigt som utgiven produkt.
 
     Det är som om alla moduler vi har är Bach-konserter. Folk skriver verk vilka besitter häpnadsväckande genialitet, men någon måste skriva en bok om hur man spelar piano.
 
-|> Header
+|> SubHeader
     Den här modulen är för:
 
-|> List
-    -- Erfarna ~sl~ med nya spelare.
-    -- ~Sl~ som vill lära sig om design av dungar.
-    -- Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
+    --- Erfarna ~sl~ med nya spelare.
+
+    --- ~Sl~ som vill lära sig om design av äventyrsplatser.
+
+    --- Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
 
     Som en helt ny ~sl~ kan du ändå använda den här grottkomplexet och lära dig mycket från den, men den kommer omedelbart pröva dina färdigheter. Modulen kan även uppskattas av erfarna spelare.
 
-|> Header
+|> SubHeader
     Jag håller inte med om…
 
     Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i den här grottkomplexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en nybörjargrotta. Det är bara /ett/ sätt att göra det.
@@ -328,20 +326,20 @@ source =
 
     Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värdefull kunkap. Att lära sig vad man inte gillar är lika värdefullt som som att lära sig vad man gillar. Kanske kan den här modulen inspirera dig att skriva din egen introduktionsgrotta.
 
-|> Header
+|> SubHeader
     Gruppstorlek och balans
 
     Den här grottkomplexet är designat för nivå 1 rollpersoner. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en rollperson eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belöningar för strid och många för att genomföra en god plan.
 
     Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna gå upp en nivå. I slutet bör överlevande rollpersoner vara nivå 2 eller 3, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
 
-    Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger 1T6 i skada. Räddningskast är angivna i ett generellt format (Räddningskast mot Gift, Räddningskast för att Ducka, etc).
+    Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger 1T6 i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
 
     En grupp rollpersoner på mellannivå spelade av erfarna spelare kan tillintetgöra den här grottkomplexet på rekordtid. De kan ändå ha kul. En grupp rollpersoner på låg nivå spelade av nybörjarspelare kommer förhoppningsvis ha jätteroligt.
 
     Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det ta mellan 12 och 24 timmar speltid att fullständigt utforska grottkomplexet. På ett första spelmöte som involverar rollpersonsskapande bör sällskapet kunna utforska Nivå 1 helt.
 
-|> Header
+|> SubHeader
     Innan du börjar:
 
     Läs hela modulen.
@@ -350,7 +348,7 @@ source =
     Byt ut monstren på sida XX till motsvarande från ditt val av system.
     Justera skatternas värde där det behövs.
 
-|> Header
+|> SubHeader
     Locka rollpersonerna
 
     Här är några sätt att locka rollpersonerna till grottkomplexet, givet att de startar panka och vet att katakomber innehåller skatter. Du kan placera den här grottkomplexet var som helst.
@@ -360,8 +358,8 @@ source =
     Xiximanters experiment framkallar märkliga drömmar.
     De hittar ingången till graven av ren slump.
     De är utsända av en mäktig mecenat att utforska de nyligen funna katakomberna.
-    
-|> Header
+
+|> SubHeader
     Lärdomar
 
     Alltigenom texten finns små rutor utspridda. Varje rum, fälla eller möte är designat för att lära nya spelare (och spelledare) en användbar läxa. Några är allmäna lärdomar, medan andra är specifika för den här grottkomplexet. Grottkomplexets struktur, beskaffenhet och faror bör sakta bli förutsägbara och möjliga att utnyttja. Dessa lärdomar kan te sig triviala för en erfaren spelledare, men jag tycker det är lämpligt att räkna upp dem ändå.
@@ -369,17 +367,17 @@ source =
 |> Header
     Struktur
 
-    Ormkonungarnas Katakomber är ett grottkomplex med 3 nivåer och 4 tematiska huvudområden. Jag har tagit med väldigt minimala beskrivningar i texten och sektionen med snabbreferenser (sid 16-17). Det finns inga texter som ska läsas högt.
+    Ormkonungarnas Katakomber är ett grottkomplex med tre nivåer och fyra tematiska huvudområden. Jag har tagit med väldigt minimala beskrivningar i texten och sektionen med snabbreferenser (sid 16--17). Det finns inga texter som ska läsas högt.
 
 |> SubHeader
     Nivå 1: Den Falska Kryptan
 
-    Introducerar grunderna i utforming av grottkomplex och utforskning av 7 rum. Den är precis rätt storlek för ett första spelmöte, givet att skapandet av rollpersoner går hyfsat fort och att du ger rollpersonerna en god anledning till att utforska katakomben.
+    Introducerar grunderna i utforming av grottkomplex och utforskning av sju rum. Den är precis rätt storlek för ett första spelmöte, givet att skapandet av rollpersoner går hyfsat fort och att du ger rollpersonerna en god anledning till att utforska katakomben.
 
 |> SubHeader
     Nivå 2: Den Övre Kryptan
 
-    Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg “framåt,” men sidorummen är frestande. Det är i den här sektionen som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möjligen behövas en färd tillbaka till civilisationen för att fylla på förnödenheter.
+    Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg framåt, men sidorummen är frestande. Det är i den här sektionen som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möjligen behövas en färd tillbaka till civilisationen för att fylla på förnödenheter.
 
 |> SubHeader
     Nivå 3: De Lägre Kryptorna
@@ -400,14 +398,14 @@ source =
 |> SubHeader
     Den Riktiga Kryptan
 
-    Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörkret, odödliga trollkarlar köpslår med er och oövervinnerlig odöd sörja glider efter er.
+    Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörkret, odödliga trollkarlar köpslår med er och oövervinnerlig odöd sörja hasar efter er.
 
-    Beskriv det här området med ord som enorm och överhängande och kall. Det här området är byggt av en civilisation äldre, visare och grymmare än rollpersonernas. Ju djupare de går desto nervösare bör de bli.
+    Beskriv det här området med ord som /enorm/, /överhängande/ och /kall/. Det här området är byggt av en civilisation äldre, visare och grymmare än rollpersonernas. Ju djupare de går desto nervösare bör de bli.
 
 |> SubHeader
     Avgrunden
 
-    Representerar det okända och den förundran den medför. Det skulle kunna finnas vadsomhelst därnere. Den kan sträcka sig ner till jordens mitt. Det skulle fortfarande kunna finnas ormmän som lever obekymrade liv därnere. Det är ett blankt ark där spelledaren kan lägga till saker till modulen.
+    Representerar det okända och den förundran den medför. Det skulle kunna finnas vadsomhelst därnere. Den kan sträcka sig ner till jordens mitt. Det skulle fortfarande kunna finnas ormmän som lever obekymrade liv därnere. Det är ett blankt ark för spelledaren att lägga till saker i modulen.
 
     Beskriv avgrunden med ord som bottenlös och oroande, det är som om världen bara faller bort och tysta, rastlösa ljud om ni är tålmodiga. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
 
@@ -417,18 +415,27 @@ source =
     Representerar en spegel av rollpersonerna. De lever i smuts, de återuppstår och gör samma misstag. De är hungriga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Gyttret är ett intrång av livskraftig och högljudd barbarism in i en kall och utdöende civilisation.
 
     Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och Ormkonungarnas Katakomber har inga fria bad. Pyttesmå röda vätteögon glöder i mörkret. Klapprande tänder och skarpa knivar väntar i mörkret.
+
+|> Header
+    Nivå 1
+
+    -- ~Den falska kryptan~
+
+|> SubHeader
+    1: Vestibul
+
+    En lång korridor med fyra öppna rum, två på varje sida. Hallen slutar vid en stor, tillbommad dörr som leder till *6:<>Falsk<>Gravkammare*.
+
+|> SubHeader
+    2: Vakternas gravar
+
+    De här två små rummen är identiska till storlek och innehåll. Bägge rymmer en likkista av trä med en lerstaty föreställande en ormfolkskrigare inuti. Statyerna är ihåliga och varje innehåller en guldamulett värd 1 ~gm~, ett torkat ormskelett och ett moln av giftgas (~t6~ i skada, kan bara reducera en rollperson till 0 ~kp~).
+    Lärdomar: grottkomplexet är organiserat. Det finns mönster. Det finns gömda skatter. Det finns också gömda faror.
     """
 
 
 blah =
     """
-    Nivå 1
-    1: Vestibul
-    En lång korridor med 4 öppna rum, 2 på varje sida. Hallen slutar vid en stor, tillbommad dörr som leder till 6: Falsk Gravkammare.
-    2: Vakternas gravar
-    De här 2 små rummen är identiska till storlek och innehåll. Bägge rymmer en likkista av trä med en lerstaty föreställande en ormfolkskrigare inuti. Statyerna är ihåliga och varje innehåller en guldamulett värd 1 ~gm~, ett torkat ormskelett och ett moln av giftgas (T6 i skada, kan bara reducera en rollperson till 0 kp). 
-    Lärdomar: grottkomplexet är organiserat. Det finns mönster. Det finns gömda skatter. Det finns också gömda faror.
-
     Rollpersonerna kommer förmodligen närma sig kista nummer 2 med mer försiktighet och få sin belöning (guld) utan faran (gift) genom att använda sina hjärnor (och en sten eller lång pinne).
     3: Den lärdes grav
     Snarlik 2: Vakternas gravar, men likkistan innehåller en lerstaty föreställande en av ormfolkets lärda. Dess skriftrullar har brytits ner till stoft. Statyn innehåller samma amulett, ormskelett och gift som de andra.
@@ -466,7 +473,7 @@ blah =
     Det här rummet var en gång ett dolt vaktrum för templets lönnmördare. Nu står det tyst och mörkt. Möblemanget har ruttnat så bara spillror återstår. På väggen hänger två krokförsedda glavar som fortfarande är användbara, tillsammans med en symbol av silver värd 5 ~gm~.
     Lärdomar: hemliga rum innehåller mer skatter.
     11: Kryptatrium
-    Hallen öppnar upp sig till en stor åttasidig kammare, även den omgärdad av stirrande ormfolksstatyer. Några bär vapen, andra håller i redskap för tortyr eller lantbruk. Dörrarna till rum 12-16 är gjorda av tung sten men kan rubbas med hävstång utan större problem. Rum 15 har en olåst trädörr. Rum 18 har en stendörr, men den är mycket mer utsmyckad än de andra. Det ser ut som en gång var ett schakt i rummets mitt, men vatten som droppat från ytan har fyllt den till bredden med mörkt, oljigt vatten som luktar lakrits. Den är 3 meter djup.
+    Hallen öppnar upp sig till en stor åttasidig kammare, även den omgärdad av stirrande ormfolksstatyer. Några bär vapen, andra håller i redskap för tortyr eller lantbruk. Dörrarna till rum 12--16 är gjorda av tung sten men kan rubbas med hävstång utan större problem. Rum 15 har en olåst trädörr. Rum 18 har en stendörr, men den är mycket mer utsmyckad än de andra. Det ser ut som en gång var ett schakt i rummets mitt, men vatten som droppat från ytan har fyllt den till bredden med mörkt, oljigt vatten som luktar lakrits. Den är 3 meter djup.
 
     Inuti bassängen finns 2 Mumiespillror (Nivå 2, Moral 12, Attack 1T4 [Klo] eller 1T6 [Strypning] ). De kommer  hoppa upp och angripa alla som kommer nära schaktet.
     Lärdomar: det finns dolda monster. Vissa monster sprider sjukdomar. Det är väldigt svårt att träffa ett monster som klamrar sig fast vid din väns strupe.
@@ -517,13 +524,13 @@ blah =
     Lärdomar: den här vägen är stängd. Tänk ut en lösning (förgiftat kött, exploderande grodor, etcetera) och kom tillbaka senare.
     Nivå 3
     Det finns 5 huvudområden på Nivå 3.
-    Yttre salarna (22-26)
+    Yttre salarna (22--26)
     Kvadersten, en aning fuktigt, mögel och slem på den lägre delen av väggarna. Luften är kall, speciellt nära avgrunden. Vissa torra och dammiga ställen. Allt har uthuggna eller målade ormmotiv på sig.
-    Offergrop (27-30)
+    Offergrop (27--30)
     Kvadersten med bättre mosaik. Luften är varm och syrefattig och blir sämre när ni närmar er 30: Offergrop.
-    Xiximanters tillhåll (43-46)
+    Xiximanters tillhåll (43--46)
     Fint huggen sten täckt av damm och spindelnät. Purpurfärgat ljus och bubblande alkemiska kolvar. Glittret av glas och slamret av ben.
-    Vättegyttret (47-52)
+    Vättegyttret (47--52)
     Grävd genom sammanstörtade tunnlar och rum eller genom naturliga grottor. Smutsigt. Golvet är tjockt av träck, skalbaggar och förruttnelse. Ni kan inte höra om tjattret kommer från skalbaggar eller vättar.
 
     Den här nivån innehåller även Strövande Väsen. De dras till ljud, ljus och värme. De börjar förflyttar sig tilll de övre lagren av grottkomplexet först när Granitväktaren blivit besegrad.
@@ -554,7 +561,7 @@ blah =
     Stor spindel. Stor som en knytnäve. Här för att äta fladdermöss, inte rollpersoner. Giftig (1T4 i giftskada) men räddhågsen. Anses vara en delikatess av vättarna.
     1T6 Svampvättar. Se sida 12. I en spejartrupp. Ytterligare 1T6 vättar lurar runt hörnet.
     1 Skelettsylta. Se sida 12.
-    1T10+5 Svampvättar. Se sida 12. I en plundrings- patrull. 1 vätte har ett skrattretande opraktiskt bestickspjut (T6 skada, räckvidd). 
+    1T10+5 Svampvättar. Se sida 12. I en plundringspatrull. 1 vätte har ett skrattretande opraktiskt bestickspjut (T6 skada, räckvidd). 
 
 
     25: Schaktfälla
@@ -610,7 +617,7 @@ blah =
     Basilisken (sida 14) lurar i mörkret. En tjock järnkätting kedjar fast den med taket. Den kan inte lämna salen.
     Lärdomar: vissa monster har okonventionella attacker. Använd lagarbete för att besegra en varelse eller kringgå den helt. Lyssna efter hot.
     39: Lönngång
-    En dold passage vilken leder från 17: Lerkrigarnas rum till 38: Basilisksal. Dörren på salens sida var omärkbar i sitt original- skick, men med tiden har mosaikplattor fallit bort, vilket nu röjer dörrens konturer.
+    En dold passage vilken leder från 17: Lerkrigarnas rum till 38: Basilisksal. Dörren på salens sida var omärkbar i sitt originalskick, men med tiden har mosaikplattor fallit bort, vilket nu röjer dörrens konturer.
     Lärdomar: dungar har öglor och genvägar.
     40: Lönngång
     Den här passagen är dold bakom en annan lönndörr och den här är oskadd och svår att hitta. Den är på precis motsatt sida av Basiliskens sal från 39: Lönngång och i samma stil, så slipade spelare kommer snabbt lokalisera den. Även om väggarna är släta och gedigna, så stinker luften och golvet är tjockt av vättars sörja.
@@ -643,7 +650,7 @@ rest =
     Xiximanter har en lönngång från tronrummet till sitt tillhåll, men han har inte använt den på årtionden. Lönndörren i tronrummet är dold bakom en rutten väggbonad. Ingången på Xiximanters sida är bakom några lådor. Passagen är tjock med damm. Om rollpersonerna använder den kommer Xiximander bli förvånad och möjligen rasande om de inte kommer på en rimlig ursäkt.
     Lärdomar: alla lönngångar är inte säkra. Rum i dungar är sammanlänkade. Det finns berg av skatter.
     47: Vättegytter
-    Det här rummet är en del av Vättegyttret. Det är en låg grotta (1½m hög). Det står klart att de här rummen störtade samman för århundranden sedan och blivit urgröpta av vättarna. De använder det här rummet för till förvaring av fjädrar, trasor och byttor med flott. En grundlig genomsökning av bråten täcker en rollperson upp till halsen med träck och skalbaggsskal och får fram 2T6 silverknivar (värda 1sm styck) och ett tillknycklat mässings- armband (värdelöst).
+    Det här rummet är en del av Vättegyttret. Det är en låg grotta (1½m hög). Det står klart att de här rummen störtade samman för århundranden sedan och blivit urgröpta av vättarna. De använder det här rummet för till förvaring av fjädrar, trasor och byttor med flott. En grundlig genomsökning av bråten täcker en rollperson upp till halsen med träck och skalbaggsskal och får fram 2T6 silverknivar (värda 1sm styck) och ett tillknycklat mässingsarmband (värdelöst).
     48: Vättarnas ynglingsgrop
     Passagen in i det här rummet är bara 60 cm hög. Den rymmer vättarnas ynglingsgrop: en vedervärdig sörja av svamp, djurkadaver och uppsvällda, vätskefyllda säckar. Rollpersoner måste lyckas med ett Räddningskast mot Illamående eller fly på grund av vämjelse. Gropen reinkarnerar döda vättarns själar och är ett av Xiximanters misslyckade odödlighetsexperiment. Det finns inga skatter här, men om inte det här rummet bränns kommer antalet vättar i grottkomplexet alltid vara för många.
     Lärdomar: Det är svårt att fullständigt rensa ett grottkomplex. Eld är användbart.
@@ -661,7 +668,7 @@ rest =
     Detta rum tjänar inget särskilt syfte för vättarna, men vid godtycklig tidpunkt kommer 1T6 (exploderande på 6) Svampvättar (sida 12) vara närvarande på natten och 3T6 + 10 (exploderar på en 6) på dagen. Vättarna kommer sova i bägge fallen, men kommer att vakna 2 rundor efter att rollpersonerna har gjort betydande oväsen i något intilliggande rum. De är nästan osynliga i skräpet. 
     Lärdomar: Smyg förbi dina fiender. Grottkomplexet förändras beroende på om det är dag eller natt.
     52: Vättarnas vaktrum
-    Ett till större delen kollapsat rum som används av vättarna för att förvara vapen. Den innehåller 2 högafflar, en hög med silver- bestick (värde 20sm) och dussintals tillspetsade pinnar. En Svampvätte är satt på vakttjänst. Han har en stor sopkvast som han använder för att fösa bort skelettsyltorna. Om rollpersonerna kommer in från 28: Kupolsal genom att öppna den sönderslagna stendörren, föser han dem tillbaka med kvasten under protester . Om de kommer från 51: Vättarnas rabalderrum, springer han iväg skrikande.
+    Ett till större delen kollapsat rum som används av vättarna för att förvara vapen. Den innehåller 2 högafflar, en hög med silverbestick (värde 20sm) och dussintals tillspetsade pinnar. En Svampvätte är satt på vakttjänst. Han har en stor sopkvast som han använder för att fösa bort skelettsyltorna. Om rollpersonerna kommer in från 28: Kupolsal genom att öppna den sönderslagna stendörren, föser han dem tillbaka med kvasten under protester . Om de kommer från 51: Vättarnas rabalderrum, springer han iväg skrikande.
     Lärdomar: Fiender kan använda udda vapen av en anledning. Att jaga vättar i mörker är ingen höjdare.
     Monster
     Svart Smet
