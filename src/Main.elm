@@ -146,18 +146,11 @@ subHeaderStyleAlt =
 ---- Document ----
 
 
-document : Mark.Document (Html msg)
+document : Mark.Document (Element msg)
 document =
     Mark.document
         (\stuff ->
-            layout
-                [ bookType
-                , Font.size medium
-                , Font.alignLeft
-                , padding large
-                ]
-            <|
-                textColumn [ centerX ] stuff
+            textColumn [ centerX ] stuff
         )
         (Mark.manyOf
             [ subHeader
@@ -294,15 +287,27 @@ viewErrors errors =
 
 
 main =
+    let
+        myLayout element =
+            layout
+                [ bookType
+                , Font.size medium
+                , Font.alignLeft
+                , padding large
+                ]
+            <|
+                element
+    in
     case Mark.compile document source of
-        Mark.Success html ->
-            html
+        Mark.Success element ->
+            myLayout element
 
         Mark.Almost { result, errors } ->
-            Html.div []
-                [ Html.div [] (viewErrors errors)
-                , Html.div [] [ result ]
-                ]
+            myLayout <|
+                column []
+                    [ column [] (List.map html (viewErrors errors))
+                    , result
+                    ]
 
         Mark.Failure errors ->
             Html.div [] (viewErrors errors)
