@@ -215,7 +215,7 @@ myText =
 
 
 list =
-    Mark.tree "List" renderList (Mark.map (column []) myText)
+    Mark.tree "List" renderList (Mark.map (paragraph []) myText)
 
 
 renderList (Mark.Enumerated enum) =
@@ -227,14 +227,26 @@ renderItem icon (Mark.Item item) =
     let
         ( index, _ ) =
             item.index
+
+        viewBullet =
+            el [ alignTop ] <| text "• "
+
+        viewNumber nr =
+            el [ alignTop ] <| text (String.fromInt (nr + 1) ++ ". ")
     in
-    row []
+    row
+        [ paddingEach
+            { zeroPad
+                | left = large
+                , bottom = xs
+            }
+        ]
         [ case icon of
             Mark.Bullet ->
-                text "* "
+                viewBullet
 
             Mark.Number ->
-                text (String.fromInt index)
+                viewNumber index
         , column [] [ textColumn [] item.content, renderList item.children ]
         ]
 
@@ -310,7 +322,7 @@ source =
 |> SubHeader
     Den här modulen är för:
 
-  |> List
+|> List
     - Erfarna ~sl~ med nya spelare.
     - ~Sl~ som vill lära sig om design av äventyrsplatser.
     - Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
