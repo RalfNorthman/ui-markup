@@ -215,26 +215,27 @@ myText =
 
 
 list =
-    Mark.tree "List" renderList (Mark.map (paragraph []) myText)
+    Mark.tree "List" renderList (Mark.map (column []) myText)
 
 
-renderList (Mark.Enumerated lst) =
-    let
-        group =
-            case lst.icon of
-                Mark.Bullet ->
-                    \str -> el [] <| text ("* " ++ str)
-
-                Mark.Number ->
-                    \str -> el [] <| text ("1 " ++ str)
-    in
-    column [] (List.map renderItem lst.items)
-
-
-renderItem (Mark.Item item) =
+renderList (Mark.Enumerated enum) =
     column []
-        [ column [] item.content
-        , renderList item.children
+        (List.map (renderItem enum.icon) enum.items)
+
+
+renderItem icon (Mark.Item item) =
+    let
+        ( index, _ ) =
+            item.index
+    in
+    row []
+        [ case icon of
+            Mark.Bullet ->
+                text "* "
+
+            Mark.Number ->
+                text (String.fromInt index)
+        , column [] [ textColumn [] item.content, renderList item.children ]
         ]
 
 
@@ -309,11 +310,10 @@ source =
 |> SubHeader
     Den här modulen är för:
 
-    --- Erfarna ~sl~ med nya spelare.
-
-    --- ~Sl~ som vill lära sig om design av äventyrsplatser.
-
-    --- Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
+  |> List
+    - Erfarna ~sl~ med nya spelare.
+    - ~Sl~ som vill lära sig om design av äventyrsplatser.
+    - Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
 
     Som en helt ny ~sl~ kan du ändå använda den här grottkomplexet och lära dig mycket från den, men den kommer omedelbart pröva dina färdigheter. Modulen kan även uppskattas av erfarna spelare.
 
@@ -322,20 +322,20 @@ source =
 
     Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i den här grottkomplexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en nybörjargrotta. Det är bara /ett/ sätt att göra det.
 
-    Om du tycker att diplomati är ett nödvändigt element, placera en hjälpsam, men feg vätte som heter Smä i *7: Falskt tempel*. Om du tycker att tidspress och en känsla av hotande fara är viktigt, lägg till Strövande Väsen till alla nivåer i grottkomplexet, inte bara Nivå 3. Lägg till troper från folksägner. Lägg till dina favoritfällor eller ta bort fällorna helt och hållet.
+    Om du tycker att diplomati är ett nödvändigt element, placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. Om du tycker att tidspress och en känsla av hotande fara är viktigt, lägg till Strövande Väsen till alla nivåer i grottkomplexet, inte bara Nivå 3. Lägg till troper från folksägner. Lägg till dina favoritfällor eller ta bort fällorna helt och hållet.
 
     Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värdefull kunkap. Att lära sig vad man inte gillar är lika värdefullt som som att lära sig vad man gillar. Kanske kan den här modulen inspirera dig att skriva din egen introduktionsgrotta.
 
 |> SubHeader
     Gruppstorlek och balans
 
-    Den här grottkomplexet är designat för nivå 1 rollpersoner. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en rollperson eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belöningar för strid och många för att genomföra en god plan.
+    Den här grottkomplexet är designat för 1:a rangens rollpersoner. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en rollperson eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belöningar för strid och många för att genomföra en god plan.
 
-    Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna gå upp en nivå. I slutet bör överlevande rollpersoner vara nivå 2 eller 3, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
+    Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna stiga en rang. I slutet bör överlevande rollpersoner vara av 2:a eller 3:e rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
 
-    Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger 1T6 i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
+    Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
 
-    En grupp rollpersoner på mellannivå spelade av erfarna spelare kan tillintetgöra den här grottkomplexet på rekordtid. De kan ändå ha kul. En grupp rollpersoner på låg nivå spelade av nybörjarspelare kommer förhoppningsvis ha jätteroligt.
+    En grupp rollpersoner av mellanrang spelade av erfarna spelare kan tillintetgöra den här grottkomplexet på rekordtid. De kan ändå ha kul. En grupp rollpersoner av låg rang spelade av nybörjarspelare kommer förhoppningsvis ha jätteroligt.
 
     Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det ta mellan 12 och 24 timmar speltid att fullständigt utforska grottkomplexet. På ett första spelmöte som involverar rollpersonsskapande bör sällskapet kunna utforska Nivå 1 helt.
 
