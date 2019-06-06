@@ -57,6 +57,10 @@ scaleInt =
         >> round
 
 
+xxs =
+    scaleInt -3
+
+
 xs =
     scaleInt -2
 
@@ -116,11 +120,7 @@ headerStyle =
 
 subHeaderStyle =
     [ Font.bold
-    , paddingEach
-        { zeroPad
-            | top = small
-            , bottom = xs
-        }
+    , paddingEach { zeroPad | top = small }
     , Font.size large
     ]
 
@@ -226,7 +226,7 @@ list =
 
 
 renderList (Mark.Enumerated enum) =
-    column []
+    column [ width fill ]
         (List.map (renderItem enum.icon) enum.items)
 
 
@@ -245,7 +245,8 @@ renderItem icon (Mark.Item item) =
         [ paddingEach
             { zeroPad
                 | left = large
-                , bottom = xs
+                , bottom = xxs
+                , top = xxs
             }
         ]
         [ case icon of
@@ -254,7 +255,7 @@ renderItem icon (Mark.Item item) =
 
             Mark.Number ->
                 viewNumber index
-        , column [] [ textColumn [] item.content, renderList item.children ]
+        , column [ width fill ] [ textColumn [] item.content, renderList item.children ]
         ]
 
 
