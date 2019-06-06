@@ -109,11 +109,15 @@ titleStyle =
     [ Font.bold
     , Font.size xxl
     , Font.letterSpacing <| -(scaleFloat -4)
+    , Font.center
+    , width fill
     ]
 
 
 headerStyle =
     [ smallCaps
+    , myWidth
+    , centerX
     , Font.size xl
     , paddingEach
         { zeroPad
@@ -126,6 +130,8 @@ headerStyle =
 
 subHeaderStyle =
     [ Font.bold
+    , myWidth
+    , centerX
     , paddingEach
         { zeroPad
             | top = small
@@ -135,11 +141,12 @@ subHeaderStyle =
     ]
 
 
-subHeaderStyleAlt =
-    [ Font.bold
-    , Font.size large
-    , Font.letterSpacing smallFloat
-    ]
+myWidth =
+    width <| px <| 60 * xs
+
+
+listWidth =
+    width <| px <| 60 * xs - large
 
 
 
@@ -150,7 +157,11 @@ document : Mark.Document (Element msg)
 document =
     Mark.document
         (\stuff ->
-            textColumn [ centerX ] stuff
+            textColumn
+                [ centerX
+                , width fill
+                ]
+                stuff
         )
         (Mark.manyOf
             [ subHeader
@@ -158,7 +169,15 @@ document =
             , title
             , list
             , Mark.map
-                (paragraph [ paddingEach { zeroPad | bottom = xxs } ])
+                (\x ->
+                    el [] <|
+                        paragraph
+                            [ paddingEach { zeroPad | bottom = xxs }
+                            , myWidth
+                            , centerX
+                            ]
+                            x
+                )
                 myText
             ]
         )
@@ -179,7 +198,7 @@ title =
 header =
     Mark.block "Header"
         (\children ->
-            paragraph headerStyle children
+            el [] <| paragraph headerStyle children
         )
         myText
 
@@ -187,7 +206,7 @@ header =
 subHeader =
     Mark.block "SubHeader"
         (\children ->
-            paragraph subHeaderStyle children
+            el [] <| paragraph subHeaderStyle children
         )
         myText
 
@@ -240,11 +259,19 @@ myReplacements =
 
 
 list =
-    Mark.tree "List" renderList (Mark.map (paragraph []) myText)
+    Mark.tree "List"
+        renderList
+        (Mark.map
+            (\x ->
+                el [] <|
+                    paragraph [ listWidth ] x
+            )
+            myText
+        )
 
 
 renderList (Mark.Enumerated enum) =
-    column [ width fill ]
+    column []
         (List.map (renderItem enum.icon) enum.items)
 
 
@@ -266,6 +293,7 @@ renderItem icon (Mark.Item item) =
                 , bottom = xxs
                 , top = xxs
             }
+        , centerX
         ]
         [ case icon of
             Mark.Bullet ->
@@ -273,7 +301,7 @@ renderItem icon (Mark.Item item) =
 
             Mark.Number ->
                 viewNumber index
-        , column [ width fill ] [ textColumn [] item.content, renderList item.children ]
+        , column [] [ textColumn [] item.content, renderList item.children ]
         ]
 
 
@@ -294,6 +322,7 @@ main =
                 , Font.size medium
                 , Font.alignLeft
                 , padding large
+                , width fill
                 ]
             <|
                 element
