@@ -57,6 +57,10 @@ scaleInt =
         >> round
 
 
+xxxs =
+    scaleInt -4
+
+
 xxs =
     scaleInt -3
 
@@ -104,7 +108,6 @@ zeroPad =
 titleStyle =
     [ Font.bold
     , Font.size xxl
-    , paddingEach { zeroPad | bottom = medium }
     , Font.letterSpacing <| -(scaleFloat -4)
     ]
 
@@ -113,14 +116,21 @@ headerStyle =
     [ smallCaps
     , Font.size xl
     , paddingEach
-        { zeroPad | top = medium }
+        { zeroPad
+            | top = xl
+            , bottom = xxs
+        }
     , Font.letterSpacing <| -(scaleFloat -5)
     ]
 
 
 subHeaderStyle =
     [ Font.bold
-    , paddingEach { zeroPad | top = small }
+    , paddingEach
+        { zeroPad
+            | top = small
+            , bottom = xxxs
+        }
     , Font.size large
     ]
 
@@ -155,9 +165,7 @@ document =
             , title
             , list
             , Mark.map
-                (paragraph
-                    [ paddingEach { zeroPad | bottom = small } ]
-                )
+                (paragraph [ paddingEach { zeroPad | bottom = xxs } ])
                 myText
             ]
         )
@@ -212,9 +220,26 @@ myText =
                     )
                 <|
                     text str
-        , replacements = Mark.commonReplacements
+        , replacements = myReplacements
         , inlines = []
         }
+
+
+myReplacements : List Mark.Replacement
+myReplacements =
+    [ Mark.replacement "..." "…"
+    , Mark.replacement "---" "—"
+    , Mark.replacement "--" "–"
+    , Mark.replacement "//" "/"
+    , Mark.replacement "'" "’"
+    , Mark.replacement "\"" "”"
+
+    -- non-breaking space
+    , Mark.replacement "<>" "\u{00A0}"
+
+    -- em space
+    , Mark.replacement "___" "\u{2003}"
+    ]
 
 
 
@@ -287,13 +312,6 @@ main =
 ---- Source ----
 
 
-source2 : String
-source2 =
-    String.trim
-        """
-"""
-
-
 source : String
 source =
     String.trim
@@ -306,9 +324,9 @@ source =
 
 När du först startar Super Mario Bros så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen handledning. Spelet själv är en handledning. 
 
-Alla kan namnge ett klassiskt grottkomplex – Tomb of Horrors, Barrier Peaks, Ravenloft – men för att dessa moduler ska vara förståeliga behöver det finnas en slags introduktion. Tomb of Horrors och Death Frost Doom är båda reaktioner /på någonting/, men vad de är reaktioner /på/ finns inte riktigt som utgiven produkt.
+___Alla kan namnge ett klassiskt grottkomplex – Tomb of Horrors, Barrier Peaks, Ravenloft – men för att dessa moduler ska vara förståeliga behöver det finnas en slags introduktion. Tomb of Horrors och Death Frost Doom är båda reaktioner /på någonting/, men vad de är reaktioner /på/ finns inte riktigt som utgiven produkt.
 
-Det är som om alla moduler vi har är Bach-konserter. Folk skriver verk vilka besitter häpnadsväckande genialitet, men någon måste skriva en bok om hur man spelar piano.
+___Det är som om alla moduler vi har är Bach-konserter. Folk skriver verk vilka besitter häpnadsväckande genialitet, men någon måste skriva en bok om hur man spelar piano.
 
 |> SubHeader
     Den här modulen är för:
@@ -325,22 +343,22 @@ Som en helt ny ~sl~ kan du ändå använda den här grottkomplexet och lära dig
 
 Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i den här grottkomplexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en nybörjargrotta. Det är bara /ett/ sätt att göra det.
 
-Om du tycker att diplomati är ett nödvändigt element, placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. Om du tycker att tidspress och en känsla av hotande fara är viktigt, lägg till Strövande Väsen till alla nivåer i grottkomplexet, inte bara Nivå<>3. Lägg till troper från folksägner. Lägg till dina favoritfällor eller ta bort fällorna helt och hållet.
+___Om du tycker att diplomati är ett nödvändigt element, placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. Om du tycker att tidspress och en känsla av hotande fara är viktigt, lägg till Strövande Väsen till alla nivåer i grottkomplexet, inte bara Nivå<>3. Lägg till troper från folksägner. Lägg till dina favoritfällor eller ta bort fällorna helt och hållet.
 
-Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värdefull kunkap. Att lära sig vad man inte gillar är lika värdefullt som att lära sig vad man gillar. Kanske kan den här modulen inspirera dig att skriva din egen introduktionsgrotta.
+___Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värdefull kunkap. Att lära sig vad man inte gillar är lika värdefullt som att lära sig vad man gillar. Kanske kan den här modulen inspirera dig att skriva din egen introduktionsgrotta.
 
 |> SubHeader
     Gruppstorlek och balans
 
 Den här grottkomplexet är designat för 1:a rangens rollpersoner. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en rollperson eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belöningar för strid och många för att genomföra en god plan.
 
-Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna stiga en rang. I slutet bör överlevande rollpersoner vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
+___Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna stiga en rang. I slutet bör överlevande rollpersoner vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
 
-Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
+___Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
 
-En grupp rollpersoner av mellanrang spelade av erfarna spelare kan tillintetgöra den här grottkomplexet på rekordtid. De kan ändå ha kul. En grupp rollpersoner av låg rang spelade av nybörjarspelare kommer förhoppningsvis ha jätteroligt.
+___En grupp rollpersoner av mellanrang spelade av erfarna spelare kan tillintetgöra den här grottkomplexet på rekordtid. De kan ändå ha kul. En grupp rollpersoner av låg rang spelade av nybörjarspelare kommer förhoppningsvis ha jätteroligt.
 
-Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det ta mellan 12 och 24 timmar speltid att fullständigt utforska grottkomplexet. På ett första spelmöte som involverar rollpersonsskapande bör sällskapet kunna utforska Nivå 1 helt.
+___Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det ta mellan 12 och 24 timmar speltid att fullständigt utforska grottkomplexet. På ett första spelmöte som involverar rollpersonsskapande bör sällskapet kunna utforska Nivå 1 helt.
 
 |> SubHeader
     Innan du börjar:
@@ -399,28 +417,28 @@ Det finns två horisontella och tre vertikala huvudleder. Grottkomplexet förgre
 
 Representerar upptäckarlust, aha-upplevelsen och spänningen av att kunna hitta skatter. Kom ihåg att berömma spelare som listar ut att det är en falsk krypta. Klokskap ska belönas. Grottkomplexet blir också märkligare och mindre jordnära ju lägre ner man går. Till en början bryter ni upp träkistor för att roffa åt er pyttesmå amuletter. Nära slutet gräver ni er igenom svampvättarnas dynga efter kungakronor, bedriver handel med en död ormman eller släpar skattkistor med guld upp till ytan.
 
-Beskriv det här området med ord som skraltig, kantstött och fuktig. Det är en jordkällare. Det sticker ner små vita rötter från taket och det är grus på golvet.
+___Beskriv det här området med ord som skraltig, kantstött och fuktig. Det är en jordkällare. Det sticker ner små vita rötter från taket och det är grus på golvet.
 
 |> SubHeader
     Den Riktiga Kryptan
 
 Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörkret, odödliga trollkarlar köpslår med er och oövervinnerlig odöd sörja hasar efter er.
 
-Beskriv det här området med ord som /enorm/, /överhängande/ och /kall/. Det här området är byggt av en civilisation äldre, visare och grymmare än rollpersonernas. Ju djupare de går desto nervösare bör de bli.
+___Beskriv det här området med ord som /enorm/, /överhängande/ och /kall/. Det här området är byggt av en civilisation äldre, visare och grymmare än rollpersonernas. Ju djupare de går desto nervösare bör de bli.
 
 |> SubHeader
     Avgrunden
 
 Representerar det okända och den förundran den medför. Det skulle kunna finnas vadsomhelst därnere. Den kan sträcka sig ner till jordens mitt. Det skulle fortfarande kunna finnas ormmän som lever obekymrade liv därnere. Det är ett blankt ark för spelledaren att lägga till saker i modulen.
 
-Beskriv avgrunden med ord som bottenlös och oroande, det är som om världen bara faller bort och tysta, rastlösa ljud om ni är tålmodiga. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
+___Beskriv avgrunden med ord som bottenlös och oroande, det är som om världen bara faller bort och tysta, rastlösa ljud om ni är tålmodiga. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
 
 |> SubHeader
     Vättegyttret
 
 Representerar en spegel av rollpersonerna. De lever i smuts, de återuppstår och gör samma misstag. De är hungriga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Gyttret är ett intrång av livskraftig och högljudd barbarism in i en kall och utdöende civilisation.
 
-Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och Ormkonungarnas Katakomber har inga fria bad. Pyttesmå röda vätteögon glöder i mörkret. Klapprande tänder och skarpa knivar väntar i mörkret.
+___Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och Ormkonungarnas Katakomber har inga fria bad. Pyttesmå röda vätteögon glöder i mörkret. Klapprande tänder och skarpa knivar väntar i mörkret.
 
 |> Header
     Nivå 1
