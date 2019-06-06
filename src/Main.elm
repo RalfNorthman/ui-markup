@@ -111,6 +111,12 @@ titleStyle =
     , Font.letterSpacing <| -(scaleFloat -4)
     , Font.center
     , width fill
+    , spacing medium
+    , paddingEach
+        { zeroPad
+            | top = medium
+            , bottom = large
+        }
     ]
 
 
@@ -240,10 +246,19 @@ myText =
 myReplacements : List Mark.Replacement
 myReplacements =
     [ Mark.replacement "..." "…"
+
+    -- normal hyphen
+    , Mark.replacement "//-" "-"
+
+    -- em dash
     , Mark.replacement "---" "—"
+
+    -- en dash
     , Mark.replacement "--" "–"
     , Mark.replacement "//" "/"
     , Mark.replacement "'" "’"
+
+    -- swedish quotation
     , Mark.replacement "\"" "”"
 
     -- non-breaking space
@@ -251,6 +266,12 @@ myReplacements =
 
     -- em space
     , Mark.replacement "___" "\u{2003}"
+
+    -- non-breaking thin space
+    , Mark.replacement "_" "\u{202F}"
+
+    -- soft hyphen
+    , Mark.replacement "-" "\u{00AD}"
     ]
 
 
@@ -384,9 +405,9 @@ ___Genom att inte hålla med så lär du dig i alla fall något om dina egna pre
 |> SubHeader
     Gruppstorlek och balans
 
-Den här grottkomplexet är designat för 1:a rangens rollpersoner. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en rollperson eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belöningar för strid och många för att genomföra en god plan.
+Den här grottkomplexet är designat för 1:a rangens roll-personer. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en roll-person eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belön-ingar för strid och många för att genomföra en god plan.
 
-___Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna stiga en rang. I slutet bör överlevande rollpersoner vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
+___Värdet på skatterna är balanserade runt tanken att 2_000 silvermynt är tillräckligt för att en rollperson ska kunna stiga en rang. I slutet bör överlevande rollpersoner vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam roll-person som överlever kommer vara rik.
 
 ___Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
 
@@ -487,7 +508,7 @@ En lång korridor med fyra öppna rum, två på varje sida. Hallen slutar vid en
 |> SubHeader
     2: Vakternas gravar
 
-De här två små rummen är identiska till storlek och innehåll. Bägge rymmer en likkista av trä med en lerstaty föreställande en ormfolkskrigare inuti. Statyerna är ihåliga och varje innehåller en guldamulett värd 1 ~gm~, ett torkat ormskelett och ett moln av giftgas (~t6~ i skada, kan bara reducera en rollperson till 0 ~kp~).
+De här två små rummen är identiska till storlek och innehåll. Bägge rymmer en likkista av trä med en lerstaty föreställande en ormfolkskrigare inuti. Statyerna är ihåliga och varje innehåller en guldamulett värd 1 guld, ett torkat ormskelett och ett moln av giftgas (~t6~ i skada, kan bara reducera en rollperson till 0 ~kp~).
 Lärdomar: grottkomplexet är organiserat. Det finns mönster. Det finns gömda skatter. Det finns också gömda faror.
     """
 
