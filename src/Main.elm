@@ -108,12 +108,19 @@ titleStyle =
 headerStyle =
     [ smallCaps
     , Font.size xl
+    , paddingEach
+        { zeroPad | top = medium }
     , Font.letterSpacing <| -(scaleFloat -5)
     ]
 
 
 subHeaderStyle =
     [ Font.bold
+    , paddingEach
+        { zeroPad
+            | top = small
+            , bottom = xs
+        }
     , Font.size large
     ]
 
@@ -149,7 +156,7 @@ document =
             , list
             , Mark.map
                 (paragraph
-                    [ paddingEach { zeroPad | bottom = medium } ]
+                    [ paddingEach { zeroPad | bottom = small } ]
                 )
                 myText
             ]
@@ -283,25 +290,6 @@ source2 : String
 source2 =
     String.trim
         """
-|> Title
-    Spöklinjerna
-
-|> Header
-    Spelarnas drag
-
-|> SubHeader
-    KRAFT
-
-    /När du brukar kraft,/ slå+~kraft~ och välj bland alternativen. 
-    På 12+, tre. På 10--11, två. På 7--9, ett.
-
-|> SubHeader
-    FINESS
-
-    /När du använder finess,/ slå+~finess~ och välj bland alternativen.
-    På 12+, tre. På 10--11, två. På 7--9, ett.
-
-    Nästa stycke.
 """
 
 
@@ -315,9 +303,11 @@ source =
 |> Header
     Introduktion
 
-    Alla kan namnge ett klassiskt grottkomplex – Tomb of Horrors, Barrier Peaks, Ravenloft – men för att dessa moduler ska vara förståeliga behöver det finnas en slags introduktion. Tomb of Horrors och Death Frost Doom är båda reaktioner /på någonting/, men vad de är reaktioner /på/ finns inte riktigt som utgiven produkt.
+När du först startar Super Mario Bros så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen handledning. Spelet själv är en handledning. 
 
-    Det är som om alla moduler vi har är Bach-konserter. Folk skriver verk vilka besitter häpnadsväckande genialitet, men någon måste skriva en bok om hur man spelar piano.
+Alla kan namnge ett klassiskt grottkomplex – Tomb of Horrors, Barrier Peaks, Ravenloft – men för att dessa moduler ska vara förståeliga behöver det finnas en slags introduktion. Tomb of Horrors och Death Frost Doom är båda reaktioner /på någonting/, men vad de är reaktioner /på/ finns inte riktigt som utgiven produkt.
+
+Det är som om alla moduler vi har är Bach-konserter. Folk skriver verk vilka besitter häpnadsväckande genialitet, men någon måste skriva en bok om hur man spelar piano.
 
 |> SubHeader
     Den här modulen är för:
@@ -327,74 +317,77 @@ source =
     - ~Sl~ som vill lära sig om design av äventyrsplatser.
     - Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
 
-    Som en helt ny ~sl~ kan du ändå använda den här grottkomplexet och lära dig mycket från den, men den kommer omedelbart pröva dina färdigheter. Modulen kan även uppskattas av erfarna spelare.
+Som en helt ny ~sl~ kan du ändå använda den här grottkomplexet och lära dig mycket från den, men den kommer omedelbart pröva dina färdigheter. Modulen kan även uppskattas av erfarna spelare.
 
 |> SubHeader
     Jag håller inte med om…
 
-    Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i den här grottkomplexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en nybörjargrotta. Det är bara /ett/ sätt att göra det.
+Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i den här grottkomplexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en nybörjargrotta. Det är bara /ett/ sätt att göra det.
 
-    Om du tycker att diplomati är ett nödvändigt element, placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. Om du tycker att tidspress och en känsla av hotande fara är viktigt, lägg till Strövande Väsen till alla nivåer i grottkomplexet, inte bara Nivå 3. Lägg till troper från folksägner. Lägg till dina favoritfällor eller ta bort fällorna helt och hållet.
+Om du tycker att diplomati är ett nödvändigt element, placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. Om du tycker att tidspress och en känsla av hotande fara är viktigt, lägg till Strövande Väsen till alla nivåer i grottkomplexet, inte bara Nivå<>3. Lägg till troper från folksägner. Lägg till dina favoritfällor eller ta bort fällorna helt och hållet.
 
-    Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värdefull kunkap. Att lära sig vad man inte gillar är lika värdefullt som som att lära sig vad man gillar. Kanske kan den här modulen inspirera dig att skriva din egen introduktionsgrotta.
+Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värdefull kunkap. Att lära sig vad man inte gillar är lika värdefullt som att lära sig vad man gillar. Kanske kan den här modulen inspirera dig att skriva din egen introduktionsgrotta.
 
 |> SubHeader
     Gruppstorlek och balans
 
-    Den här grottkomplexet är designat för 1:a rangens rollpersoner. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en rollperson eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belöningar för strid och många för att genomföra en god plan.
+Den här grottkomplexet är designat för 1:a rangens rollpersoner. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grottkomplexet med en rollperson eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belöningar för strid och många för att genomföra en god plan.
 
-    Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna stiga en rang. I slutet bör överlevande rollpersoner vara av 2:a eller 3:e rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
+Värdet på skatterna är balanserade runt tanken att 200 guldmynt är tillräckligt för att en rollperson ska kunna stiga en rang. I slutet bör överlevande rollpersoner vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lättare (och få mindre skatter per rollperson). En ensam rollperson som överlever kommer vara rik.
 
-    Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
+Skadeangivelserna är skalade efter rollpersoner som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Räddningskast är angivna i ett generellt format: exempelvis Räddningskast mot Gift, Räddningskast för att Ducka.
 
-    En grupp rollpersoner av mellanrang spelade av erfarna spelare kan tillintetgöra den här grottkomplexet på rekordtid. De kan ändå ha kul. En grupp rollpersoner av låg rang spelade av nybörjarspelare kommer förhoppningsvis ha jätteroligt.
+En grupp rollpersoner av mellanrang spelade av erfarna spelare kan tillintetgöra den här grottkomplexet på rekordtid. De kan ändå ha kul. En grupp rollpersoner av låg rang spelade av nybörjarspelare kommer förhoppningsvis ha jätteroligt.
 
-    Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det ta mellan 12 och 24 timmar speltid att fullständigt utforska grottkomplexet. På ett första spelmöte som involverar rollpersonsskapande bör sällskapet kunna utforska Nivå 1 helt.
+Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det ta mellan 12 och 24 timmar speltid att fullständigt utforska grottkomplexet. På ett första spelmöte som involverar rollpersonsskapande bör sällskapet kunna utforska Nivå 1 helt.
 
 |> SubHeader
     Innan du börjar:
 
-    Läs hela modulen.
-    Gör anteckningar över saker du gillar och inte gillar.
-    Skriv ut sida XXoch kartan på sida XX.
-    Byt ut monstren på sida XX till motsvarande från ditt val av system.
-    Justera skatternas värde där det behövs.
+|> List
+    - Läs hela modulen.
+    - Gör anteckningar över saker du gillar och inte gillar.
+    - Skriv ut sida XXoch kartan på sida XX.
+    - Byt ut monstren på sida XX till motsvarande från ditt val av system.
+    - Justera skatternas värde där det behövs.
 
 |> SubHeader
     Locka rollpersonerna
 
-    Här är några sätt att locka rollpersonerna till grottkomplexet, givet att de startar panka och vet att katakomber innehåller skatter. Du kan placera den här grottkomplexet var som helst.
-    De hittar en uråldrig karta till ett länge sedan bortglömt gravvalv.
-    Ett jordskred avslöjar ingången till graven.
-    Vättarna kidnappar någon som står rollpersonerna nära.
-    Xiximanters experiment framkallar märkliga drömmar.
-    De hittar ingången till graven av ren slump.
-    De är utsända av en mäktig mecenat att utforska de nyligen funna katakomberna.
+Här är några sätt att locka rollpersonerna till grottkomplexet, givet att de startar panka och vet att katakomber innehåller skatter (du kan placera den här grottkomplexet var som helst):
+
+|> List
+    - De hittar en uråldrig karta till ett länge sedan bortglömt gravvalv.
+    - Ett jordskred avslöjar ingången till graven.
+    - Vättarna kidnappar någon som står rollpersonerna nära.
+    - Xiximanters experiment framkallar märkliga drömmar.
+    - De hittar ingången till graven av ren slump.
+    - De är utsända av en mäktig mecenat att utforska de nyligen funna katakomberna.
 
 |> SubHeader
     Lärdomar
 
-    Alltigenom texten finns små rutor utspridda. Varje rum, fälla eller möte är designat för att lära nya spelare (och spelledare) en användbar läxa. Några är allmäna lärdomar, medan andra är specifika för den här grottkomplexet. Grottkomplexets struktur, beskaffenhet och faror bör sakta bli förutsägbara och möjliga att utnyttja. Dessa lärdomar kan te sig triviala för en erfaren spelledare, men jag tycker det är lämpligt att räkna upp dem ändå.
+Alltigenom texten finns små rutor utspridda. Varje rum, fälla eller möte är designat för att lära nya spelare (och spelledare) en användbar läxa. Några är allmäna lärdomar, medan andra är specifika för den här grottkomplexet. Grottkomplexets struktur, beskaffenhet och faror bör sakta bli förutsägbara och möjliga att utnyttja. Dessa lärdomar kan te sig triviala för en erfaren spelledare, men jag tycker det är lämpligt att räkna upp dem ändå.
 
 |> Header
     Struktur
 
-    Ormkonungarnas Katakomber är ett grottkomplex med tre nivåer och fyra tematiska huvudområden. Jag har tagit med väldigt minimala beskrivningar i texten och sektionen med snabbreferenser (sid 16--17). Det finns inga texter som ska läsas högt.
+Ormkonungarnas Katakomber är ett grottkomplex med tre nivåer och fyra tematiska huvudområden. Jag har tagit med väldigt minimala beskrivningar i texten och sektionen med snabbreferenser (sid 16--17). Det finns inga texter som ska läsas högt.
 
 |> SubHeader
     Nivå 1: Den Falska Kryptan
 
-    Introducerar grunderna i utforming av grottkomplex och utforskning av sju rum. Den är precis rätt storlek för ett första spelmöte, givet att skapandet av rollpersoner går hyfsat fort och att du ger rollpersonerna en god anledning till att utforska katakomben.
+Introducerar grunderna i utforming av grottkomplex och utforskning av sju rum. Den är precis rätt storlek för ett första spelmöte, givet att skapandet av rollpersoner går hyfsat fort och att du ger rollpersonerna en god anledning till att utforska katakomben.
 
 |> SubHeader
     Nivå 2: Den Övre Kryptan
 
-    Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg framåt, men sidorummen är frestande. Det är i den här sektionen som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möjligen behövas en färd tillbaka till civilisationen för att fylla på förnödenheter.
+Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg framåt, men sidorummen är frestande. Det är i den här sektionen som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möjligen behövas en färd tillbaka till civilisationen för att fylla på förnödenheter.
 
 |> SubHeader
     Nivå 3: De Lägre Kryptorna
 
-    Det finns två horisontella och tre vertikala huvudleder. Grottkomplexet förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du började. Den här nivån är betydligt farligare än de föregående. Diplomati och handel blir också aktuellt, liksom strövande väsen. Du kan utforska Nivå 1 och 2 i lugn och ro, men spenderar du för mycket tid på Nivå 3 tar du en allvarlig risk. Nivå 3 är öppen. Du kan lägga till material för att utöka grottkomplexet så långt du vill. I det här läget, om du är en ny spelledare eller ovan med ~osr~-spel, bör du vara redo att skriva ditt eget material.
+Det finns två horisontella och tre vertikala huvudleder. Grottkomplexet förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du började. Den här nivån är betydligt farligare än de föregående. Diplomati och handel blir också aktuellt, liksom strövande väsen. Du kan utforska Nivå 1 och 2 i lugn och ro, men spenderar du för mycket tid på Nivå 3 tar du en allvarlig risk. Nivå 3 är öppen. Du kan lägga till material för att utöka grottkomplexet så långt du vill. I det här läget, om du är en ny spelledare eller ovan med ~osr~-spel, bör du vara redo att skriva ditt eget material.
 
 |> Header
     Tematiska områden
@@ -403,30 +396,30 @@ source =
 
     Den Falska Kryptan
 
-    Representerar upptäckarlust, aha-upplevelsen och spänningen av att kunna hitta skatter. Kom ihåg att berömma spelare som listar ut att det är en falsk krypta. Klokskap ska belönas. Grottkomplexet blir också märkligare och mindre jordnära ju lägre ner man går. Till en början bryter ni upp träkistor för att roffa åt er pyttesmå amuletter. Nära slutet gräver ni er igenom svampvättarnas dynga efter kungakronor, bedriver handel med en död ormman eller släpar skattkistor med guld upp till ytan.
+Representerar upptäckarlust, aha-upplevelsen och spänningen av att kunna hitta skatter. Kom ihåg att berömma spelare som listar ut att det är en falsk krypta. Klokskap ska belönas. Grottkomplexet blir också märkligare och mindre jordnära ju lägre ner man går. Till en början bryter ni upp träkistor för att roffa åt er pyttesmå amuletter. Nära slutet gräver ni er igenom svampvättarnas dynga efter kungakronor, bedriver handel med en död ormman eller släpar skattkistor med guld upp till ytan.
 
-    Beskriv det här området med ord som skraltig, kantstött och fuktig. Det är en jordkällare. Det sticker ner små vita rötter från taket och det är grus på golvet.
+Beskriv det här området med ord som skraltig, kantstött och fuktig. Det är en jordkällare. Det sticker ner små vita rötter från taket och det är grus på golvet.
 
 |> SubHeader
     Den Riktiga Kryptan
 
-    Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörkret, odödliga trollkarlar köpslår med er och oövervinnerlig odöd sörja hasar efter er.
+Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörkret, odödliga trollkarlar köpslår med er och oövervinnerlig odöd sörja hasar efter er.
 
-    Beskriv det här området med ord som /enorm/, /överhängande/ och /kall/. Det här området är byggt av en civilisation äldre, visare och grymmare än rollpersonernas. Ju djupare de går desto nervösare bör de bli.
+Beskriv det här området med ord som /enorm/, /överhängande/ och /kall/. Det här området är byggt av en civilisation äldre, visare och grymmare än rollpersonernas. Ju djupare de går desto nervösare bör de bli.
 
 |> SubHeader
     Avgrunden
 
-    Representerar det okända och den förundran den medför. Det skulle kunna finnas vadsomhelst därnere. Den kan sträcka sig ner till jordens mitt. Det skulle fortfarande kunna finnas ormmän som lever obekymrade liv därnere. Det är ett blankt ark för spelledaren att lägga till saker i modulen.
+Representerar det okända och den förundran den medför. Det skulle kunna finnas vadsomhelst därnere. Den kan sträcka sig ner till jordens mitt. Det skulle fortfarande kunna finnas ormmän som lever obekymrade liv därnere. Det är ett blankt ark för spelledaren att lägga till saker i modulen.
 
-    Beskriv avgrunden med ord som bottenlös och oroande, det är som om världen bara faller bort och tysta, rastlösa ljud om ni är tålmodiga. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
+Beskriv avgrunden med ord som bottenlös och oroande, det är som om världen bara faller bort och tysta, rastlösa ljud om ni är tålmodiga. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
 
 |> SubHeader
     Vättegyttret
 
-    Representerar en spegel av rollpersonerna. De lever i smuts, de återuppstår och gör samma misstag. De är hungriga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Gyttret är ett intrång av livskraftig och högljudd barbarism in i en kall och utdöende civilisation.
+Representerar en spegel av rollpersonerna. De lever i smuts, de återuppstår och gör samma misstag. De är hungriga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Gyttret är ett intrång av livskraftig och högljudd barbarism in i en kall och utdöende civilisation.
 
-    Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och Ormkonungarnas Katakomber har inga fria bad. Pyttesmå röda vätteögon glöder i mörkret. Klapprande tänder och skarpa knivar väntar i mörkret.
+Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och Ormkonungarnas Katakomber har inga fria bad. Pyttesmå röda vätteögon glöder i mörkret. Klapprande tänder och skarpa knivar väntar i mörkret.
 
 |> Header
     Nivå 1
@@ -436,13 +429,13 @@ source =
 |> SubHeader
     1: Vestibul
 
-    En lång korridor med fyra öppna rum, två på varje sida. Hallen slutar vid en stor, tillbommad dörr som leder till *6:<>Falsk<>Gravkammare*.
+En lång korridor med fyra öppna rum, två på varje sida. Hallen slutar vid en stor, tillbommad dörr som leder till *6:<>Falsk<>Gravkammare*.
 
 |> SubHeader
     2: Vakternas gravar
 
-    De här två små rummen är identiska till storlek och innehåll. Bägge rymmer en likkista av trä med en lerstaty föreställande en ormfolkskrigare inuti. Statyerna är ihåliga och varje innehåller en guldamulett värd 1 ~gm~, ett torkat ormskelett och ett moln av giftgas (~t6~ i skada, kan bara reducera en rollperson till 0 ~kp~).
-    Lärdomar: grottkomplexet är organiserat. Det finns mönster. Det finns gömda skatter. Det finns också gömda faror.
+De här två små rummen är identiska till storlek och innehåll. Bägge rymmer en likkista av trä med en lerstaty föreställande en ormfolkskrigare inuti. Statyerna är ihåliga och varje innehåller en guldamulett värd 1 ~gm~, ett torkat ormskelett och ett moln av giftgas (~t6~ i skada, kan bara reducera en rollperson till 0 ~kp~).
+Lärdomar: grottkomplexet är organiserat. Det finns mönster. Det finns gömda skatter. Det finns också gömda faror.
     """
 
 
