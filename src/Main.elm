@@ -163,7 +163,7 @@ subHeaderStyle =
 
 lessonStyle =
     [ Font.light
-    , Font.color <| grey 0.5
+    , Font.color <| grey 0.55
     , myWidth
     , centerX
     , paddingEach { zeroPad | bottom = xxs }
@@ -562,7 +562,7 @@ ___Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om
 |> Header
     Nivå 1
 
-    -- ~Den falska kryptan~
+    *-- ~Den falska kryptan*~
 
 |> SubHeader
     1: Vestibul
@@ -606,13 +606,15 @@ Snarlik *2: Vakternas gravar*, men likkistan innehåller en lerstaty föreställ
 |> SubHeader
     5: Dörr//Hammarfälla
     
-En stor dörr, reglad med en tvärslå av sten som hänger på två järnfästen på vardera sida av dörrkarmen. För att lyfta bommen krävs minst tre roll-person-er (eller alli-hopa om sällskapet är mindre). När bommen lyfts från järn-fästena aktiveras en fälla. En väldig stenhammare sving-ar ner från taket, med sikte rakt på de nu fångade roll-person-er-nas ryggar. Den fyller närapå korridorens bredd, men det finns en liten glipa på vardera sida. /Rollpersonerna kan/:
+En stor dörr, reglad med en tvärslå av sten som hänger på två järnfästen på vardera sida av dörrkarmen. För att lyfta bommen krävs minst tre roll-person-er (eller alli-hopa om sällskapet är mindre). 
+
+___När bommen lyfts från järn-fästena aktiveras en fälla. En väldig stenhammare sving-ar ner från taket, med sikte rakt på de nu fångade roll-person-er-nas ryggar. Den fyller närapå korridorens bredd, men det finns en liten glipa på vardera sida. /Rollpersonerna kan/:
 
 |> List
     - Slå Smidighetsslag för att försöka undvika.
     - Använda en annan roll-person som språngbräda och få +2 på sitt slag men ge den knuffade rollpersonen //-2 på sitt.
 
-En träffad roll-person dör (eller tar allvarlig skada, typ 2~t~6+4).
+___En träffad roll-person dör (eller tar allvarlig skada, typ 2~t~6+4).
 
 ___Fällan kan identifieras genom att granska dörren eller fästena, genom att upptäcka att fästena höjs när bommen lyfts eller genom att undersöka taket. Om bommen snabbt byts ut, fästena hålls ner eller om fällans mekanism i taket är skadad så kommer inte fällan lösa ut.
 
@@ -627,13 +629,15 @@ ___Hammaren dras långsamt tillbaka upp i taket såvida den inte blockeras. Den 
 |> SubHeader
     6: Falsk kungagrav
 
- Gravkammare tillhörande ormfolkets kung och hans två gemåler. Längs norra väggen står tre kistor av trä, den i mitten uppenbarligen större och mer utsmyckad. Inuti finns tre ~Skelett~ -- /Nivå 2, Moral 12, Attack 1~t~6 /[klor/]/ -- vilka kommer anfalla omedelbart om deras vila blir störd.
+Gravkammare tillhörande -- vad som verkar vara -- ormfolkets kung och hans två gemåler. Längs norra väggen står tre kistor av trä, stiliserat målade med sovande ormfolk. Kistan i mitten är uppenbart större och mer utsmyckad. 
+
+___Varje kista innehåller ett ~Skelett -- ff 9, f 12, st 2, m 12, a 1 ~klor~ (1t6 sp)~ -- vilka omedelbart kommer an-falla om deras vila blir störd.
 
 |> Lesson
     ~Lärdomar~: 
 
 |> Lesson
-    ___Det finns /odöda/ i grott-komp-lex-et. De tar lägre skada från huggvapen. Rollpersonerna kan använda omgivningen mot dem (lura in dem i hammarfällan).
+    ___Det finns /odöda/ i grott-komp-lex-et. De tar lägre skada från huggvapen. Rollpersonerna kan använda om-giv-ningen mot dem (lura in dem i hammarfällan).
 
 |> SubHeader
     7: Falskt tempel
@@ -648,18 +652,36 @@ Det här rummet domineras av en enorm staty före-ställande en ohygglig ormfolk
 
 |> Lesson
     ___Genomgående i den här grott-komp-lex-et kommer statyer vara associerade med hemliga gångar och skatter.
+
+|> Header
+    Nivå 2
+
+    *-- ~Den övre kryptan*~
+
+
+|> SubHeader
+    8: Hemlig gång
+    
+Det här rummet ligger direkt nedanför *7: Falskt tempel*. Det är en smal nischliknande passage som snabbt vidgar sig till att övergå till *9: Statyernas hall*.
+
+|> SubHeader
+    9: Statyernas hall
+
+En lång och bred korridor. Sex väldiga statyer före-ställ-ande tungt beväpnade och bepansrade orm-män över-skuggar salen och stirrar ilsket på säll-skapet. En av sta-ty-erna står lite ur fas jämfört med de andra: den kan flytt-as för att blotta *10: Hemligt vaktrum*.
+
+|> Lesson
+    ~Lärdomar~: 
+
+|> Lesson
+    ___Sällskapet ska ha lärt sig i *7: Falskt tempel* att statyer ibland döljer hemliga gångar. 
+
+|> Lesson
+    ___Ljus från ytan kan inte tränga igenom så här långt ner. Hädanefter måste roll-person-er-na förlita sig på andra ljuskällor.
     """
 
 
 blah =
     """
-    Nivå 2
-    8: Hemlig gång
-    Det här rummet ligger direkt nedanför 7: Falskt tempel. Det är en smal nischliknande passage som snabbt vidgar sig till att övergå till 9: Statyernas hall.
-    9: Statyernas hall
-    En lång och bred korridor. Sex väldiga statyer föreställande tungt beväpnade och bepansrade ormmän överskuggar salen och stirrar ilsket på sällskapet. En av statyerna står lite ur fas jämfört med de andra: den kan flyttas för att blotta 10: Hemligt vaktrum.
-    Lärdomar: sällskapet ska ha lärt sig i 7: Falskt tempel att statyer ibland döljer hemliga gångar. 
-    Ljus från ytan kan inte tränga igenom så här långt ner. Hädanefter måste roll-person-er-na förlita sig på andra ljuskällor.
     10: Hemligt vaktrum
     Det här rummet var en gång ett dolt vaktrum för templets lönnmördare. Nu står det tyst och mörkt. Möblemanget har ruttnat så bara spillror återstår. På väggen hänger två krokförsedda glavar som fortfarande är användbara, tillsammans med en symbol av silver värd 5 ~gm~.
     Lärdomar: hemliga rum innehåller mer skatter.
