@@ -33,11 +33,11 @@ googleFont fontName weight =
 
 
 bookType =
-    googleFont "Cormorant" "400i,400,700,700i"
+    googleFont "Cormorant" "300,300i,400i,400,700,700i"
 
 
 smallCaps =
-    googleFont "Cormorant SC" "400, 700"
+    googleFont "Cormorant SC" "400,700"
 
 
 
@@ -120,6 +120,21 @@ titleStyle =
     ]
 
 
+creditsStyle =
+    [ Font.light
+    , Font.color <| grey 0.5
+    , Font.size large
+    , Font.letterSpacing <| -(scaleFloat -5)
+    , Font.center
+    , width fill
+    , spacing xs
+    , paddingEach
+        { zeroPad
+            | bottom = xs
+        }
+    ]
+
+
 headerStyle =
     [ smallCaps
     , myWidth
@@ -135,6 +150,7 @@ headerStyle =
 
 subHeaderStyle =
     [ Font.bold
+    , Font.color <| grey 0.3
     , myWidth
     , centerX
     , paddingEach
@@ -147,7 +163,7 @@ subHeaderStyle =
 
 lessonStyle =
     [ Font.light
-    , Font.color <| grey 0.6
+    , Font.color <| grey 0.5
     , myWidth
     , centerX
     , paddingEach { zeroPad | bottom = xxs }
@@ -186,6 +202,7 @@ document =
             , title
             , list
             , lesson
+            , credits
             , Mark.map
                 (\x ->
                     el [] <|
@@ -237,6 +254,14 @@ lesson =
         myText
 
 
+credits =
+    Mark.block "Credits"
+        (\children ->
+            el [] <| paragraph creditsStyle children
+        )
+        myText
+
+
 myText : Mark.Block (List (Element msg))
 myText =
     let
@@ -276,6 +301,8 @@ myReplacements =
     -- en dash
     , Mark.replacement "--" "–"
     , Mark.replacement "//" "/"
+    , Mark.replacement "/[" "["
+    , Mark.replacement "/]" "]"
     , Mark.replacement "'" "’"
 
     -- swedish quotation
@@ -394,14 +421,29 @@ source =
 |> Title
     Ormkonungarnas Katakomber
 
+|> Credits
+    /Text/
+
+|> Credits
+    *Skerples*
+
+|> Credits
+    <>
+
+|> Credits
+    /Översätting -- Form -- Bearbetning/
+
+|> Credits
+    *Ralf Northman*
+
 |> Header
     Introduktion
 
-När du först startar Super Mario Bros så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen hand-ledning. Spelet själv är en handledning. 
+När du först startar /Super Mario Bros/ så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen hand-ledning. Spelet själv är en handledning. 
 
-___Alla kan namnge ett klassiskt grottkomplex – Tomb of Horrors, Barrier Peaks, Ravenloft – men för att dessa mod-ul-er ska vara förståeliga behöver det finnas en slags intro-duktion. Tomb of Horrors och Death Frost Doom är båda reaktioner /på någonting/, men vad de är reak-tion-er /på/ finns inte riktigt som utgiven produkt.
+___Alla kan namnge ett klassiskt grottkomplex – /Tomb of Horrors/, /Barrier Peaks/, /Ravenloft/ – men för att dessa mod-ul-er ska vara förståeliga behöver det finnas en slags intro-duktion. /Tomb of Horrors/ och /Death Frost Doom/ är båda reaktioner /på någonting/, men vad de är reak-tion-er /på/ finns inte riktigt som utgiven produkt.
 
-___Det är som om alla moduler vi har är Bach-konserter. Människor skriver verk vilka besitter häpnadsväckande genial-itet, men någon måste skriva en bok om hur man spelar piano.
+___Det är som om alla moduler vi har är Bach//-konserter. Människor skriver verk vilka besitter häpnadsväckande genial-itet, men någon måste skriva en bok om hur man spelar piano.
 
 |> SubHeader
     Den här modulen är för:
@@ -439,11 +481,11 @@ ___Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det
     Innan du börjar:
 
 |> List
-    - Läs hela modulen.
-    - Gör anteckningar över saker du gillar och inte gillar.
-    - Skriv ut sida XX och kartan på sida XX.
-    - Byt ut monstren på sida XX till motsvarande från ditt val av system.
-    - Justera skatternas värde där det behövs.
+    1. Läs hela modulen.
+    -- Gör anteckningar över saker du gillar och inte gillar.
+    -- Byt ut monstren till motsvarande från ditt val av system.
+    -- Justera skatternas värde där det behövs.
+    -- Skriv ut sida XX och kartan på sida XX.
 
 |> SubHeader
     Locka roll-person-er-na
@@ -560,29 +602,57 @@ Snarlik *2: Vakternas gravar*, men likkistan innehåller en lerstaty föreställ
 
 |> Lesson
     ___Gömda skatter kan vara /magiska/, /användbara/ och ibland bära på /förbannelser/.
+
+|> SubHeader
+    5: Dörr//Hammarfälla
+    
+En stor dörr, reglad med en tvärslå av sten som hänger på två järnfästen på vardera sida av dörrkarmen. För att lyfta bommen krävs minst tre roll-person-er (eller alli-hopa om sällskapet är mindre). När bommen lyfts från järn-fästena aktiveras en fälla. En väldig stenhammare sving-ar ner från taket, med sikte rakt på de nu fångade roll-person-er-nas ryggar. Den fyller närapå korridorens bredd, men det finns en liten glipa på vardera sida. /Rollpersonerna kan/:
+
+|> List
+    - Slå Smidighetsslag för att försöka undvika.
+    - Använda en annan roll-person som språngbräda och få +2 på sitt slag men ge den knuffade rollpersonen //-2 på sitt.
+
+En träffad roll-person dör (eller tar allvarlig skada, typ 2~t~6+4).
+
+___Fällan kan identifieras genom att granska dörren eller fästena, genom att upptäcka att fästena höjs när bommen lyfts eller genom att undersöka taket. Om bommen snabbt byts ut, fästena hålls ner eller om fällans mekanism i taket är skadad så kommer inte fällan lösa ut.
+
+___Hammaren dras långsamt tillbaka upp i taket såvida den inte blockeras. Den kan återaktiveras genom att lyfta upp järnfästena, antingen för hand eller med rep. När den aktiveras första gången slås den stora dörren som leder in till *6: Falsk kungagrav* upp av kollsionen.
+
+|> Lesson
+    ~Lärdomar~: 
+
+|> Lesson
+    ___Det finns dödliga /fällor/. Grottkomplexet kan vara /livsfarligt/.
+
+|> SubHeader
+    6: Falsk kungagrav
+
+ Gravkammare tillhörande ormfolkets kung och hans två gemåler. Längs norra väggen står tre kistor av trä, den i mitten uppenbarligen större och mer utsmyckad. Inuti finns tre ~Skelett~ -- /Nivå 2, Moral 12, Attack 1~t~6 /[klor/]/ -- vilka kommer anfalla omedelbart om deras vila blir störd.
+
+|> Lesson
+    ~Lärdomar~: 
+
+|> Lesson
+    ___Det finns /odöda/ i grott-komp-lex-et. De tar lägre skada från huggvapen. Rollpersonerna kan använda omgivningen mot dem (lura in dem i hammarfällan).
+
+|> SubHeader
+    7: Falskt tempel
+
+Det här rummet domineras av en enorm staty före-ställande en ohygglig ormfolksgud. Vatten som läcker in i kryptan har vittrat sönder golvet vilket blottar en hemlig gång under statyn som leder till Nivå<>2.
+
+|> Lesson
+    ~Lärdomar~: 
+
+|> Lesson
+    ___Det finns /hemliga gångar/. De är associerade med /statyer/. Det här kan vara en /falsk krypta/.
+
+|> Lesson
+    ___Genomgående i den här grott-komp-lex-et kommer statyer vara associerade med hemliga gångar och skatter.
     """
 
 
 blah =
     """
-    5: Dörr/Hammarfälla
-    En stor dörr, reglad med en tvärslå av sten som hänger på 2 järnfästen på vardera sida av dörrposterna. För att lyfta bommen krävs minst 3 roll-person-er (eller allihopa om sällskapet är mindre). När bommen lyfts från järnfästena aktiveras en fälla. En väldig stenhammare svingar ner från taket, med sikte rakt på de nu fångade roll-person-er-nas ryggar. Den fyller närapå korridorens bredd, men det finns en liten glipa på vardera sida. Rollpersonerna kan:
-    Slå Räddningskast för att Ducka eller
-    Använda en annan roll-person som språngbräda och få +2 på sitt kast men ge den knuffade rollpersonen -2 på sitt.
-    En träffad roll-person dör (eller tar allvarlig skada, typ 2~t~6+4).
-
-    Fällan kan identifieras genom att granska dörren eller fästena, genom att upptäcka att fästena höjs när bommen lyfts eller genom att undersöka taket. Om bommen snabbt byts ut, fästena hålls ner eller om fällans mekanism i taket är skadad så kommer inte fällan lösa ut.
-    Lärdomar: det finns dödliga fällor. Grottkomplexet kan vara livsfarlig.
-    Hammaren dras långsamt tillbaka upp i taket såvida den inte blockeras. Den kan återaktiveras genom att lyfta upp järnfästena, antingen för hand eller med rep. När den aktiveras första gången slås den stora dörren som leder in till 6: Falsk kungagrav upp av kollsionen.
-    6: Falsk kungagrav
-    Gravkammare tillhörande ormfolkets kung och hans två gemåler. Längs norra väggen står 3 kistor av trä, den i mitten uppenbarligen större och mer utsmyckad. Inuti finns 3 Skelett (Nivå 2, Moral 12, Attack 1~t~6 [klor]) vilka kommer anfalla omedelbart om deras vila blir störd.
-    Lärdomar: det finns odöda i grott-komp-lex-et. De tar lägre skada från huggvapen. Rollpersonerna kan använda omgivningen mot dem (lura in dem i hammarfällan).
-
-    7: Falskt tempel
-    Det här rummet domineras av en enorm staty föreställande en ohygglig ormfolksgud. Vatten som läcker in i kryptan har vittrat sönder golvet vilket blottar en hemlig gång under statyn som leder till nivå 2.
-    Lärdomar: det finns hemliga gångar. De är associerade med statyer. Det här kan vara en falsk krypta.
-
-    Genomgående i den här grott-komp-lex-et kommer statyer vara associerade med hemliga gångar och skatter.
     Nivå 2
     8: Hemlig gång
     Det här rummet ligger direkt nedanför 7: Falskt tempel. Det är en smal nischliknande passage som snabbt vidgar sig till att övergå till 9: Statyernas hall.
