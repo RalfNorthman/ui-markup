@@ -333,15 +333,18 @@ list =
     Mark.tree "List"
         renderList
         (Mark.map
-            (\x ->
-                el [] <|
-                    paragraph [ listWidth ] x
-            )
+            (\x -> paragraph [] x)
             myText
         )
 
 
 renderList (Mark.Enumerated enum) =
+    el [] <|
+        column [ myWidth, centerX ]
+            (List.map (renderItem enum.icon) enum.items)
+
+
+renderSubList (Mark.Enumerated enum) =
     column []
         (List.map (renderItem enum.icon) enum.items)
 
@@ -352,19 +355,17 @@ renderItem icon (Mark.Item item) =
             item.index
 
         viewBullet =
-            el [ alignTop ] <| text "• "
+            el [ alignTop ] <| text "\u{2003}• "
 
         viewNumber nr =
-            el [ alignTop ] <| text (String.fromInt (nr + 1) ++ ". ")
+            el [ alignTop ] <| text ("\u{2003}" ++ String.fromInt (nr + 1) ++ ". ")
     in
     row
         [ paddingEach
             { zeroPad
-                | left = large
-                , bottom = xxs
+                | bottom = xxs
                 , top = xxs
             }
-        , centerX
         ]
         [ case icon of
             Mark.Bullet ->
@@ -372,7 +373,10 @@ renderItem icon (Mark.Item item) =
 
             Mark.Number ->
                 viewNumber index
-        , column [] [ textColumn [] item.content, renderList item.children ]
+        , column [ width fill ]
+            [ textColumn [] item.content
+            , renderSubList item.children
+            ]
         ]
 
 
@@ -417,6 +421,13 @@ main =
 ---- Source ----
 
 
+tempPre : String
+tempPre =
+    String.trim
+        """
+"""
+
+
 source : String
 source =
     String.trim
@@ -445,11 +456,13 @@ source =
 |> Header
     Introduktion
 
-När du först startar /Super Mario Bros/ så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen hand-ledning. Spelet själv är en handledning. 
+När du först startar /Super Mario Bros/ så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen hand-ledning; spelet självt är en handledning. 
 
-___Alla kan namnge ett klassiskt grottkomplex – /Tomb of Horrors/, /Barrier Peaks/, /Ravenloft/ – men för att dessa mod-ul-er ska vara förståeliga behöver det finnas en slags intro-duktion. /Tomb of Horrors/ och /Death Frost Doom/ är båda reaktioner /på någonting/, men vad de är reak-tion-er /på/ finns inte riktigt som utgiven produkt.
+___Alla kan namnge ett klassiskt grottkomplex – /Tomb of Horrors/, /Barrier Peaks/, /The Temple of Elemental Evil/ – men för att dessa mod-ul-er ska vara förståeliga behöver det finnas en slags intro-duktion. /Tomb of Horrors/ och /Death Frost Doom/ är båda reaktioner på någonting, men vad de är reak-tion-er på finns inte riktigt som utgiven produkt.
 
 ___Det är som om alla moduler vi har är Bach//-konserter. Människor skriver verk vilka besitter häpnadsväckande genial-itet, men någon måste skriva en bok om hur man spelar piano.
+
+___Det här grottkomplexet är designat för att vara klass-iskt, men utan att vara fullt av åter-blickar och nost-al-gi. Det har några -- men inte alla -- av de huvud-sakliga trop-erna. Det har också design-kommentarer. 
 
 |> SubHeader
     Den här modulen är för:
@@ -466,14 +479,22 @@ Som en helt ny ~sl~ kan du ändå använda den här grott-komp-lexet och lära d
 
 Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i den här grott-komp-lexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en ny-börjar-grotta. Det är bara /ett/ sätt att göra det.
 
-___Om du tycker att diplomati är ett nödvändigt element; placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. Om du tycker att tidspress och en känsla av hotande fara är viktigt, lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara Nivå<>3. Lägg till troper från folksägner. Lägg till dina favorit-fällor eller ta bort fällorna helt och hållet.
-
 ___Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värde-full kun-skap. Att lära sig vad man inte gillar är lika värde-fullt som att lära sig vad man gillar. Kanske kan den här mod-ul-en inspirera dig att skriva din egen introduktions-grotta.
+
+|> SubHeader
+    Exempel på sätt du kan förändra komplexet:
+
+|> List
+    -- Om du tycker att diplomati är ett nödvändigt element: placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. 
+    -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara Nivå<>3.
+    -- Om du inte gillar ormar: byt ut dem mot getter.
+    -- Lägg till troper från folksägner.
+    -- Lägg till dina favorit-fällor eller ta bort fällorna helt och hållet.
 
 |> SubHeader
     Gruppstorlek och balans
 
-Den här grott-komp-lex-et är designat för 1:a rangens roll-personer. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grott-komp-lex-et med en roll-person eller tio. Mötena är inte balanserade. De har inte svårighetsnivåer. Det finns väldigt få belön-ingar för strid och många för att genomföra en god plan.
+Den här grott-komp-lex-et är designat för första rangens roll-personer. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grott-komp-lex-et med en roll-person eller tio. Mötena är inte balans-erade. De har inte svårig-hets-nivå-er. Det finns väldigt få belön-ingar för strid och många för att genomföra en god plan.
 
 ___Värdet på skatterna är balanserade runt tanken att 2_000 silvermynt är tillräckligt för att en roll-person ska kunna stiga en rang. I slutet bör överlevande roll-person-er vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lätt-are (och få mindre skatter per rollperson). En ensam roll-person som överlever kommer vara rik.
 
@@ -509,7 +530,7 @@ Här är några sätt att locka roll-person-er-na till grott-komp-lex-et, givet 
 |> SubHeader
     Lärdomar
 
-Alltigenom texten finns små rutor utspridda. Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en användbar läxa. Några är allmäna lärdomar, medan andra är specifika för den här grott-komp-lex-et. Grottkomplexets struktur, beskaffenhet och faror bör sakta bli förutsägbara och möjliga att utnyttja. Dessa lärdomar kan te sig triviala för en erfaren spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
+Alltigenom texten finns stycken med ljusgrå brödtext utspridda. Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en användbar läxa. Några är allmäna lärdomar, medan andra är specifika för den här grott-komp-lex-et. Grottkomplexets struktur, beskaffenhet och faror bör sakta bli förutsägbara och möjliga att utnyttja. Dessa lärdomar kan te sig triviala för en erfaren spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
 
 |> Header
     Struktur
@@ -683,26 +704,58 @@ En lång och bred korridor. Sex väldiga statyer före-ställ-ande tungt beväpn
 
 |> Lesson
     ___Ljus från ytan kan inte tränga igenom så här långt ner. Hädanefter måste roll-person-er-na förlita sig på andra ljuskällor.
-    """
 
 
-blah =
-    """
+|> SubHeader
     10: Hemligt vaktrum
-    Det här rummet var en gång ett dolt vaktrum för templets lönnmördare. Nu står det tyst och mörkt. Möblemanget har ruttnat så bara spillror återstår. På väggen hänger två krokförsedda glavar som fortfarande är användbara, tillsammans med en symbol av silver värd 5 ~gm~.
-    Lärdomar: hemliga rum innehåller mer skatter.
-    11: Kryptatrium
-    Hallen öppnar upp sig till en stor åttasidig kammare, även den omgärdad av stirrande ormfolksstatyer. Några bär vapen, andra håller i redskap för tortyr eller lantbruk. Dörrarna till rum 12--16 är gjorda av tung sten men kan rubbas med hävstång utan större problem. Rum 15 har en olåst trädörr. Rum 18 har en stendörr, men den är mycket mer utsmyckad än de andra. Det ser ut som en gång var ett schakt i rummets mitt, men vatten som droppat från ytan har fyllt den till bredden med mörkt, oljigt vatten som luktar lakrits. Den är 3 meter djup.
+Det här rummet var en gång ett dolt vaktrum för temp-lets lönnmördare. Nu står det tyst och mörkt. Möble-manget har ruttnat så bara spillror återstår. På väggen hänger två krokförsedda glavar -- fortfarande an-vänd-bara -- till-sammans med en silverikon, före-ställ-an-de en ormfolkskung med bister uppsyn, värd 5<>sm.
 
-    Inuti bassängen finns 2 Mumiespillror (Nivå 2, Moral 12, Attack 1T4 [Klo] eller 1~t~6 [Strypning] ). De kommer  hoppa upp och angripa alla som kommer nära schaktet.
-    Lärdomar: det finns dolda monster. Vissa monster sprider sjukdomar. Det är väldigt svårt att träffa ett monster som klamrar sig fast vid din väns strupe.
-    Att bara beröra vattnet orsakar inte mumiesjuka, men att dricka det eller få det i öppna sår gör det. Om sällskapet kan dräpa eller oskadliggöra mumiespillrorna, kan de försöka dragga eller söka igenom bassängen.  Den innehåller:
-    ett rasande och fullständigt vansinnigt mumiehuvud.
-    en tung guldkedja värd 35 ~gm~.
-    en magisk silverring.
-    ett magiskt nyttoting som SL väljer, ett slumpmässigt magiskt föremål eller smycken värda 2T10 ~gm~.
-    Silverringen är Fjärrögats Ring. När den bärs, ramlar ett av nyttjarens ögon ut och blir hårt som glas. Ögat kan fortfarande se normalt. 
-    Lärdomar: leta efter skatter på botten av schakt och bassänger. Magiska föremål kan lösa problem. 
+|> Lesson
+    ~Lärdomar~: 
+
+|> Lesson
+    ___Hemliga rum innehåller mer skatter.
+
+|> SubHeader
+    11: Krypt//-atrium
+
+Hallen öppnar upp sig till en stor åttasidig kammare, även den omgärdad av stirrande ormfolksstatyer. Några bär vapen, andra håller i redskap för tortyr eller lantbruk. 
+
+___Dörrarna till rum 12--14 och 16 är gjorda av tung sten, men kan rubbas med hävstång utan större pro-blem. Rum 18 har också en stendörr, men den är mycket mer ut-smyck-ad än de andra. Rum 15 har en olåst trädörr.
+
+___Det ser ut som det en gång var ett schakt i rummets mitt, men vatten som droppat från ytan har fyllt den till bredden med mörkt, oljigt vatten som luktar lakrits. Den är tre meter djup.
+
+___Inuti bassängen finns två ~Mumiespillror -- ff 6, f<>12, st 2, m 12, a 1: ~klo~ (1t4 sp) ~/eller/ strypning ~(1t6 sp)~-. De kommer  hoppa upp och angripa alla som kommer nära schaktet.
+
+|> Lesson
+    ~Lärdomar~: 
+
+|> Lesson
+    ___Det finns dolda monster. Vissa monster sprider sjukdomar. Det är väldigt svårt att träffa ett monster som klamrar sig fast vid din väns strupe.
+
+    ___Att bara beröra vattnet orsakar inte mumieröta, men att dricka det eller få det i öppna sår gör det. Om säll-skapet kan dräpa eller oskadliggöra mumie-spill-ror-na, kan de försöka dragga eller söka igenom bassängen. Den<>innehåller:
+
+|> List
+    -- Ett rasande och fullständigt vansinnigt mumiehuvud.
+    -- En tung guldkedja värd 35 sm.
+    -- En magisk silverring.
+    -- Ett av dessa:
+        -- Ett magiskt nyttoting som ~sl~ väljer. 
+        -- Ett slump-mässigt magiskt föremål 
+        -- Smycken värda ~2t10~<>sm.
+
+Silverringen är /Fjärrögats Ring/. När den bärs, ramlar ett av nyttjarens ögon ut och blir hårt som glas. Ögat kan fortfarande se normalt. 
+
+|> Lesson
+    ~Lärdomar~: 
+
+|> Lesson
+    ___Leta efter skatter på botten av schakt och bassänger. Magiska föremål kan lösa problem. 
+"""
+
+
+tempPost =
+    """
     12: Xisor den Grönes krypta
     Passagen in till den här kryptan rymmer en tryckplatta som utlöser en åskvigg-besvärjelse med sikte längs med korridoren. Den utdelar 4~t~6 skada (lyckas med Smidighetsslag för hälften) och löser bara ut en gång. Elektrumskivan den avfyras från är värd 10 ~gm~. Det finns också en formelrulle (ögongift eller någon annan giftbaserad besvärjelse) inut Xisors likkista.
     Lärdomar: ibland är golven gillrade med fällor. Fällor är ofta dödliga. Behandla okända rum med försiktighet. 
