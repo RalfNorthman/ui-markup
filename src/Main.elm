@@ -138,11 +138,12 @@ creditsStyle =
 headerStyle =
     [ smallCaps
     , myWidth
+    , Font.color <| grey 0.2
     , centerX
     , Font.size xl
     , paddingEach
         { zeroPad
-            | top = xxl
+            | top = 2 * xl
         }
     , Font.letterSpacing <| -(scaleFloat -5)
     ]
@@ -150,7 +151,8 @@ headerStyle =
 
 subHeaderStyle =
     [ Font.bold
-    , Font.color <| grey 0.3
+    , smallCaps
+    , Font.color <| grey 0.4
     , myWidth
     , centerX
     , paddingEach
@@ -158,6 +160,7 @@ subHeaderStyle =
             | top = large
         }
     , Font.size large
+    , Font.letterSpacing <| -(scaleFloat -7)
     ]
 
 
@@ -436,6 +439,9 @@ source =
 |> Credits
     *Ralf Northman*
 
+|> Credits
+    <>
+
 |> Header
     Introduktion
 
@@ -511,17 +517,17 @@ Alltigenom texten finns små rutor utspridda. Varje rum, fälla eller möte är 
 Ormkonungarnas Katakomber är ett grottkomplex med tre nivåer och fyra tematiska huvudområden. Jag har tagit med väldigt minimala beskrivningar i texten och sektionen med snabbreferenser (sid 16--17). Det finns inga texter som ska läsas högt.
 
 |> SubHeader
-    Nivå 1: Den Falska Kryptan
+    Nivå 1: Den falska kryptan
 
 Introducerar grunderna i utforming av grottkomplex och utforskning av sju rum. Den är precis rätt storlek för ett första spelmöte, givet att skapandet av roll-person-er går hyfsat fort och att du ger roll-person-er-na en god anledning till att utforska katakomben.
 
 |> SubHeader
-    Nivå 2: Den Övre Kryptan
+    Nivå 2: Den övre kryptan
 
 Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg framåt, men sidorummen är frestande. Det är i den här sektionen som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möjligen behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
 
 |> SubHeader
-    Nivå 3: De Lägre Kryptorna
+    Nivå 3: De lägre kryptorna
 
 Det finns två horisontella och tre vertikala huvudleder. Grottkomplexet förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är betydligt farligare än de före-gåen-de. Diplomati och handel blir också aktuellt, liksom ströv-ande väsen. Du kan utforska Nivå 1 och 2 i lugn och ro, men spenderar du för mycket tid på Nivå 3 tar du en allvarlig risk. 
 
@@ -532,14 +538,14 @@ ___Nivå 3 är öppen. Du kan lägga till material för att utöka grott-komp-le
 
 |> SubHeader
 
-    Den Falska Kryptan
+    Den falska kryptan
 
 Representerar upptäckarlust, aha-upplevelsen och spänningen av att kunna hitta skatter. Kom ihåg att berömma spelare som listar ut att det är en falsk krypta. Klokskap ska belönas. Grottkomplexet blir också märkligare och mindre jordnära ju lägre ner man går. Till en början bryter ni upp träkistor för att roffa åt er pyttesmå amuletter. Nära slutet gräver ni er igenom svampvättarnas dynga efter kungakronor, bedriver handel med en död ormman eller släpar skattkistor med guld upp till ytan.
 
 ___Beskriv det här området med ord som /skraltig/, /kantstött/ och /fuktig/. Det är en jordkällare. Det sticker ner små vita rötter från taket och det är grus på golvet.
 
 |> SubHeader
-    Den Riktiga Kryptan
+    Den riktiga kryptan
 
 Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörkret, odödliga trollkarlar köpslår med er och oövervinnerlig odöd sörja hasar efter er.
 
