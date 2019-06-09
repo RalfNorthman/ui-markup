@@ -174,15 +174,11 @@ lessonStyle =
 
 
 widthInChars =
-    58
+    65
 
 
 myWidth =
     width <| px <| widthInChars * xs
-
-
-listWidth =
-    width <| px <| widthInChars * xs - large
 
 
 
@@ -305,7 +301,7 @@ myReplacements =
     , Mark.replacement "--" "–"
     , Mark.replacement "//" "/"
     , Mark.replacement "/[" "["
-    , Mark.replacement "/]" "]"
+    , Mark.replacement " /]" "]"
     , Mark.replacement "'" "’"
 
     -- swedish quotation
@@ -456,9 +452,9 @@ source =
 |> Header
     Introduktion
 
-När du först startar /Super Mario Bros/ så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen hand-ledning; spelet självt är en handledning. 
+När du först startar /Super Mario Bros/ så ger inte spelet dig några instruktioner. Första banan är designad för att ge dig reglerna: hoppa ovanpå fienderna, plocka upp svampar, ta mynt, undvik avgrunder. Det finns ingen manual; spelet självt är en manual.
 
-___Alla kan namnge ett klassiskt grottkomplex – /Tomb of Horrors/, /Barrier Peaks/, /The Temple of Elemental Evil/ – men för att dessa mod-ul-er ska vara förståeliga behöver det finnas en slags intro-duktion. /Tomb of Horrors/ och /Death Frost Doom/ är båda reaktioner på någonting, men vad de är reak-tion-er på finns inte riktigt som utgiven produkt.
+___Alla kan namnge ett klassisk grotta – /Tomb of Horrors/, /Barrier Peaks/, /The Temple of Elemental Evil/ – men för att dessa mod-ul-er ska vara förståeliga behöver det finnas en slags intro-duk-tion. /Tomb of Horrors/ och /Death Frost Doom/ är båda reak-tion-er på någon-ting, men vad de är reak-tion-er på finns inte riktigt som utgiven produkt.
 
 ___Det är som om alla moduler vi har är Bach//-konserter. Människor skriver verk vilka besitter häpnadsväckande genial-itet, men någon måste skriva en bok om hur man spelar piano.
 
@@ -470,9 +466,9 @@ ___Det här grottkomplexet är designat för att vara klass-iskt, men utan att v
 |> List
     - Erfarna ~sl~ med nya spelare.
     - ~Sl~ som vill lära sig om design av äventyrsplatser.
-    - Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~-innehåll.
+    - Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~//-innehåll.
 
-Som en helt ny ~sl~ kan du ändå använda den här grott-komp-lexet och lära dig mycket från den, men den kom-mer omedelbart pröva dina färdigheter. Modulen kan även uppskattas av erfarna spelare.
+Som en helt ny ~sl~ kan du ändå använda den här grott-komp-lexet och lära dig mycket från den, men den kom-mer omedel-bart pröva dina färdig-heter. Modulen kan även uppskattas av erfarna spelare.
 
 |> SubHeader
     Jag håller inte med om…
@@ -482,27 +478,27 @@ Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fä
 ___Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värde-full kun-skap. Att lära sig vad man inte gillar är lika värde-fullt som att lära sig vad man gillar. Kanske kan den här mod-ul-en inspirera dig att skriva din egen introduktions-grotta.
 
 |> SubHeader
-    Exempel på sätt du kan förändra komplexet:
+    Exempel på modifikationer:
 
 |> List
     -- Om du tycker att diplomati är ett nödvändigt element: placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. 
     -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara Nivå<>3.
     -- Om du inte gillar ormar: byt ut dem mot getter.
     -- Lägg till troper från folksägner.
-    -- Lägg till dina favorit-fällor eller ta bort fällorna helt och hållet.
+    -- Lägg till dina favorit-fällor eller ta bort fällorna helt.
 
 |> SubHeader
     Gruppstorlek och balans
 
-Den här grott-komp-lex-et är designat för första rangens roll-personer. Jag har försökt att göra den här modulen så systemneutral som möjligt. Du kan köra grott-komp-lex-et med en roll-person eller tio. Mötena är inte balans-erade. De har inte svårig-hets-nivå-er. Det finns väldigt få belön-ingar för strid och många för att genomföra en god plan.
+Den här grott-komp-lex-et är designat för första rangens roll-personer. Det engelska originalet är gjord så system-neutral som möjligt, men den här svenska versionen är anpassad till /Svärd & Svartkonst/. Du kan köra grott-komp-lex-et med en roll-person eller tio. Mötena är inte balans-erade. De har inte svår-ig-hets-nivå-er. Det finns väldigt få belön-ingar för strid och många för att genomföra en god plan.
 
-___Värdet på skatterna är balanserade runt tanken att 2_000 silvermynt är tillräckligt för att en roll-person ska kunna stiga en rang. I slutet bör överlevande roll-person-er vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lätt-are (och få mindre skatter per rollperson). En ensam roll-person som överlever kommer vara rik.
+___Värdet på skatterna är balanserade runt tanken att 2_000 silvermynt är tillräckligt för att en roll-person ska kunna stiga en rang. I slutet bör överlevande roll-person-er vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lätt-are (och få mindre skatter per roll-person). En ensam roll-person som överlever kommer vara rik.
 
-___Skadeangivelserna är skalade efter roll-person-er som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Räddningskast är angivna i ett generellt format: exempel-vis Räddningskast mot Gift, Räddningskast för att Ducka.
+___Skadeangivelserna är skalade efter roll-person-er som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Rädd-nings-kast är angivna i ~s&s~//-stil, exempel-vis: lyckas med ett Fysik-slag eller dö.
 
-___En grupp roll-person-er av mellanrang spelade av er-far-na spelare kan tillintetgöra den här grott-komp-lex-et på rekordtid. De kan ändå ha kul. En grupp roll-person-er av låg rang spelade av nybörjarspelare kommer för-hopp-nings-vis ha jätteroligt.
+___En grupp roll-person-er av mellanrang spelade av er-far-na spel-are kan till-int-et-göra den här grott-komp-lex-et på rekordtid. De kan ändå ha kul. En grupp roll-person-er av låg rang spelade av nybörjarspelare kommer för-hopp-nings-vis ha jätteroligt.
 
-___Beroende på spelstil, sidoäventyr, avbrott och andra distraktioner, kan det ta mellan 12 och 24 timmar spel-tid att fullständigt utforska grott-komp-lex-et. På ett för-sta spelmöte som involverar rollpersonsskapande bör sällskapet kunna utforska Nivå 1 helt.
+___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan det ta mellan 12 och 24 timmar spel-tid att full-ständ-igt utforska grott-komp-lex-et. På ett för-sta spelmöte som involverar rollpersonsskapande bör sällskapet kunna ut-forsk-a Nivå 1 helt.
 
 |> SubHeader
     Innan du börjar:
@@ -530,29 +526,29 @@ Här är några sätt att locka roll-person-er-na till grott-komp-lex-et, givet 
 |> SubHeader
     Lärdomar
 
-Alltigenom texten finns stycken med ljusgrå brödtext utspridda. Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en användbar läxa. Några är allmäna lärdomar, medan andra är specifika för den här grott-komp-lex-et. Grottkomplexets struktur, beskaffenhet och faror bör sakta bli förutsägbara och möjliga att utnyttja. Dessa lärdomar kan te sig triviala för en erfaren spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
+Alltigenom texten finns små avsnitt med ljusgrå brödtext ut-spridda; dessa signalerar lärdomar: Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en an-vänd-bar läxa. Några är all-männa lär-dom-ar, medan andra är spe-ci-fi-ka för den här grott-komp-lex-et. Grottkomplexets struk-tur, be-skaff-en-het och faror bör sakta bli för-ut-säg-bara och möjliga att utnyttja. Dessa lär-dom-ar kan te sig triviala för en er-far-en spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
 
 |> Header
     Struktur
 
-Ormkonungarnas Katakomber är ett grottkomplex med tre nivåer och fyra tematiska huvudområden. Jag har tagit med väldigt minimala beskrivningar i texten och sektionen med snabbreferenser (sid 16--17). Det finns inga texter som ska läsas högt.
+Ormkonungarnas Katakomber är ett grottkomplex med tre nivå-er och fyra tematiska huvudområden. Det finns inga texter som ska läsas högt.
 
 |> SubHeader
     Nivå 1: Den falska kryptan
 
-Introducerar grunderna i utforming av grottkomplex och utforskning av sju rum. Den är precis rätt storlek för ett första spelmöte, givet att skapandet av roll-person-er går hyfsat fort och att du ger roll-person-er-na en god anledning till att utforska katakomben.
+Introducerar grunderna i utforming av grottkomplex och ut-forsk-ning av sju rum. Den är precis rätt storlek för ett första spel-möte, givet att skapandet av roll-person-er går nå-gor-lun-da fort och att du ger roll-person-er-na en god anledning till att utforska katakomben.
 
 |> SubHeader
     Nivå 2: Den övre kryptan
 
-Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg framåt, men sidorummen är frestande. Det är i den här sektionen som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möjligen behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
+Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg fram-åt, men sidorummen är frestande. Det är i den här sek-tion-en som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möj-lig-en behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
 
 |> SubHeader
     Nivå 3: De lägre kryptorna
 
-Det finns två horisontella och tre vertikala huvudleder. Grottkomplexet förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är betydligt farligare än de före-gåen-de. Diplomati och handel blir också aktuellt, liksom ströv-ande väsen. Du kan utforska Nivå 1 och 2 i lugn och ro, men spenderar du för mycket tid på Nivå 3 tar du en allvarlig risk. 
+Det finns två horisontella och tre vertikala huvudleder. Grott-komp-lex-et förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är bet-yd-ligt far-lig-are än de före-gåen-de. Dip-lo-ma-ti och han-del blir också aktu-ellt, liksom ströv-ande väsen. Du kan ut-forska Nivå 1 och 2 i lugn och ro, men spen-der-ar du för mycket tid på Nivå 3 tar du en all-var-lig risk. 
 
-___Nivå 3 är öppen. Du kan lägga till material för att utöka grott-komp-lex-et så långt du vill. I det här läget, om du är en ny spel-ledare eller ovan med ~osr~-spel, bör du vara redo att skriva ditt eget material.
+___Nivå 3 är öppen. Du kan lägga till material för att utöka grott-komp-lex-et så långt du vill. I det här läget, om du är en ny spel-ledare eller ovan med ~osr~//-spel, bör du vara redo att skriva ditt eget material.
 
 |> Header
     Tematiska områden
@@ -561,30 +557,32 @@ ___Nivå 3 är öppen. Du kan lägga till material för att utöka grott-komp-le
 
     Den falska kryptan
 
-Representerar upptäckarlust, aha-upplevelsen och spänningen av att kunna hitta skatter. Kom ihåg att berömma spelare som listar ut att det är en falsk krypta. Klokskap ska belönas. Grottkomplexet blir också märkligare och mindre jordnära ju lägre ner man går. Till en början bryter ni upp träkistor för att roffa åt er pyttesmå amuletter. Nära slutet gräver ni er igenom svampvättarnas dynga efter kungakronor, bedriver handel med en död ormman eller släpar skattkistor med guld upp till ytan.
+Representerar upptäckarlust, aha-upplevelsen och spänningen av att kunna hitta skatter. Kom ihåg att berömma spelare som listar ut att det är en falsk krypta. Klokskap ska belönas. 
+
+___Grottkomplexet blir också märkligare och mindre jordnära ju lägre ner man går. Till en början bryter ni upp träkistor för att roffa åt er pyttesmå amuletter. Nära slutet gräver ni er gen-om vättarnas dynga efter kungakronor, be-driv-er han-del med en död orm-man eller släpar skattkistor med guld upp till ytan.
 
 ___Beskriv det här området med ord som /skraltig/, /kantstött/ och /fuktig/. Det är en jordkällare. Det sticker ner små vita rötter från taket och det är grus på golvet.
 
 |> SubHeader
     Den riktiga kryptan
 
-Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörkret, odödliga trollkarlar köpslår med er och oövervinnerlig odöd sörja hasar efter er.
+Representerar makt och osagda hot. Statyer hänger över er. Tingestar skälver i låsta kistor. Jätteödlor lurpassar på er i mörk-ret, odödliga trollkarlar köpslår med er och o-öv-er-vinnerlig o-död sör-ja hasar efter er.
 
-___Beskriv det här området med ord som /enorm/, /över-hängande/ och /kall/. Det här området är byggt av en civ-il-isa-tion äldre, visare och grymmare än roll-person-er-nas. Ju djupare de går desto nervösare bör de bli.
+___Beskriv det här området med ord som /enorm/, /över-hängande/ och /kall/. Det här området är byggt av en civ-il-isa-tion äldre, vis-are och grymmare än roll-person-er-nas. Ju djupare de går des-to nerv-ös-are bör de bli.
 
 |> SubHeader
     Avgrunden
 
-Representerar det okända och den förundran den medför. Det skulle kunna finnas vadsomhelst därnere. Den kan sträcka sig ner till jordens mitt. Det skulle fortfarande kunna finnas ormmän som lever obekym-rade liv därnere. Det är ett blankt ark för spel-ledar-en att lägga till saker i modulen.
+Representerar det okända och den förundran den medför. Det skulle kunna finnas vadsomhelst därnere. Den kan sträcka sig ner till jordens mitt. Det skulle fortfarande kunna finnas orm-folk som lever obekym-rade liv därnere. Det är ett blankt ark för spel-ledar-en att lägga till saker i modulen.
 
-___Beskriv avgrunden med ord som /bottenlös/ och /oro-ande/, det är som om världen bara faller bort och tysta, rastlösa ljud om ni är tålmodiga. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
+___Beskriv avgrunden med ord som /bottenlös/ och /oro-ande/; ut-tryck som /tysta, rastlösa ljud om ni är tålmodiga/ och /det är som om världen bara faller bort/. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
 
 |> SubHeader
     Vättegyttret
 
-Representerar en spegel av roll-person-er-na. De lever i smuts, de återuppstår och gör samma misstag. De är hung-riga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Vättegyttret är ett intrång av livs-kraftig och högljudd barbarism in i en kall och utdöende civilisation.
+Representerar en spegel av roll-person-er-na. De lever i smuts, de återuppstår och gör samma misstag. De är hung-riga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Vätte-gytt-ret är ett intrång av livs-kraftig och hög-ljudd barb-ar-ism in i en kall och utdöende civilisation.
 
-___Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och Ormkonungarnas Katakomber har inga fria bad. Pyttesmå röda vätteögon glöder i mörkret. Klapprande tänder och skarpa knivar väntar i mörkret.
+___Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och /Orm-kon-ung-arnas Kata-komb-er/ har inga fria bad. Pytte-små röda vätte-ögon glöder i mörkret. Klapp-ran-de tänder och skar-pa kniv-ar vänt-ar i mörk-ret.
 
 |> Header
     Nivå 1
@@ -615,7 +613,7 @@ ___Statyerna är ihål-iga och varje innehåller en guld-amulett värd 1 sm, ett
 |> SubHeader
     3: Den lärdes grav
     
-Snarlik *2: Vakternas gravar*, men likkistan innehåller en lerstaty föreställande en av ormfolkets lärda. Dess skrift-rullar har brytits ner till stoft. Statyn inne-håller samma amulett, ormskelett och gift som de andra.
+Snarlik *2: Vakternas gravar*, men likkistan innehåller en ler-staty föreställande en av ormfolkets lärda. Dess skrift-rullar har brytits ner till stoft. Statyn inne-håller samma amulett, orm-skelett och gift som de andra.
 
 |> SubHeader
     4: Svartkonstnärens grav
