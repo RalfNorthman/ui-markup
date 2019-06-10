@@ -201,6 +201,7 @@ document =
             , title
             , list
             , lesson
+            , lessonMore
             , credits
             , Mark.map
                 (\x ->
@@ -248,7 +249,19 @@ subHeader =
 lesson =
     Mark.block "Lesson"
         (\children ->
-            el [] <| paragraph lessonStyle children
+            el [] <|
+                column lessonStyle
+                    [ el [ smallCaps ] <| text "Lärdomar:"
+                    , paragraph [] (text "\u{2003}" :: children)
+                    ]
+        )
+        myText
+
+
+lessonMore =
+    Mark.block "LessonMore"
+        (\children ->
+            el [] <| paragraph lessonStyle (text "\u{2003}" :: children)
         )
         myText
 
@@ -304,6 +317,9 @@ myReplacements =
     , Mark.replacement " /]" "]"
     , Mark.replacement "'" "’"
 
+    -- multiplication sign
+    , Mark.replacement "**" "×"
+
     -- swedish quotation
     , Mark.replacement "\"" "”"
 
@@ -335,7 +351,10 @@ list =
 
 
 renderList (Mark.Enumerated enum) =
-    el [] <|
+    el
+        [ paddingEach { zeroPad | bottom = xs }
+        ]
+    <|
         column [ myWidth, centerX ]
             (List.map (renderItem enum.icon) enum.items)
 
@@ -357,11 +376,7 @@ renderItem icon (Mark.Item item) =
             el [ alignTop ] <| text ("\u{2003}" ++ String.fromInt (nr + 1) ++ ". ")
     in
     row
-        [ paddingEach
-            { zeroPad
-                | bottom = xxs
-                , top = xxs
-            }
+        [ paddingXY 0 xxxs
         ]
         [ case icon of
             Mark.Bullet ->
@@ -482,7 +497,7 @@ ___Genom att inte hålla med så lär du dig i alla fall något om dina egna pre
 
 |> List
     -- Om du tycker att diplomati är ett nödvändigt element: placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. 
-    -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara Nivå<>3.
+    -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara Nivå_3.
     -- Om du inte gillar ormar: byt ut dem mot getter.
     -- Lägg till troper från folksägner.
     -- Lägg till dina favorit-fällor eller ta bort fällorna helt.
@@ -498,7 +513,7 @@ ___Skadeangivelserna är skalade efter roll-person-er som har 4 till 16 kroppspo
 
 ___En grupp roll-person-er av mellanrang spelade av er-far-na spel-are kan till-int-et-göra den här grott-komp-lex-et på rekordtid. De kan ändå ha kul. En grupp roll-person-er av låg rang spelade av nybörjarspelare kommer för-hopp-nings-vis ha jätteroligt.
 
-___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan det ta mellan 12 och 24 timmar spel-tid att full-ständ-igt utforska grott-komp-lex-et. På ett för-sta spelmöte som involverar rollpersonsskapande bör sällskapet kunna ut-forsk-a Nivå 1 helt.
+___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan det ta mellan 12 och 24 timmar spel-tid att full-ständ-igt utforska grott-komp-lex-et. På ett för-sta spelmöte som involverar rollpersonsskapande bör sällskapet kunna ut-forsk-a Nivå_1 helt.
 
 |> SubHeader
     Innan du börjar:
@@ -534,21 +549,21 @@ Alltigenom texten finns små avsnitt med ljusgrå brödtext ut-spridda; dessa si
 Ormkonungarnas Katakomber är ett grottkomplex med tre nivå-er och fyra tematiska huvudområden. Det finns inga texter som ska läsas högt.
 
 |> SubHeader
-    Nivå 1: Den falska kryptan
+    Nivå_1: Den falska kryptan
 
 Introducerar grunderna i utforming av grottkomplex och ut-forsk-ning av sju rum. Den är precis rätt storlek för ett första spel-möte, givet att skapandet av roll-person-er går nå-gor-lun-da fort och att du ger roll-person-er-na en god anledning till att utforska katakomben.
 
 |> SubHeader
-    Nivå 2: Den övre kryptan
+    Nivå_2: Den övre kryptan
 
-Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg fram-åt, men sidorummen är frestande. Det är i den här sek-tion-en som lärdomarna från Nivå 1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möj-lig-en behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
+Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg fram-åt, men sidorummen är frestande. Det är i den här sek-tion-en som lärdomarna från Nivå_1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möj-lig-en behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
 
 |> SubHeader
-    Nivå 3: De lägre kryptorna
+    Nivå_3: De lägre kryptorna
 
-Det finns två horisontella och tre vertikala huvudleder. Grott-komp-lex-et förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är bet-yd-ligt far-lig-are än de före-gåen-de. Dip-lo-ma-ti och han-del blir också aktu-ellt, liksom ströv-ande väsen. Du kan ut-forska Nivå 1 och 2 i lugn och ro, men spen-der-ar du för mycket tid på Nivå 3 tar du en all-var-lig risk. 
+Det finns två horisontella och tre vertikala huvudleder. Grott-komp-lex-et förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är bet-yd-ligt far-lig-are än de före-gåen-de. Dip-lo-ma-ti och han-del blir också aktu-ellt, liksom ströv-ande väsen. Du kan ut-forska Nivå_1 och 2 i lugn och ro, men spen-der-ar du för mycket tid på Nivå_3 tar du en all-var-lig risk. 
 
-___Nivå 3 är öppen. Du kan lägga till material för att utöka grott-komp-lex-et så långt du vill. I det här läget, om du är en ny spel-ledare eller ovan med ~osr~//-spel, bör du vara redo att skriva ditt eget material.
+___Nivå_3 är öppen. Du kan lägga till material för att utöka grott-komp-lex-et så långt du vill. I det här läget, om du är en ny spel-ledare eller ovan med ~osr~//-spel, bör du vara redo att skriva ditt eget material.
 
 |> Header
     Tematiska områden
@@ -599,16 +614,13 @@ En lång korridor med fyra öppna rum, två på varje sida. Hallen slutar vid en
 
 De här två små rummen är identiska till storlek och inne-håll. Bägge rymmer en likkista av trä med en ler-staty före-ställande en ormfolkskrigare inuti. 
 
-___Statyerna är ihål-iga och varje innehåller en guld-amulett värd 1 sm, ett torkat ormskelett och ett moln av giftgas (~t6~ i skada, kan bara reducera en roll-person till 0 ~kp~).
+___Statyerna är ihål-iga och varje innehåller en guld-amulett värd 10_sm, ett torkat ormskelett och ett moln av giftgas (~t6~ i skada, kan bara reducera en roll-person till 0 ~kp~).
 
 |> Lesson
-    ~Lärdomar~: 
+    Grott-komp-lex-et är /organiserat/. Det finns /mönster/. Det finns /gömda skatter/. Det finns också /gömda faror/.
 
-|> Lesson
-    ___Grott-komp-lex-et är /organiserat/. Det finns /mönster/. Det finns /gömda skatter/. Det finns också /gömda faror/.
-
-|> Lesson
-    ___Rollpersonerna kommer förmodligen närma sig kista nummer 2 med mer försiktighet och få sin belöning (guld) utan faran (gift) genom att använda sina hjärnor (och en sten eller lång pinne).
+|> LessonMore
+    Rollpersonerna kommer förmodligen närma sig kista nummer två med mer försiktighet och få sin belöning (guld) utan faran (gift) genom att använda sina hjärnor (och en sten eller lång pinne).
 
 |> SubHeader
     3: Den lärdes grav
@@ -623,10 +635,7 @@ Snarlik *2: Vakternas gravar*, men likkistan innehåller en lerstaty föreställ
     ___Ringen är magisk, men det vilar också en förbannelse över den. Om den bärs på ett finger så blir fingernageln lång, kluven i tu och spetsiga som ett tvillingpar av hugg-tänder. Den kan användas som en förgiftad dolk, men varje morgon måste bäraren lyckas med ett Fysikslag eller ta ~t~6 skada. Om bäraren tar 6 skada på samma gång från giftringen faller deras finger av och förvandlas till en orm.
 
 |> Lesson
-    ~Lärdomar~: 
-
-|> Lesson
-    ___Gömda skatter kan vara /magiska/, /användbara/ och ibland bära på /förbannelser/.
+    Gömda skatter kan vara /magiska/, /användbara/ och ibland bära på /förbannelser/.
 
 |> SubHeader
     5: Dörr//Hammarfälla
@@ -639,44 +648,35 @@ ___När bommen lyfts från järn-fästena aktiveras en fälla. En väldig stenha
     - Slå Smidighetsslag för att försöka undvika.
     - Använda en annan roll-person som språngbräda och få +2 på sitt slag men ge den knuffade rollpersonen //-2 på sitt.
 
-___En träffad roll-person dör (eller tar allvarlig skada, typ 2~t~6+4).
+En träffad roll-person dör (eller tar allvarlig skada, typ 2~t~6_+_4).
 
 ___Fällan kan identifieras genom att granska dörren eller fästena, genom att upptäcka att fästena höjs när bommen lyfts eller genom att undersöka taket. Om bommen snabbt byts ut, fästena hålls ner eller om fällans mekanism i taket är skadad så kommer inte fällan lösa ut.
 
 ___Hammaren dras långsamt tillbaka upp i taket såvida den inte blockeras. Den kan återaktiveras genom att lyfta upp järnfästena, antingen för hand eller med rep. När den aktiveras första gången slås den stora dörren som leder in till *6: Falsk kungagrav* upp av kollsionen.
 
 |> Lesson
-    ~Lärdomar~: 
-
-|> Lesson
-    ___Det finns dödliga /fällor/. Grottkomplexet kan vara /livsfarligt/.
+    Det finns dödliga /fällor/. Grottkomplexet kan vara /livsfarligt/.
 
 |> SubHeader
     6: Falsk kungagrav
 
 Gravkammare tillhörande -- vad som verkar vara -- ormfolkets kung och hans två gemåler. Längs norra väggen står tre kistor av trä, stiliserat målade med sovande ormfolk. Kistan i mitten är uppenbart större och mer utsmyckad. 
 
-___Varje kista innehåller ett ~Skelett -- ff 9, f 12, st 2, m 12, a 1 ~klor~ (1t6 sp)~ -- vilka omedelbart kommer an-falla om deras vila blir störd.
+___Varje kista innehåller ett ~Skelett -- ff_9, f_12, st_2, m_12, a_1: ~klor~ (1t6 sp)~ -- vilka omedelbart kommer an-falla om deras vila blir störd.
 
 |> Lesson
-    ~Lärdomar~: 
-
-|> Lesson
-    ___Det finns /odöda/ i grott-komp-lex-et. De tar lägre skada från huggvapen. Rollpersonerna kan använda om-giv-ningen mot dem (lura in dem i hammarfällan).
+    Det finns /odöda/ i grott-komp-lex-et. De tar lägre skada från huggvapen. Rollpersonerna kan använda om-giv-ningen mot dem (lura in dem i hammarfällan).
 
 |> SubHeader
     7: Falskt tempel
 
-Det här rummet domineras av en enorm staty före-ställande en ohygglig ormfolksgud. Vatten som läcker in i kryptan har vittrat sönder golvet vilket blottar en hemlig gång under statyn som leder till Nivå<>2.
+Det här rummet domineras av en enorm staty före-ställande en ohygglig ormfolksgud. Vatten som läcker in i kryptan har vittrat sönder golvet vilket blottar en hemlig gång under statyn som leder till Nivå_2.
 
 |> Lesson
-    ~Lärdomar~: 
+    Det finns /hemliga gångar/. De är associerade med /statyer/. Det här kan vara en /falsk krypta/.
 
-|> Lesson
-    ___Det finns /hemliga gångar/. De är associerade med /statyer/. Det här kan vara en /falsk krypta/.
-
-|> Lesson
-    ___Genomgående i den här grott-komp-lex-et kommer statyer vara associerade med hemliga gångar och skatter.
+|> LessonMore
+    Genomgående i den här grott-komp-lex-et kommer statyer vara associerade med hemliga gångar och skatter.
 
 |> Header
     Nivå 2
@@ -695,24 +695,14 @@ Det här rummet ligger direkt nedanför *7: Falskt tempel*. Det är en smal nisc
 En lång och bred korridor. Sex väldiga statyer före-ställ-ande tungt beväpnade och bepansrade orm-män över-skuggar salen och stirrar ilsket på säll-skapet. En av sta-ty-erna står lite ur fas jämfört med de andra: den kan flytt-as för att blotta *10: Hemligt vaktrum*.
 
 |> Lesson
-    ~Lärdomar~: 
-
-|> Lesson
-    ___Sällskapet ska ha lärt sig i *7: Falskt tempel* att statyer ibland döljer hemliga gångar. 
-
-|> Lesson
-    ___Ljus från ytan kan inte tränga igenom så här långt ner. Hädanefter måste roll-person-er-na förlita sig på andra ljuskällor.
-
+    Sällskapet ska ha lärt sig i *7: Falskt tempel* att statyer ibland döljer hemliga gångar. 
 
 |> SubHeader
     10: Hemligt vaktrum
-Det här rummet var en gång ett dolt vaktrum för temp-lets lönnmördare. Nu står det tyst och mörkt. Möble-manget har ruttnat så bara spillror återstår. På väggen hänger två krokförsedda glavar -- fortfarande an-vänd-bara -- till-sammans med en silverikon, före-ställ-an-de en ormfolkskung med bister uppsyn, värd 5<>sm.
+Det här rummet var en gång ett dolt vaktrum för temp-lets lönnmördare. Nu står det tyst och mörkt. Möble-manget har ruttnat så bara spillror återstår. På väggen hänger två krokförsedda glavar -- fortfarande an-vänd-bara -- till-sammans med en silverikon, före-ställ-an-de en ormfolkskung med bister uppsyn, värd 50_sm.
 
 |> Lesson
-    ~Lärdomar~: 
-
-|> Lesson
-    ___Hemliga rum innehåller mer skatter.
+    Hemliga rum innehåller mer skatter.
 
 |> SubHeader
     11: Krypt//-atrium
@@ -723,49 +713,48 @@ ___Dörrarna till rum 12--14 och 16 är gjorda av tung sten, men kan rubbas med 
 
 ___Det ser ut som det en gång var ett schakt i rummets mitt, men vatten som droppat från ytan har fyllt den till bredden med mörkt, oljigt vatten som luktar lakrits. Den är tre meter djup.
 
-___Inuti bassängen finns två ~Mumiespillror -- ff 6, f<>12, st 2, m 12, a 1: ~klo~ (1t4 sp) ~/eller/ strypning ~(1t6 sp)~-. De kommer  hoppa upp och angripa alla som kommer nära schaktet.
+___Inuti bassängen finns två ~Mumiespillror -- ff_6, f_12, st_2, m_12, a_1: ~klo~ (1t4 sp) ~/eller/ strypning ~(1t6 sp)~-. De kommer  hoppa upp och angripa alla som kommer nära schaktet.
 
 |> Lesson
-    ~Lärdomar~: 
-
-|> Lesson
-    ___Det finns dolda monster. Vissa monster sprider sjukdomar. Det är väldigt svårt att träffa ett monster som klamrar sig fast vid din väns strupe.
+    Det finns dolda monster. Vissa monster sprider sjukdomar. Det är väldigt svårt att träffa ett monster som klamrar sig fast vid din väns strupe.
 
     ___Att bara beröra vattnet orsakar inte mumieröta, men att dricka det eller få det i öppna sår gör det. Om säll-skapet kan dräpa eller oskadliggöra mumie-spill-ror-na, kan de försöka dragga eller söka igenom bassängen. Den<>innehåller:
 
 |> List
     -- Ett rasande och fullständigt vansinnigt mumiehuvud.
-    -- En tung guldkedja värd 35 sm.
+    -- En tung guldkedja värd 350_sm.
     -- En magisk silverring.
     -- Ett av dessa:
         -- Ett magiskt nyttoting som ~sl~ väljer. 
         -- Ett slump-mässigt magiskt föremål 
-        -- Smycken värda ~2t10~<>sm.
+        -- Smycken värda ~2t10_**_10~_sm.
 
-Silverringen är /Fjärrögats Ring/. När den bärs, ramlar ett av nyttjarens ögon ut och blir hårt som glas. Ögat kan fortfarande se normalt. 
-
-|> Lesson
-    ~Lärdomar~: 
+Silverringen är /Fjärrögats Ring/. När den bärs, ramlar ett av nyttjarens ögon ut och blir hårt som glas. Ögat kan fort-farande se normalt. 
 
 |> Lesson
-    ___Leta efter skatter på botten av schakt och bassänger. Magiska föremål kan lösa problem. 
+    Leta efter skatter på botten av schakt och bassänger. Magiska föremål kan lösa problem. 
+
+|> SubHeader
+    12: Xisor den Grönes krypta
+
+Passagen in till den här kryptan rymmer en tryckplatta som utlöser en åskviggs-besvärjelse med sikte längs med korridoren. Den utdelar 4~t~6 skada (lyckas med Smidighetsslag för hälften) och löser bara ut en gång. Elektrumskivan den avfyras från är värd 100_sm. Det finns också en formelrulle (/Gift/ eller någon annan giftbaserad besvärjelse) inut Xisors likkista.
+
+|> Lesson
+    Ibland är golven gillrade med fällor. Fällor är ofta dödliga. Behandla okända rum med försiktighet. 
 """
 
 
 tempPost =
     """
-    12: Xisor den Grönes krypta
-    Passagen in till den här kryptan rymmer en tryckplatta som utlöser en åskvigg-besvärjelse med sikte längs med korridoren. Den utdelar 4~t~6 skada (lyckas med Smidighetsslag för hälften) och löser bara ut en gång. Elektrumskivan den avfyras från är värd 10 ~gm~. Det finns också en formelrulle (ögongift eller någon annan giftbaserad besvärjelse) inut Xisors likkista.
-    Lärdomar: ibland är golven gillrade med fällor. Fällor är ofta dödliga. Behandla okända rum med försiktighet. 
     13: Sparamanturs krypta
-    Den här kryptan är delvis ihoprasad: takets block har störtat in. Om roll-person-er-na börjar gräva ut rummet, kommer de höra Sparamantur, ett ormfolks-skelett (Nivå 3, Moral 12, Attack 1T8 [Skarprättarbila]),  ragla omkring och banka på andra sidan den blockerade passagen. Han är inte subtil och kommer hugga så fort han får syn på en levande varelses huvud. Hans grannlåt är värd 10 ~gm~.
+    Den här kryptan är delvis ihoprasad: takets block har störtat in. Om roll-person-er-na börjar gräva ut rummet, kommer de höra Sparamantur, ett ormfolks-skelett (Nivå 3, Moral 12, Attack 1T8 [Skarprättarbila]),  ragla omkring och banka på andra sidan den blockerade passagen. Han är inte subtil och kommer hugga så fort han får syn på en levande varelses huvud. Hans grannlåt är värd 100_sm.
     Lärdomar: lyssna vid dörrar. Ni kan höra vissa montster innan ni ser dem. Vissa rum är det bäst att lämna ifred.
 
     14: Franbinzars krypta
-    Det här rummet är primitivare än de andra och har enklare målningar och ornament. Det rymmer en stor stenkista med de dåligt mumifierade kvarlevorna av Franbinzar, fästets sista makthavare. Mumifieringen gick inte bra. Kvarlevorna räknas som en Svart Smet (Nivå 5, Moral 12, Attack 1~t~6 [Slag] eller 3~t~6 [Längre Kontakt]) och kommer slänga sig emot och angripa den som öppnar kistan. Hans gravgods är kopior av lera, men han har ringar värda 2 ~gm~ inneslutna i sig. Om han dräps kommer han regenera efter 1T20 timmar såvida inte han bränns upp. Om han kommer lös i grott-komp-lex-et, lägg till honom i Tabellen över Strövande Väsen (sida XX),  där han ersätter ett av förebudsresultaten. 
+    Det här rummet är primitivare än de andra och har enklare målningar och ornament. Det rymmer en stor stenkista med de dåligt mumifierade kvarlevorna av Franbinzar, fästets sista makthavare. Mumifieringen gick inte bra. Kvarlevorna räknas som en Svart Smet (Nivå 5, Moral 12, Attack 1~t~6 [Slag] eller 3~t~6 [Längre Kontakt]) och kommer slänga sig emot och angripa den som öppnar kistan. Hans gravgods är kopior av lera, men han har ringar värda 20_sm inneslutna i sig. Om han dräps kommer han regenera efter 1T20 timmar såvida inte han bränns upp. Om han kommer lös i grott-komp-lex-et, lägg till honom i Tabellen över Strövande Väsen (sida XX),  där han ersätter ett av förebudsresultaten. 
     Lärdomar: sörjor bor i dungar. De är svåra att klubba, precis som skeletten var svåra att hugga. Ni kan använda omgivningen till er fördel (genom att springa runt schaktet i 11: Kryptatrium, genom att stänga stendörrar för sörjan, genom att locka sörjan till övervåningen och slå till den med hammarfällan, etcetera).
     15: Prästrum
-    Det här rummet användes av övre kryptans präster. Det rymmer tre sängar, några ruttna hyllor och en ormgudssymbol av silver och smaragder värd 20 gm. Utspridda skriftrullar återger instängda mumiers  osammanhängande svammel på ett glömt språk.
+    Det här rummet användes av övre kryptans präster. Det rymmer tre sängar, några ruttna hyllor och en ormgudssymbol av silver och smaragder värd 200_sm. Utspridda skriftrullar återger instängda mumiers  osammanhängande svammel på ett glömt språk.
     Lärdomar: värdeföremål tar okonventionella former. Svamlet kan vara värdefullt om det översätts eller säljs till lättlurade.
     16: Ofärdig krypta
     Det här rummet är tomt, sånär som på några kasserade verktyg för stenarbete som ligger och rostar på golvet. Det kan bli en bra tillflyktsort i ett nödläge eller någonstans att gömma förnödenheter.
@@ -780,7 +769,7 @@ tempPost =
     Det tredje trappsteget ovanifrån är gillrad med en fälla. Om det läggs någon tyngd på den, kommer trappstegen vikas ner och bli en slät stenramp. Spetsar fälls ut ur golvet vid rampens botten när fällan löser ut. En roll-person som glider ner tar ~t~6 i skada (lyckas med Smidighetsslag för hälften). Fällan återaktiveras efter 5 rundor.
     Lärdomar: Kolla golvet. Fällor kan flytta er, inte bara ge skada.
     19: Granitväktarens arena
-    Det här är ett stort arenaliknande rum (identiskt med 11: Kryptatrium i storlek och form) helt täckt med sköldar från stammar besegrade av ormfolket. Några av sköldarna har ruttnat sönder, men minst 5 är fortfarande i användbart skick. Om de skrapas och tas isär är silvertråden i dem värd 2 ~gm~.
+    Det här är ett stort arenaliknande rum (identiskt med 11: Kryptatrium i storlek och form) helt täckt med sköldar från stammar besegrade av ormfolket. Några av sköldarna har ruttnat sönder, men minst 5 är fortfarande i användbart skick. Om de skrapas och tas isär är silvertråden i dem värd 20_sm.
 
     Precis i mitten av rummet står Granitväktaren (se sida 11). Den angriper så fort den får syn på en rollperson.
     20: Avgrund och avsats
@@ -792,8 +781,8 @@ tempPost =
     21: Grottkoraller
     Här är gångstigen full av grottkoraller. Dessa stentäckta mollusker slukar alla varmblodiga varelser som passerar dem. Rollpersoner som spenderat tid i kryptor, grottor och tunnlar känner igen och vet att undvika dessa odjur.
     Lärdomar: den här vägen är stängd. Tänk ut en lösning (förgiftat kött, exploderande grodor, etcetera) och kom tillbaka senare.
-    Nivå 3
-    Det finns 5 huvudområden på Nivå 3.
+    Nivå_3
+    Det finns 5 huvudområden på Nivå_3.
     Yttre salarna (22--26)
     Kvadersten, en aning fuktigt, mögel och slem på den lägre delen av väggarna. Luften är kall, speciellt nära avgrunden. Vissa torra och dammiga ställen. Allt har uthuggna eller målade ormmotiv på sig.
     Offergrop (27--30)
@@ -818,12 +807,12 @@ tempPost =
     Nedsänkt 12 cm in i väggen och hålls stängd av en tung stenbom. Bommen är på sidan vänd mot avgrunden. Dörren kan inte öppnas om man kommer från andra hållet utan att ha sönder stora delar av den. Den rymmer samma typ av hammarfälla som i 5: Dörr/Hammarfälla, men hammaren svingar bort från dörren, snarare än mot den. Detta gör den lättare att ducka (+2 på Smidighetsslaget), men alla roll-person-er som träffas måste slå igen för att inte kastas ner i avgrunden.
     Lärdomar: fällor upprepar sig i dungar. Var försiktig i närheten av bottenlösa avgrunder.
     23: Ceremonirum
-    Använd av ormfolkets präster för att förbereda sig och meditera. Rymmer flera låga bänkar, urgamla väggbonader och en torr fontän. Vättar har lirkat bort guldstatyn från fontänen och gömt den i sitt tronrum. Några guldfragment värda 1 ~gm~ ligger kvar.
+    Använd av ormfolkets präster för att förbereda sig och meditera. Rymmer flera låga bänkar, urgamla väggbonader och en torr fontän. Vättar har lirkat bort guldstatyn från fontänen och gömt den i sitt tronrum. Några guldfragment värda 10_sm ligger kvar.
     Lärdomar: vissa rum är ofarliga. Titta efter vad som kan saknas.
     24: Korridor
     En lång och smal korridor som lutar nedåt mot söder. Rymmer 1 Skelettsylta (Nivå 1, Moral 12, Attack 1T4 [Slag] som rör sig mot oväsen.
     Strövande Väsen
-    Kolla varje halvtimme på Nivå 3 eller närhelst roll-person-er-na gör mycket oväsen. Slå 1T8:
+    Kolla varje halvtimme på Nivå_3 eller närhelst roll-person-er-na gör mycket oväsen. Slå 1T8:
     Förebud om basilisken. Rasslandet av en kedja som kastas av och an, dragen genom sten och damm.
     Förebud om sylta. Vått slaskande på avstånd.
     Förebud om vättarna. Tjatter, till hälften fnitter, hälften tandgnissel och slickande om läppar. Glittret av röda ögon i fjärran. En pust av svampröta.
@@ -837,7 +826,7 @@ tempPost =
     25: Schaktfälla
     Det här rummet har ett falskt golv av tunna stenplattor. En 3o cm bred kant längs med väggarna är säker, men alla andra plattor hålls upp pinnar och tunna metallstänger. En roll-person som stiger in i rummet måste lyckas med ett Smidighetsslag eller ta 1~t~6 skada från fallet och slå igen för att inte ta ytterligare 1~t~6 från spetsarna på bottnen. De falska plattorna är lätta att upptäcka. En saknas till och med.
 
-    Schaktet rymmer åtskilliga vanliga människoskelett och en guldring värd 2 ~gm~. Vättarna använder schaktet för att fånga mat och ersätter nedfallna plattor varje dag.
+    Schaktet rymmer åtskilliga vanliga människoskelett och en guldring värd 20_sm. Vättarna använder schaktet för att fånga mat och ersätter nedfallna plattor varje dag.
     Lärdomar: kolla golvet.
     26: Korridor
     En liten passage förgrenar sig från huvudkorridoren och leder till en låst dörr. Låset har farit illa av tidens tand och dörren kan lätt öppnas.
@@ -847,7 +836,7 @@ tempPost =
     28: Kupolsal
     En ståtlig kupolsal med en låst järnport till söder. Nyckeln till porten är innesluten i basiliskens hals. Porten är inte magisk, men det skulle ta ett arbetslag timmar eller dagar för att bända upp den eller spräcka dess gångjärn. Till väster finns en sönderslagen stendörr.
     29: Skattkammare
-    Det här rummet rymmer… vadhelst du vill placera i slutet av ditt grottkomplex: en slutstrid, ett sällsynt föremål, högar med guld, ledtrådar till vidare äventyr, trappor till fler nivåer av grott-komp-lex-et. Allra minst bör den innehålla skatter av olika slag till ett värde av 200 ~gm~.
+    Det här rummet rymmer… vadhelst du vill placera i slutet av ditt grottkomplex: en slutstrid, ett sällsynt föremål, högar med guld, ledtrådar till vidare äventyr, trappor till fler nivåer av grott-komp-lex-et. Allra minst bör den innehålla skatter av olika slag till ett värde av 2000_sm.
 
 
 
@@ -855,18 +844,18 @@ tempPost =
     30: Offergrop
     Offergropen består av en nedsjunken, evig flamma i mitten av en uthuggen, 4½ meter djup grop. Sidorna på gropen lutar nedåt. Flamman får bränsle från naturgas ledd från en djup och uråldrig gruva. Det finns en 60 cm bred avsats runt gropen. Förkolnade ben täcker bottnen. Även om luften är syrefattig här, så är den inte farlig för någonting utanför själva gropen. Varelser i gropen måste lyckas med ett Fysikslag eller ta 1~t~6 temporär Konstitutionsskada. Medvetslösa roll-person-er glider ner till flamman och tar 2~t~6 skada av elden varje rond.
 
-    Det finns rinniga strimmor av guld runt flamman och ett fåtal kolbelagda ädelstenar (värda 50 ~gm~ totalt) glittrar i det brandgula ljuset. Alla offer var inte fattiga.
+    Det finns rinniga strimmor av guld runt flamman och ett fåtal kolbelagda ädelstenar (värda 500_sm totalt) glittrar i det brandgula ljuset. Alla offer var inte fattiga.
     Lärdomar: vissa faror är osynliga.
     31: Bevakad sal
-    Två statyer föreställande ormmän står i de södra hörnen av denna ståtliga sal. De här statyerna är oerhört naturtrogna och mycket mer detaljrika än något annat stenarbete i kata-komb-er-na. I realiteten är de förstenade ormmän placerade här som bestraffning. Om de skulle oförstenas störtar de ner i mordiskt ursinne i 10 minuter, för att sedan sakta ge efter till förtvivlan. Statyerna är värda 50 ~gm~ styck om de säljs i en större stad eller tio gånger mer till en trollkarl som inser deras beskaffenhet.
+    Två statyer föreställande ormmän står i de södra hörnen av denna ståtliga sal. De här statyerna är oerhört naturtrogna och mycket mer detaljrika än något annat stenarbete i kata-komb-er-na. I realiteten är de förstenade ormmän placerade här som bestraffning. Om de skulle oförstenas störtar de ner i mordiskt ursinne i 10 minuter, för att sedan sakta ge efter till förtvivlan. Statyerna är värda 500_sm styck om de säljs i en större stad eller tio gånger mer till en trollkarl som inser deras beskaffenhet.
     Lärdomar: försök hitta förklaringar till saker som verkar malplacerade.
     32: Åkallelserum
     Ett långt och trångt rum med en stor hög med bråte (trasiga sköldar, böjda svärd, ljusstakar och trädgrenar) vid ingången. Att rensa bort högen tar en halvtimme och för ett fasligt oväsen. Rummet innanför var en gång en kammare för åkallan. Det rymmer en fjättrad Succuba (sida 11) åkallad av ormfolket för att svara på frågor om de lägre helvetena. Hon ser ut att vara en ung botanist av samma art som den första rollpersonen hon ser och av lämpligt kön. Hon kommer påstå att hon blivit tillfångatagen av vättarna. Bojan runt hennes fotled är ett bländverk. Allt hon behöver är att någon stiger över cirkeln (som är täckt av damm och till större delen dold) som fjättrar henne.
 
-    Rummet rymmer även ett litet altare, 2 gyllene skålar värda 15 ~gm~ styck, en magisk dolk (+1) och en vågformad orm av sten som varseblivs som magisk. Ormen kan användas till att öppna porten till 46: Tronrum. Succubin är inte fientlig mot roll-person-er-na, men hon kommer att försöka isolera och kyssa en av dem (lyckas med ett Fysikslag, annars 1~t~6 permanent KP och Kon skada samt åldras 1T10 år. +10 på slaget om hon gillar dig) så hon kan fylla på sina reserver och fly iväg. Hennes sanna namn (Baltoplat) är nedskrivet i en skriftrulle i 15: Prästrum. Vättarna är rädda för henne. Xiximanter känner till hennes sanna natur, men antar att sällskapet också vet. Hon är immun mot förstening och är synnerligen bra på att ducka och undvika. Hon kommer omedelbart att fly från alla konflikter. Om hon tvingas förhandla kan hon varsebli gift, avslöja forntida hemligheter eller komma överens om att dräpa en vanlig dödlig roll-person-er-na kan namnet på. Hon är tålmodig och listig, men håller sitt ord.
+    Rummet rymmer även ett litet altare, 2 gyllene skålar värda 150_sm styck, en magisk dolk (+1) och en vågformad orm av sten som varseblivs som magisk. Ormen kan användas till att öppna porten till 46: Tronrum. Succubin är inte fientlig mot roll-person-er-na, men hon kommer att försöka isolera och kyssa en av dem (lyckas med ett Fysikslag, annars 1~t~6 permanent KP och Kon skada samt åldras 1T10 år. +10 på slaget om hon gillar dig) så hon kan fylla på sina reserver och fly iväg. Hennes sanna namn (Baltoplat) är nedskrivet i en skriftrulle i 15: Prästrum. Vättarna är rädda för henne. Xiximanter känner till hennes sanna natur, men antar att sällskapet också vet. Hon är immun mot förstening och är synnerligen bra på att ducka och undvika. Hon kommer omedelbart att fly från alla konflikter. Om hon tvingas förhandla kan hon varsebli gift, avslöja forntida hemligheter eller komma överens om att dräpa en vanlig dödlig roll-person-er-na kan namnet på. Hon är tålmodig och listig, men håller sitt ord.
     Lärdomar: vissa monster har dolda agendor. Det finns bländverk. Låt dig inte bli isolerad. För inte oväsen.
     33: Tempelnisch
-    En alkov vilken rymmer en helgedom tillägnad en av ormfolkets många kobrahövdade gudar. Statyn har två hål i sin bas stora nog för en mänsklig arm. Statyn kan inte lyftas, men kommer skramla och kan lätt vridas. Nästan vilken ansträngning, granskning eller åtgärd som helst kommer vrida den något. Vridning 90◦ moturs löser ut en giftgasfälla (~t~6 skada i ett 9m moln). Vridning 90◦ medur får en massa guld (2T100+10 ~gm~) att spilla och rulla ut över golvet. Några mynt kommer rulla in i 35: Korridor med klingfälla.
+    En alkov vilken rymmer en helgedom tillägnad en av ormfolkets många kobrahövdade gudar. Statyn har två hål i sin bas stora nog för en mänsklig arm. Statyn kan inte lyftas, men kommer skramla och kan lätt vridas. Nästan vilken ansträngning, granskning eller åtgärd som helst kommer vrida den något. Vridning 90◦ moturs löser ut en giftgasfälla (~t~6 skada i ett 9m moln). Vridning 90◦ medur får en massa guld (2T100_**_10_+_100_sm) att spilla och rulla ut över golvet. Några mynt kommer rulla in i 35: Korridor med klingfälla.
     Lärdomar: skatter är gömda bakom statyer. Vissa fällor följer mönster.
 
 
@@ -895,7 +884,7 @@ tempPost =
     En trappa upp till ytan. Den mynnar ut i det fria under ett träds rötter. Människostora varelser kan krypa igenom, men för att röja en större passage krävs yxor och tid.
     Lärdomar: dungar har öglor och genvägar. Monster har ekologier.
     42: Cylinderrum
-    En roterande stencylinder med ett uthugget stycke stort nog för två personer (föreställ er en tillbucklad tunna). Vrid den moturs för att aktivera en fälla med stötande spjut (1~t~6 skada per person och rond tills de är roterade till säkerhet). Vrid den medurs för att blotta en avgudabild av sten med två gyllene skålar värda 10 ~gm~ styck. Vrid ett halvt varv för att nå 47: Vättegytter.
+    En roterande stencylinder med ett uthugget stycke stort nog för två personer (föreställ er en tillbucklad tunna). Vrid den moturs för att aktivera en fälla med stötande spjut (1~t~6 skada per person och rond tills de är roterade till säkerhet). Vrid den medurs för att blotta en avgudabild av sten med två gyllene skålar värda 100_sm styck. Vrid ett halvt varv för att nå 47: Vättegytter.
     Lärdomar: vissa fällor följer mönster. Speja framåt.
 
     43: Xiximanters förrum
@@ -906,16 +895,16 @@ tempPost =
 rest =
     """
     44: Ingrediensförråd
-    Tunnor med urgamla örter och pulver står bredvid fat med syra och unket vatten. En kolv innehåller pulvriserad saffran (till ett värde av 200 ~gm~), medan en pytteliten flaska rymmer 1T10 frön från en nu utrotad växt (värd 30 ~gm~ styck för en samlare eller driftig bonde). Xiximanter kommer inte byta bort dessa om inte han kan få ännu mer sällsynta eller värdefulla ingredienser från sällskapet. Inget de hittar i kata-komb-er-na lär kittla hans intresse. Det är också här Xiximanter förvarar sina offer. Sex fånghålor med mässingslock, som vintankar nedsänkta i golvet, är utspridda i rummet. Schakten innhåller för närvarande 1T10 eländiga Svampvättar (1 KP, Moral 7, Attack 1~t~6 [Svärd eller Tänder]) nedstuvade i samma schakt.
+    Tunnor med urgamla örter och pulver står bredvid fat med syra och unket vatten. En kolv innehåller pulvriserad saffran (till ett värde av 2000_sm), medan en pytteliten flaska rymmer 1T10 frön från en nu utrotad växt (värd 300_sm styck för en samlare eller driftig bonde). Xiximanter kommer inte byta bort dessa om inte han kan få ännu mer sällsynta eller värdefulla ingredienser från sällskapet. Inget de hittar i kata-komb-er-na lär kittla hans intresse. Det är också här Xiximanter förvarar sina offer. Sex fånghålor med mässingslock, som vintankar nedsänkta i golvet, är utspridda i rummet. Schakten innhåller för närvarande 1T10 eländiga Svampvättar (1 KP, Moral 7, Attack 1~t~6 [Svärd eller Tänder]) nedstuvade i samma schakt.
     45: Elixirlaboratorium
-    Alkemiska kolvar, dammiga verktyg och glänsande hyllor fulla av vackra flaskor står utefter väggarna. Rollpersonerna kommer inte tillåtas komma förbi förrummet såvida de inte går med på att bli Xiximanters lärjungar (eller offer). Hans mest kraftfulla elixir tar årtionden att brygga. Han kan tänka sig byta dekokter mot levande varelser, besvärjelser, sällsynta ingredienser och lärjungar. Han tar inte emot mynt eller skatter. Om sällskapet öppet bär föremål plundrade från kata-komb-er-na kommer han bli misstänksam och försöka förgifta, fånga eller manipulera dem. Förrutom en samling slumpmässiga trollbrygder (10+1T10 stycken), rymmer hans hyllor alltid:
+    Alkemiska kolvar, dammiga verktyg och glänsande hyllor fulla av vackra flaskor står utefter väggarna. Rollpersonerna kommer inte tillåtas komma förbi förrummet såvida de inte går med på att bli Xiximanters lärjungar (eller offer). Hans mest kraftfulla elixir tar årtionden att brygga. Han kan tänka sig byta dekokter mot levande varelser, besvärjelser, sällsynta ingredienser och lärjungar. Han tar inte emot mynt eller skatter. Om sällskapet öppet bär föremål plundrade från kata-komb-er-na kommer han bli misstänksam och försöka förgifta, fånga eller manipulera dem. Förrutom en samling slumpmässiga trollbrygder (10_+_1~t10~ stycken), rymmer hans hyllor alltid:
     2 besvärjelsemutationsbrygder
-    1 dryck för blygsam odödlighet (förlänger naturliga livslängden med 20+1T100 år)
+    1 dryck för blygsam odödlighet (förlänger naturliga livslängden med 20_+_1~T100~_år)
     1 oförnimbart gift (smakar som en slumpmässig dekokt, men dödar (inget Fysikslag) på 1 minut.
     2 helande drycker
     Lärdomar: använd diplomati. Vissa fiender kan resoneras med. Du kan bedriva handel i ett grottkomplex. Du kan förråda dina vänner.
     46: Tronrum
-    Den stora porten i änden av Basilisksalen är tillverkad av omslingrade stenormar. En orm saknas. Den kan hittas i 32: Åkallelserum. Om den sätts tillbaka, slingrar sig porten upp och blottlägger ett rum av röd sten, guld och speglar. De 8 handflatestora speglarna på trästativ är värda 10 ~gm~ styck om de säljs i en större stad. Tronen är värd 250 ~gm~, men att lyfta den kräver minst 3 personer. Den som sätter sig på den måste lyckas med ett Viljestyrkeslag eller åtrå landområden och erövring.
+    Den stora porten i änden av Basilisksalen är tillverkad av omslingrade stenormar. En orm saknas. Den kan hittas i 32: Åkallelserum. Om den sätts tillbaka, slingrar sig porten upp och blottlägger ett rum av röd sten, guld och speglar. De 8 handflatestora speglarna på trästativ är värda 100_sm styck om de säljs i en större stad. Tronen är värd 2500_sm, men att lyfta den kräver minst 3 personer. Den som sätter sig på den måste lyckas med ett Viljestyrkeslag eller åtrå landområden och erövring.
 
     Xiximanter har en lönngång från tronrummet till sitt tillhåll, men han har inte använt den på årtionden. Lönndörren i tronrummet är dold bakom en rutten väggbonad. Ingången på Xiximanters sida är bakom några lådor. Passagen är tjock med damm. Om roll-person-er-na använder den kommer Xiximander bli förvånad och möjligen rasande om de inte kommer på en rimlig ursäkt.
     Lärdomar: alla lönngångar är inte säkra. Rum i dungar är sammanlänkade. Det finns berg av skatter.
@@ -932,7 +921,7 @@ rest =
     Vättarnas tronrum. För det mesta rymmer det här rummet 1~t~6 (exploderar på 6) Svampvättar som äter fladdermöss, slåss eller tillber deras nuvarande kung. Om de inte nyligen har hittat en levande varelse att kröna, gör de en avgudabild av pinnar och lera. Vättekronan är tillverkad av böjda bestick och kvistar. De har haft en riktig krona, men tappat bort den.
     Lärdomar: använd diplomati och taktik. Vättarna kommer kringränna er och hugga er i mörkret.
     50: Vättarnas odlingar
-    Vättarna planterar allt möjligt här för att se om det växer. Sjukliga växter ruttnar i mörkret, tillsammans med begravda fingrar, vapen och guld. Muddring av detta rum uppenbarar 2T10 ~gm~, en rubin värd 30 ~gm~ och Ormkonungarnas Krona. Bara materialen kronan är tillverkad av har ett värde av 300 ~gm~. Den är gjord av 8 små ihopslingrade ormar av guld och platina, med smaragdögon och diamantänder. Kronan är även magisk. Någon som bär den som inte är en ormman måste slå mot rädsla. Om de misslyckas spenderar de nästa timme med att babbla och hoa i ren skräck. Om tre på varandra följande timmar spenderas i detta tillstånd, är effekten permanent. Kronan kan avlägsnas av en annan person. Om de lyckas med räddningsslaget händer ingenting. Garvade förgiftare eller trollkarlar kanske känner igen de blå svamparna här som grottgurkor, som kan bota förstening om de skivas och gnids på huden. Personen kommer att återhämta sig inom 1~t~6 dagar.
+    Vättarna planterar allt möjligt här för att se om det växer. Sjukliga växter ruttnar i mörkret, tillsammans med begravda fingrar, vapen och guld. Muddring av detta rum uppenbarar 2T10_**_10_sm, en rubin värd 300_sm och Ormkonungarnas Krona. Bara materialen kronan är tillverkad av har ett värde av 3000_sm. Den är gjord av 8 små ihopslingrade ormar av guld och platina, med smaragdögon och diamantänder. Kronan är även magisk. Någon som bär den som inte är en ormman måste slå mot rädsla. Om de misslyckas spenderar de nästa timme med att babbla och hoa i ren skräck. Om tre på varandra följande timmar spenderas i detta tillstånd, är effekten permanent. Kronan kan avlägsnas av en annan person. Om de lyckas med räddningsslaget händer ingenting. Garvade förgiftare eller trollkarlar kanske känner igen de blå svamparna här som grottgurkor, som kan bota förstening om de skivas och gnids på huden. Personen kommer att återhämta sig inom 1~t~6 dagar.
     Lärdomar: Titta efter skatter på märkliga ställen. Vättar är usla bönder.
     51: Vättarnas rabalderrum
     Detta rum tjänar inget särskilt syfte för vättarna, men vid godtycklig tidpunkt kommer 1~t~6 (exploderande på 6) Svampvättar (sida 12) vara närvarande på natten och 3~t~6 + 10 (exploderar på en 6) på dagen. Vättarna kommer sova i bägge fallen, men kommer att vakna 2 rundor efter att roll-person-er-na har gjort betydande oväsen i något intilliggande rum. De är nästan osynliga i skräpet. 
