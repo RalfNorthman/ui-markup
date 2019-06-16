@@ -40,6 +40,34 @@ smallCaps =
     googleFont "Cormorant SC" "400,700"
 
 
+backgroundColor =
+    lonelier
+
+
+titleColor =
+    asker
+
+
+mainTextColor =
+    areWe
+
+
+headerColor =
+    lonelyBird
+
+
+subHeaderColor =
+    asker
+
+
+lessonColor =
+    goldEmbossing
+
+
+creditsColor =
+    shantBe
+
+
 
 ---- Scale ----
 
@@ -101,6 +129,14 @@ grey y =
     rgb x x x
 
 
+zeroPad =
+    { left = 0, right = 0, top = 0, bottom = 0 }
+
+
+
+---- Caligraphy ----
+
+
 manillaFolder =
     rgb255 254 241 224
 
@@ -117,8 +153,40 @@ goldEmbossing =
     rgb255 164 127 26
 
 
-zeroPad =
-    { left = 0, right = 0, top = 0, bottom = 0 }
+
+---- Lonely Paper Pushing ----
+
+
+lonely =
+    rgb255 242 237 208
+
+
+lonelier =
+    rgb255 252 247 218
+
+
+ask =
+    rgb255 205 223 180
+
+
+asker =
+    rgb255 145 163 120
+
+
+shantBe =
+    rgb255 167 163 115
+
+
+lonelyBird =
+    rgb255 106 91 84
+
+
+areYou =
+    rgb255 59 70 70
+
+
+areWe =
+    rgb255 84 105 105
 
 
 
@@ -129,6 +197,7 @@ titleStyle =
     [ Font.bold
     , Font.size xxl
     , Font.letterSpacing <| -(scaleFloat -4)
+    , Font.color titleColor
     , Font.center
     , width fill
     , spacing medium
@@ -142,7 +211,7 @@ titleStyle =
 
 creditsStyle =
     [ Font.light
-    , Font.color <| grey 0.5
+    , Font.color creditsColor
     , Font.size large
     , Font.letterSpacing <| -(scaleFloat -5)
     , Font.center
@@ -158,7 +227,7 @@ creditsStyle =
 headerStyle =
     [ smallCaps
     , myWidth
-    , Font.color <| grey 0.2
+    , Font.color headerColor
     , centerX
     , Font.size xl
     , paddingEach
@@ -172,7 +241,7 @@ headerStyle =
 subHeaderStyle =
     [ Font.bold
     , smallCaps
-    , Font.color <| grey 0.4
+    , Font.color subHeaderColor
     , myWidth
     , centerX
     , paddingEach
@@ -186,7 +255,7 @@ subHeaderStyle =
 
 lessonStyle =
     [ Font.light
-    , Font.color <| grey 0.5
+    , Font.color lessonColor
     , myWidth
     , centerX
     , paddingEach { zeroPad | bottom = xxs }
@@ -449,9 +518,9 @@ main =
             layout
                 [ bookType
                 , Font.size medium
-                , Font.color <| grey 0
+                , Font.color mainTextColor
                 , Font.alignLeft
-                , Background.color <| grey 0.9
+                , Background.color backgroundColor
                 , padding large
                 , width fill
                 ]
