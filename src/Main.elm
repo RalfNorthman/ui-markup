@@ -41,15 +41,15 @@ smallCaps =
 
 
 backgroundColor =
-    lonelier
+    loneliest
 
 
 titleColor =
-    asker
+    askerDarkerGreyer
 
 
 mainTextColor =
-    areWe
+    lonelyBird
 
 
 headerColor =
@@ -57,15 +57,15 @@ headerColor =
 
 
 subHeaderColor =
-    asker
+    askerDarkerGreyer
 
 
 lessonColor =
-    goldEmbossing
+    shantGoldGreyer
 
 
 creditsColor =
-    shantBe
+    shantGoldGreyerDarker
 
 
 
@@ -165,6 +165,10 @@ lonelier =
     rgb255 252 247 218
 
 
+loneliest =
+    rgb255 255 252 235
+
+
 ask =
     rgb255 205 223 180
 
@@ -173,8 +177,40 @@ asker =
     rgb255 145 163 120
 
 
+askerGreyer =
+    rgb255 145 158 125
+
+
+askerDark =
+    rgb255 125 143 100
+
+
+askerDarkGreyer =
+    rgb255 125 138 105
+
+
+askerDarker =
+    rgb255 105 123 80
+
+
+askerDarkerGreyer =
+    rgb255 105 118 85
+
+
 shantBe =
     rgb255 167 163 115
+
+
+shantGold =
+    rgb255 166 145 70
+
+
+shantGoldGreyer =
+    rgb255 160 145 76
+
+
+shantGoldGreyerDarker =
+    rgb255 140 125 56
 
 
 lonelyBird =
@@ -198,6 +234,11 @@ titleStyle =
     , Font.size xxl
     , Font.letterSpacing <| -(scaleFloat -4)
     , Font.color titleColor
+    , Font.shadow
+        { offset = ( 1, 1 )
+        , blur = 1
+        , color = mainTextColor
+        }
     , Font.center
     , width fill
     , spacing medium
@@ -610,8 +651,8 @@ ___Genom att inte hålla med så lär du dig i alla fall något om dina egna pre
     Exempel på modifikationer:
 
 |> List
-    -- Om du tycker att diplomati är ett nödvändigt element: placera en hjälpsam, men feg vätte som heter Smä i *7:<>Falskt<>tempel*. 
-    -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara Nivå_3.
+    -- Om du tycker att diplomati är ett nödvändigt element: placera en hjälpsam, men feg vätte som heter /Smä/ i *7:<>Falskt<>tempel*. 
+    -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara nivå_3.
     -- Om du inte gillar ormar: byt ut dem mot getter.
     -- Lägg till troper från folksägner.
     -- Lägg till dina favorit-fällor eller ta bort fällorna helt.
@@ -627,7 +668,7 @@ ___Skadeangivelserna är skalade efter roll-person-er som har 4 till 16 kroppspo
 
 ___En grupp roll-person-er av mellanrang spelade av er-far-na spel-are kan till-int-et-göra den här grott-komp-lex-et på rekordtid. De kan ändå ha kul. En grupp roll-person-er av låg rang spelade av nybörjarspelare kommer för-hopp-nings-vis ha jätteroligt.
 
-___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan det ta mellan 12 och 24 timmar spel-tid att full-ständ-igt utforska grott-komp-lex-et. På ett för-sta spelmöte som involverar rollpersonsskapande bör sällskapet kunna ut-forsk-a Nivå_1 helt.
+___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan det ta mellan 12 och 24 timmar spel-tid att full-ständ-igt utforska grott-komp-lex-et. På ett för-sta spelmöte som involverar rollpersonsskapande bör sällskapet kunna ut-forsk-a nivå_1 helt.
 
 |> SubHeader
     Innan du börjar:
@@ -655,7 +696,7 @@ Här är några sätt att locka roll-person-er-na till grott-komp-lex-et, givet 
 |> SubHeader
     Lärdomar
 
-Alltigenom texten finns små avsnitt med ljusgrå brödtext ut-spridda; dessa signalerar lärdomar: Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en an-vänd-bar läxa. Några är all-männa lär-dom-ar, medan andra är spe-ci-fi-ka för den här grott-komp-lex-et. Grottkomplexets struk-tur, be-skaff-en-het och faror bör sakta bli för-ut-säg-bara och möjliga att utnyttja. Dessa lär-dom-ar kan te sig triviala för en er-far-en spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
+Alltigenom texten finns små avsnitt med ljusare brödtext ut-spridda; dessa signalerar lärdomar: Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en an-vänd-bar läxa. Några är all-männa lär-dom-ar, medan andra är spe-ci-fi-ka för den här grott-komp-lex-et. Grottkomplexets struk-tur, be-skaff-en-het och faror bör sakta bli för-ut-säg-bara och möjliga att utnyttja. Dessa lär-dom-ar kan te sig triviala för en er-far-en spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
 
 |> Header
     Struktur
@@ -670,12 +711,12 @@ Introducerar grunderna i utforming av grottkomplex och ut-forsk-ning av sju rum.
 |> SubHeader
     Nivå_2: Den övre kryptan
 
-Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg fram-åt, men sidorummen är frestande. Det är i den här sek-tion-en som lärdomarna från Nivå_1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möj-lig-en behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
+Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg fram-åt, men sidorummen är frestande. Det är i den här sek-tion-en som lärdomarna från nivå_1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möj-lig-en behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
 
 |> SubHeader
     Nivå_3: De lägre kryptorna
 
-Det finns två horisontella och tre vertikala huvudleder. Grott-komp-lex-et förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är bet-yd-ligt far-lig-are än de före-gåen-de. Dip-lo-ma-ti och han-del blir också aktu-ellt, liksom ströv-ande väsen. Du kan ut-forska Nivå_1 och 2 i lugn och ro, men spen-der-ar du för mycket tid på Nivå_3 tar du en all-var-lig risk. 
+Det finns två horisontella och tre vertikala huvudleder. Grott-komp-lex-et förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är bet-yd-ligt far-lig-are än de före-gåen-de. Dip-lo-ma-ti och han-del blir också aktu-ellt, liksom ströv-ande väsen. Du kan ut-forska nivå_1 och 2 i lugn och ro, men spen-der-ar du för mycket tid på nivå_3 tar du en all-var-lig risk. 
 
 ___Nivå_3 är öppen. Du kan lägga till material för att utöka grott-komp-lex-et så långt du vill. I det här läget, om du är en ny spel-ledare eller ovan med ~osr~//-spel, bör du vara redo att skriva ditt eget material.
 
@@ -874,7 +915,7 @@ Den här kryptan är delvis ihoprasad; takets block har störtat in. Om roll-per
 |> SubHeader
     14: Franbinzars krypta
 
-Det här rummet är primitivare än de andra och har enklare målningar och ornament. Det rymmer en stor stenkista med de dåligt mumifierade kvarlevorna av /Franbinzar/, fästets sista makthavare. Mumifieringen gick inte alls bra. Kvarlevorna räknas som en ~Svart Sörja~:
+Det här rummet är primitivare än de andra och har enklare målningar och ornament. Det rymmer en stor stenkista med de dåligt mumifierade kvarlevorna av /Franbinzar/, fästets sista makthavare. Mumifieringen gick inte alls bra; kvarlevorna räknas som en ~Svart Sörja~:
 
 ~ff_3, f_12, st_5, m_12, a_#~: frätande pseudopod (~1t6_sp~).
 
@@ -908,9 +949,9 @@ Det här rummet är tomt, sånär som på några kasserade verk-tyg för stenarb
     En del rum är tomma.
 
 |> SubHeader
-    17: Lerkrigarnas rum
+    17: Keramikkrigarnas rum
 
-En samling av arton lerstatyer föreställande ormfolkskrigare i naturlig storlek i tre rader med sex i varje. Deras svärd är sön-der-rost-ade till obruk-bar-het. Varje staty är ihålig, men in-ne-hål-ler inte någonting. Statyn längst bort i det södra hör-net står ov-an-på en hemlig gång vilken leder till *38: Basilisksalen*.
+En samling av arton keramikstatyer föreställande orm-folks-krig-are i naturlig storlek i tre rader med sex i varje. Der-as svärd är sön-der-rost-ade till obruk-bar-het. Varje staty är i-hål-ig, men in-ne-hål-ler ingenting. Statyn längst bort i det södra hör-net står ov-an-på en hemlig gång vilken leder till *38:<>Basilisksalen*.
 
 |> Lesson
     Vissa rum ser mer hotfulla ut än de är. Titta under statyer för gömda passager.
@@ -923,17 +964,20 @@ ___Det tredje trappsteget ovanifrån är gillrad med en fälla. Om det läggs n�
 
 |> Lesson
     Kolla golvet. Fällor kan flytta er, inte bara ge skada.
+
+|> SubHeader
+    19: Granitväktarens arena
+
+Det här är ett stort arenaliknande rum (identiskt med *11: Kryptatrium* i storlek och form) helt täckt med sköldar från stammar besegrade av ormfolket. Några av sköldarna har rutt-nat sönder, men minst 5 är fortfarande i användbart skick. Om de skrapas och tas isär är silvertråden i dem värd 20_sm.
+
+___Precis i mitten av rummet står ~Granitväktaren~. Den angriper så fort den får syn på en rollperson.
 """
 
 
 tempPost =
     """
-    19: Granitväktarens arena
-    Det här är ett stort arenaliknande rum (identiskt med 11: Kryptatrium i storlek och form) helt täckt med sköldar från stammar besegrade av ormfolket. Några av sköldarna har ruttnat sönder, men minst 5 är fortfarande i användbart skick. Om de skrapas och tas isär är silvertråden i dem värd 20_sm.
-
-    Precis i mitten av rummet står Granitväktaren (se sida 11). Den angriper så fort den får syn på en rollperson.
     20: Avgrund och avsats
-    En smal avsats längs en bottenlös avgrund. Avsatsen tynar bort in i berget mot norr och leder till resten av kata-komb-er-na till söder. Avsatsen är 3 meter bred och en aning hal: springa eller  hoppa kräver ett tämligen lätt räddningskast. Avgrunden är 18m bred och motstående sida syns inte såvida inte sällskapet använder eldpilar eller en mycket kraftfull ljuskälla. Om sällskapet retar upp svampvättarna så kommer det här vara platsen där de helst ligger i bakhåll. Vättarna är klibbiga och kan ignorera att stengolvet är halt.
+    En smal avsats längs en bottenlös avgrund. Avsatsen tynar bort in i berget mot norr och leder till resten av kata-komb-er-na till söder. Avsatsen är 3 meter bred och en aning hal: springa eller hoppa kräver ett tämligen lätt räddningskast. Avgrunden är 18m bred och motstående sida syns inte såvida inte sällskapet använder eldpilar eller en mycket kraftfull ljuskälla. Om sällskapet retar upp svampvättarna så kommer det här vara platsen där de helst ligger i bakhåll. Vättarna är klibbiga och kan ignorera att stengolvet är halt.
 
     Som spel-ledare är avgrunden din att forma och utöka. Du kan lägga till trappor som leder ner till andra nivåer. Du kan lägga till en bro, precis efter 21: Grottkoraller till en slutstrid på andra sidan, med 29: Skattkammare som ett sätt att komma runt korallerna. Du kan till och med använda Veins of the Earth för att generera ett helt grottsystem. Valet är ditt.
     Lärdomar: välj era strider noga.
@@ -972,7 +1016,7 @@ tempPost =
     24: Korridor
     En lång och smal korridor som lutar nedåt mot söder. Rymmer 1 Skelettsylta (Nivå 1, Moral 12, Attack 1T4 [Slag] som rör sig mot oväsen.
     Strövande Väsen
-    Kolla varje halvtimme på Nivå_3 eller närhelst roll-person-er-na gör mycket oväsen. Slå 1T8:
+    Kolla varje halvtimme på nivå_3 eller närhelst roll-person-er-na gör mycket oväsen. Slå 1T8:
     Förebud om basilisken. Rasslandet av en kedja som kastas av och an, dragen genom sten och damm.
     Förebud om sylta. Vått slaskande på avstånd.
     Förebud om vättarna. Tjatter, till hälften fnitter, hälften tandgnissel och slickande om läppar. Glittret av röda ögon i fjärran. En pust av svampröta.
@@ -1036,7 +1080,7 @@ tempPost =
     Basilisken (sida 14) lurar i mörkret. En tjock järnkätting kedjar fast den med taket. Den kan inte lämna salen.
     Lärdomar: vissa monster har okonventionella attacker. Använd lagarbete för att besegra en varelse eller kringgå den helt. Lyssna efter hot.
     39: Lönngång
-    En dold passage vilken leder från 17: Lerkrigarnas rum till 38: Basilisksal. Dörren på salens sida var omärkbar i sitt originalskick, men med tiden har mosaikplattor fallit bort, vilket nu röjer dörrens konturer.
+    En dold passage vilken leder från 17: Keramikkrigarnas rum till 38: Basilisksal. Dörren på salens sida var omärkbar i sitt originalskick, men med tiden har mosaikplattor fallit bort, vilket nu röjer dörrens konturer.
     Lärdomar: dungar har öglor och genvägar.
     40: Lönngång
     Den här passagen är dold bakom en annan lönndörr och den här är oskadd och svår att hitta. Den är på precis motsatt sida av Basiliskens sal från 39: Lönngång och i samma stil, så slipade spelare kommer snabbt lokalisera den. Även om väggarna är släta och gedigna, så stinker luften och golvet är tjockt av vättars sörja.
