@@ -626,7 +626,7 @@ När du först startar /Super Mario Bros/ så ger inte spelet dig några instruk
 
 ___Alla kan namnge ett klassisk grotta – /Tomb of Horrors/, /Barrier Peaks/, /The Temple of Elemental Evil/ – men för att dessa mod-ul-er ska vara förståeliga behöver det finnas en slags intro-duk-tion. /Tomb of Horrors/ och /Death Frost Doom/ är båda reak-tion-er på någon-ting, men vad de är reak-tion-er på finns inte riktigt som utgiven produkt.
 
-___Det är som om alla moduler vi har är Bach//-konserter. Människor skriver verk vilka besitter häpnadsväckande genial-itet, men någon måste skriva en bok om hur man spelar piano.
+___Det är som om alla moduler vi har är Bach//-konserter. Män-ni-skor skriver verk vilka besitter häpnadsväckande genial-itet, men någon måste skriva en bok om hur man spelar piano.
 
 ___Det här grottkomplexet är designat för att vara klass-iskt, men utan att vara fullt av åter-blickar och nost-al-gi. Det har några -- men inte alla -- av de huvud-sakliga trop-erna. Det har också design-kommentarer. 
 
@@ -652,7 +652,7 @@ ___Genom att inte hålla med så lär du dig i alla fall något om dina egna pre
 
 |> List
     -- Om du tycker att diplomati är ett nödvändigt element: placera en hjälpsam, men feg vätte som heter /Smä/ i *7:<>Falskt<>tempel*. 
-    -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till Strövande Väsen till alla nivåer i grott-komp-lexet, inte bara nivå_3.
+    -- Om du tycker att tidspress och en känsla av hotande fara är viktigt: lägg till /strövande väsen/ till alla nivåer i grott-komp-lexet, inte bara nivå_3.
     -- Om du inte gillar ormar: byt ut dem mot getter.
     -- Lägg till troper från folksägner.
     -- Lägg till dina favorit-fällor eller ta bort fällorna helt.
@@ -748,11 +748,11 @@ Representerar det okända och den förundran den medför. Det skulle kunna finna
 ___Beskriv avgrunden med ord som /bottenlös/ och /oro-ande/; ut-tryck såsom /tysta, rastlösa ljud om ni är tålmodiga/ och /det är som om världen bara faller bort/. Rollpersonerna bör inte vilja stanna någon längre tid i avgrundens närhet.
 
 |> SubHeader
-    Vättegyttret
+    Vättegrytet
 
 Representerar en spegel av roll-person-er-na. De lever i smuts, de återuppstår och gör samma misstag. De är hung-riga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Vätte-gytt-ret är ett intrång av livs-kraftig och hög-ljudd barb-ar-ism in i en kall och utdöende civilisation.
 
-___Beskriv gyttret med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och /Orm-kon-ung-arnas Kata-komb-er/ har inga fria bad. Pytte-små röda vätte-ögon glöder i mörkret. Klapp-ran-de tänder och skar-pa kniv-ar vänt-ar i mörk-ret.
+___Beskriv grytet med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och /Orm-kon-ung-arnas Kata-komb-er/ har inga fria bad. Pytte-små röda vätte-ögon glöder i mörkret. Klapp-ran-de tänder och skar-pa kniv-ar vänt-ar i mörk-ret.
 
 
 |> Header
@@ -957,10 +957,10 @@ En samling av arton keramikstatyer föreställande orm-folks-krig-are i naturlig
     Vissa rum ser mer hotfulla ut än de är. Titta under statyer för gömda passager.
 
 |> SubHeader
-    18: Trappor
-Den här passagen värnas av en väldigt ornamenterad port, ut-sirad med bilder av ormar som regnar ner från himlen. Trap-p-or leder ner i mörkret. Ett svagt vinddrag kan kännas här.
+    18: Trappa
+Den här passagen värnas av en väldigt ornamenterad port, ut-sirad med bilder av ormar som regnar ner från himlen. Trapp-steg leder ner i mörkret. En kall, svag bris blåser nedifrån.
 
-___Det tredje trappsteget ovanifrån är gillrad med en fälla. Om det läggs någon tyngd på det, kommer trappstegen vikas ner och bli en slät stenramp. Spetsar fälls ut ur golvet vid rampens botten när fällan löser ut. En roll-person som glider ner tar ~t~6 i skada (lyckas med smidighetsslag för hälften). Fällan åter-aktiveras efter 5 rundor.
+___Det tredje trappsteget ovanifrån är aningen löst och har lämnat mycket svaga repor efter sig på väggen. Om det läggs någon tyngd på det kommer trappstegen vikas ner och bli en slät stenramp. Spetsar fälls ut ur golvet vid rampens botten när fällan löser ut. En roll-person som glider ner tar ~t~6 i skada (lyckas med smidighetsslag för hälften). Fällan åter-aktiveras efter 5 rundor.
 
 |> Lesson
     Kolla golvet. Fällor kan flytta er, inte bara ge skada.
@@ -968,9 +968,9 @@ ___Det tredje trappsteget ovanifrån är gillrad med en fälla. Om det läggs n�
 |> SubHeader
     19: Granitväktarens arena
 
-Det här är ett stort arenaliknande rum (identiskt med *11: Kryptatrium* i storlek och form) helt täckt med sköldar från stammar besegrade av ormfolket. Några av sköldarna har rutt-nat sönder, men minst 5 är fortfarande i användbart skick. Om de skrapas och tas isär är silvertråden i dem värd 20_sm.
+Det här är ett stort arenaliknande rum (identiskt med *11: Krypt//-atrium* i storlek och form) helt täckt med sköldar från stammar besegrade av ormfolket. De flesta av sköldarna har rutt-nat sönder, men fem är fortfarande i användbart skick. Om de med stor möda skrapas och tas isär uppgår silvertråden och bladguldet från dem till ett totalt värde av 20_sm.
 
-___Precis i mitten av rummet står ~Granitväktaren~. Den angriper så fort den får syn på en rollperson.
+___Precis i mitten av rummet står ~Granitväktaren~. Den angriper så fort den får syn på en rollperson. Den får inte plats i trappan.
 """
 
 
@@ -993,10 +993,10 @@ tempPost =
     Kvadersten med bättre mosaik. Luften är varm och syrefattig och blir sämre när ni närmar er 30: Offergrop.
     Xiximanters tillhåll (43--46)
     Fint huggen sten täckt av damm och spindelnät. Purpurfärgat ljus och bubblande alkemiska kolvar. Glittret av glas och slamret av ben.
-    Vättegyttret (47--52)
+    Vättegrytet (47--52)
     Grävd genom sammanstörtade tunnlar och rum eller genom naturliga grottor. Smutsigt. Golvet är tjockt av träck, skalbaggar och förruttnelse. Ni kan inte höra om tjattret kommer från skalbaggar eller vättar.
 
-    Den här nivån innehåller även Strövande Väsen. De dras till ljud, ljus och värme. De börjar förflyttar sig tilll de övre lagren av grott-komp-lex-et först när Granitväktaren blivit besegrad.
+    Den här nivån innehåller även /strövande väsen/. De dras till ljud, ljus och värme. De börjar förflyttar sig tilll de övre lagren av grott-komp-lex-et först när Granitväktaren blivit besegrad.
 
 
 
@@ -1088,7 +1088,7 @@ tempPost =
     En trappa upp till ytan. Den mynnar ut i det fria under ett träds rötter. Människostora varelser kan krypa igenom, men för att röja en större passage krävs yxor och tid.
     Lärdomar: dungar har öglor och genvägar. Monster har ekologier.
     42: Cylinderrum
-    En roterande stencylinder med ett uthugget stycke stort nog för två personer (föreställ er en tillbucklad tunna). Vrid den moturs för att aktivera en fälla med stötande spjut (1~t~6 skada per person och rond tills de är roterade till säkerhet). Vrid den medurs för att blotta en avgudabild av sten med två gyllene skålar värda 100_sm styck. Vrid ett halvt varv för att nå 47: Vättegytter.
+    En roterande stencylinder med ett uthugget stycke stort nog för två personer (föreställ er en tillbucklad tunna). Vrid den moturs för att aktivera en fälla med stötande spjut (1~t~6 skada per person och rond tills de är roterade till säkerhet). Vrid den medurs för att blotta en avgudabild av sten med två gyllene skålar värda 100_sm styck. Vrid ett halvt varv för att nå 47: Vättegryt.
     Lärdomar: vissa fällor följer mönster. Speja framåt.
 
     43: Xiximanters förrum
@@ -1112,8 +1112,8 @@ rest =
 
     Xiximanter har en lönngång från tronrummet till sitt tillhåll, men han har inte använt den på årtionden. Lönndörren i tronrummet är dold bakom en rutten väggbonad. Ingången på Xiximanters sida är bakom några lådor. Passagen är tjock med damm. Om roll-person-er-na använder den kommer Xiximander bli förvånad och möjligen rasande om de inte kommer på en rimlig ursäkt.
     Lärdomar: alla lönngångar är inte säkra. Rum i dungar är sammanlänkade. Det finns berg av skatter.
-    47: Vättegytter
-    Det här rummet är en del av Vättegyttret. Det är en låg grotta (1½m hög). Det står klart att de här rummen störtade samman för århundranden sedan och blivit urgröpta av vättarna. De använder det här rummet för till förvaring av fjädrar, trasor och byttor med flott. En grundlig genomsökning av bråten täcker en roll-person upp till halsen med träck och skalbaggsskal och får fram 2~t~6 silverknivar (värda 1sm styck) och ett tillknycklat mässingsarmband (värdelöst).
+    47: Vättegryt
+    Det här rummet är en del av Vättegrytet. Det är en låg grotta (1½m hög). Det står klart att de här rummen störtade samman för århundranden sedan och blivit urgröpta av vättarna. De använder det här rummet för till förvaring av fjädrar, trasor och byttor med flott. En grundlig genomsökning av bråten täcker en roll-person upp till halsen med träck och skalbaggsskal och får fram 2~t~6 silverknivar (värda 1sm styck) och ett tillknycklat mässingsarmband (värdelöst).
     48: Vättarnas ynglingsgrop
     Passagen in i det här rummet är bara 60 cm hög. Den rymmer vättarnas ynglingsgrop: en vedervärdig sörja av svamp, djurkadaver och uppsvällda, vätskefyllda säckar. Rollpersoner måste lyckas med ett fysikslag eller fly på grund av vämjelse. Gropen reinkarnerar döda vättarns själar och är ett av Xiximanters misslyckade odödlighetsexperiment. Det finns inga skatter här, men om inte det här rummet bränns kommer antalet vättar i grott-komp-lex-et alltid vara för många.
     Lärdomar: Det är svårt att fullständigt rensa ett grottkomplex. Eld är användbart.
@@ -1197,7 +1197,7 @@ rest =
 
     Tar halv skada från hugg och stickvapen. De rasslar och knakar; lika mordiska som obevekliga.
     Svampvättar
-    Återfinns i: Vättegyttret och som Strövande Väsen
+    Återfinns i: Vättegrytet och som /strövande väsen/
     Egenskaper: som goblins, men klibbiga
     Utseende: Bleka, förkrympta varelser med gigantiska ovala huvuden fulla med tänder och två pyttesmå röda ögon alldeles för tätt ihop. Konsistens som bakad potatis blandad med trälim.
     De har bestick som klädsel och vill ha mat.
@@ -1211,7 +1211,7 @@ rest =
 
     Svampvättarna är listiga och tålmodiga. De kan (långsamt) klättra upp för väggarna och överfalla sällskapet ovanifrån. De kommer använda spannar med vatten för att släcka facklor, rep för att snärja och grottornas existerande fällor för att stympa och isolera gruppen. Vättarna kommer också ansätta gruppens läger på natten, bita av benen på deras hästar och stjäla glänsande föremål. Såvida inte 48: Vättarnas ynglingsgrop är bränd, kommer antalet vättar i grott-komp-lex-et alltid vara för många. Svampvättarna är experiment som flytt. Även om Xiximanter inte har något emot att få tillbaka dem, är de inte honom till någon större nytta.
     Skelettsylta
-    Återfinns i: 24: Korridor och som Strövande Väsen
+    Återfinns i: 24: Korridor och som /strövande väsen/
     Egenskaper: som ett väldigt svagt skeleton som är fullständigt immunt mot skada.
     Utseende:  Ett skelett täckt med bärnstensfärgad gelé. Odödligt och närapå oförstörbart. Varje attack som normalt skulle göra 4 eller mer skada knuffar istället tillbaka det 1½ meter.
     Vill: klämma huvuden och göra fler skelettsyltor.
@@ -1221,7 +1221,7 @@ rest =
     Skada: 1~t~4, vanligtvis genom att greppa ditt huvud.
     Lösningar: Spring iväg, få Basilisken att förstena dem, putta ner dem i Avgrunden, bind fast dem, lås in dem i ett rum eller fånga dem i 25: Schaktfälla eller 37: Schaktfälla.
 
-    Det finns totalt 4 skelettsyltor i grott-komp-lex-et. Om sällskapet skulle lyckas med att fullständigt oskadliggöra alla fyra – ta då bort dem från Strövande Väsen-tabellen. Skelettsyltorna kommer så småningom kravla sig fria från schaktfällor och repknyten. Varje levande varelse som dräps av dem återuppstår som en skelettsylta inom 10 minuter – svampvättar är dock immuna mot detta.
+    Det finns totalt 4 skelettsyltor i grott-komp-lex-et. Om sällskapet skulle lyckas med att fullständigt oskadliggöra alla fyra – ta då bort dem från /strövande väsen/-tabellen. Skelettsyltorna kommer så småningom kravla sig fria från schaktfällor och repknyten. Varje levande varelse som dräps av dem återuppstår som en skelettsylta inom 10 minuter – svampvättar är dock immuna mot detta.
     Xiximanter
     Återfinns i: Xiximanters tillhåll
     Egenskaper: som en lich 
