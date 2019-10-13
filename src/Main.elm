@@ -32,12 +32,11 @@ googleFont fontName weight =
         ]
 
 
-bookType =
-    googleFont "Cormorant" "300,300i,400i,400,700,700i"
 
-
-smallCaps =
-    googleFont "Cormorant SC" "400,700"
+-- bookType =
+--    googleFont "Cormorant" "300,300i,400i,400,700,700i"
+-- smallCaps =
+--     googleFont "Cormorant SC" "400,700"
 
 
 backgroundColor =
@@ -46,6 +45,15 @@ backgroundColor =
 
 titleColor =
     askerDarkerGreyer
+
+
+darkerTitleColor =
+    rgb255 85 98 65
+
+
+
+--  rgb255 95 108 75
+--   rgb255 105 118 85
 
 
 mainTextColor =
@@ -229,32 +237,99 @@ areWe =
 ---- Styles ----
 
 
-titleStyle =
-    [ Font.bold
-    , Font.size xxl
-    , Font.letterSpacing <| -(scaleFloat -4)
+chronicle =
+    Font.family
+        [ Font.typeface "Chronicle SSm A"
+        , Font.sansSerif
+        ]
+
+
+chronicleSC =
+    Font.family
+        [ Font.typeface "Chronicle SSm SC A"
+        , Font.sansSerif
+        ]
+
+
+chronicleConfig =
+    { normal = Font.light
+    , fat = Font.medium
+    , smallCaps = Just chronicleSC
+    , nonSC = chronicle
+    }
+
+
+chronicleDisplayCondensed =
+    Font.family
+        [ Font.typeface "Chronicle Cond A"
+        , Font.sansSerif
+        ]
+
+
+chronicleDisplayCondensedConfig =
+    { normal = Font.light
+    , fat = Font.semiBold
+    , smallCaps = Nothing
+    , nonSC = chronicleDisplayCondensed
+    }
+
+
+requiemDisplay =
+    Font.family
+        [ Font.typeface "Requiem Display A"
+        , Font.serif
+        ]
+
+
+requiemConfig =
+    { normal = Font.regular
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = requiemDisplay
+    }
+
+
+knockout70 =
+    Font.family
+        [ Font.typeface "Knockout 70 A"
+        , Font.sansSerif
+        ]
+
+
+ko70Config =
+    { normal = Font.regular
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = knockout70
+    }
+
+
+knockout68 =
+    Font.family
+        [ Font.typeface "Knockout 68 A"
+        , Font.sansSerif
+        ]
+
+
+ko68Config =
+    { normal = Font.regular
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = knockout68
+    }
+
+
+titleStyle plus =
+    [ Font.size <| xxl + plus
     , Font.color titleColor
-    , Font.shadow
-        { offset = ( 1, 1 )
-        , blur = 1
-        , color = mainTextColor
-        }
     , Font.center
     , width fill
-    , spacing medium
-    , paddingEach
-        { zeroPad
-            | top = large
-            , bottom = xxl
-        }
     ]
 
 
 creditsStyle =
-    [ Font.light
-    , Font.color creditsColor
+    [ Font.color creditsColor
     , Font.size large
-    , Font.letterSpacing <| -(scaleFloat -5)
     , Font.center
     , width fill
     , spacing xs
@@ -266,8 +341,7 @@ creditsStyle =
 
 
 headerStyle =
-    [ smallCaps
-    , myWidth
+    [ myWidth
     , Font.color headerColor
     , centerX
     , Font.size xl
@@ -275,14 +349,11 @@ headerStyle =
         { zeroPad
             | top = 2 * xl
         }
-    , Font.letterSpacing <| -(scaleFloat -5)
     ]
 
 
 subHeaderStyle =
-    [ Font.bold
-    , smallCaps
-    , Font.color subHeaderColor
+    [ Font.color subHeaderColor
     , myWidth
     , centerX
     , paddingEach
@@ -290,13 +361,11 @@ subHeaderStyle =
             | top = large
         }
     , Font.size large
-    , Font.letterSpacing <| -(scaleFloat -7)
     ]
 
 
 lessonStyle =
-    [ Font.light
-    , Font.color lessonColor
+    [ Font.color lessonColor
     , myWidth
     , centerX
     , paddingEach { zeroPad | bottom = xxs }
@@ -329,6 +398,7 @@ document =
             [ subHeader
             , header
             , title
+            , title2
             , list
             , lesson
             , lessonMore
@@ -343,7 +413,7 @@ document =
                             ]
                             x
                 )
-                myText
+                myTextChronicle
             ]
         )
 
@@ -355,9 +425,17 @@ document =
 title =
     Mark.block "Title"
         (\children ->
-            paragraph titleStyle children
+            paragraph (titleStyle -2) children
         )
-        myText
+        (myText ko68Config)
+
+
+title2 =
+    Mark.block "Title2"
+        (\children ->
+            paragraph (titleStyle 7) children
+        )
+        (myText ko70Config)
 
 
 header =
@@ -365,7 +443,7 @@ header =
         (\children ->
             el [] <| paragraph headerStyle children
         )
-        myText
+        (myText requiemConfig)
 
 
 subHeader =
@@ -373,7 +451,7 @@ subHeader =
         (\children ->
             el [] <| paragraph subHeaderStyle children
         )
-        myText
+        (myText requiemConfig)
 
 
 lesson =
@@ -381,11 +459,11 @@ lesson =
         (\children ->
             el [] <|
                 column lessonStyle
-                    [ el [ smallCaps ] <| text "Lärdomar:"
+                    [ el [ chronicleSC ] <| text "Lärdomar:"
                     , paragraph [] (text "\u{2003}" :: children)
                     ]
         )
-        myText
+        myTextChronicle
 
 
 lessonMore =
@@ -393,7 +471,7 @@ lessonMore =
         (\children ->
             el [] <| paragraph lessonStyle (text "\u{2003}" :: children)
         )
-        myText
+        myTextChronicle
 
 
 credits =
@@ -401,55 +479,66 @@ credits =
         (\children ->
             el [] <| paragraph creditsStyle children
         )
-        myText
-
-
-
----- Inline
-
-
-creature =
-    Mark.annotation "creature"
-        (\styles ff ->
-            paragraph [] (List.map (applyTuple renderStyles) styles)
-        )
-        |> Mark.field "ff" Mark.string
-
-
-applyTuple fn ( one, two ) =
-    fn one two
+        (myText chronicleDisplayCondensedConfig)
 
 
 
 ---- Innermost text functions ----
 
 
-myText : Mark.Block (List (Element msg))
-myText =
+type alias FontConfig msg =
+    { normal : Attribute msg
+    , fat : Attribute msg
+    , smallCaps : Maybe (Attribute msg)
+    , nonSC : Attribute msg
+    }
+
+
+myText : FontConfig msg -> Mark.Block (List (Element msg))
+myText fontConfig =
     Mark.textWith
-        { view = renderStyles
+        { view = renderStyles fontConfig
         , replacements = myReplacements
         , inlines = []
         }
 
 
-renderStyles styles str =
+myTextChronicle =
+    myText chronicleConfig
+
+
+renderStyles fontConfig styles str =
     let
-        ifStyle : Attribute msg -> Bool -> List (Attribute msg)
-        ifStyle attr bool =
-            if bool then
-                [ attr ]
+        italicOrNo =
+            if styles.italic then
+                [ Font.italic ]
 
             else
                 []
+
+        weight =
+            if styles.bold then
+                fontConfig.fat
+
+            else
+                fontConfig.normal
+
+        smallCapsOrNo =
+            if styles.strike then
+                case fontConfig.smallCaps of
+                    Nothing ->
+                        fontConfig.nonSC
+
+                    Just sc ->
+                        sc
+
+            else
+                fontConfig.nonSC
+
+        attrs =
+            [ weight, smallCapsOrNo ] ++ italicOrNo
     in
-    el
-        (ifStyle Font.bold styles.bold
-            ++ ifStyle Font.italic styles.italic
-            ++ ifStyle smallCaps styles.strike
-        )
-    <|
-        text str
+    el attrs <| text str
 
 
 myReplacements : List Mark.Replacement
@@ -499,7 +588,7 @@ list =
         renderList
         (Mark.map
             (\x -> paragraph [] x)
-            myText
+            myTextChronicle
         )
 
 
@@ -555,10 +644,30 @@ viewErrors errors =
 
 main =
     let
+        titleAttrs font plus =
+            [ Font.size <| xxl + plus
+            , Font.color darkerTitleColor
+            , Font.center
+            , font
+            , width fill
+
+            --   , Font.shadow
+            --       { offset = ( 2, 2 )
+            --       , blur = 1
+            --       , color = mainTextColor
+            --       }
+            ]
+
+        altTitle =
+            textColumn [ centerX, spacing -32 ]
+                [ el (titleAttrs knockout68 -2) <| text "ORMKONUNGARNAS"
+                , el (titleAttrs knockout70 8) <| text "KATAKOMBER"
+                ]
+
         myLayout element =
             layout
-                [ bookType
-                , Font.size medium
+                [ Font.variant Font.ligatures
+                , Font.size (medium - 6)
                 , Font.color mainTextColor
                 , Font.alignLeft
                 , Background.color backgroundColor
@@ -566,7 +675,10 @@ main =
                 , width fill
                 ]
             <|
-                element
+                column [ centerX ]
+                    [ altTitle
+                    , element
+                    ]
     in
     case Mark.compile document source of
         Mark.Success element ->
@@ -598,8 +710,11 @@ source : String
 source =
     String.trim
         """
-|> Title
-    Ormkonungarnas Katakomber
+|> Credits
+    <>
+
+|> Credits
+    <>
 
 |> Credits
     /Text/
@@ -615,9 +730,6 @@ source =
 
 |> Credits
     *Ralf Northman*
-
-|> Credits
-    <>
 
 |> Header
     Introduktion
@@ -758,7 +870,7 @@ ___Beskriv grytet med lukter och ljud. Det stinker. Ni kommer själva stinka om 
 |> Header
     Nivå 1
 
-*-- ~Den falska kryptan*~
+-- ~Den falska kryptan~
 
 
 |> SubHeader
@@ -841,7 +953,7 @@ ___Vatten som läcker in har vittrat sönder golvet, vilk-et blottar en hemlig g
 |> Header
     Nivå 2
 
-*-- ~Den övre kryptan*~
+-- ~Den övre kryptan~
 
 
 |> SubHeader
