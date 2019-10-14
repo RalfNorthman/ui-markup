@@ -22,7 +22,7 @@ backgroundColor =
 
 
 creditsColor =
-    Palette.darkOldGold
+    Palette.oldGold
 
 
 headerColor =
@@ -38,7 +38,7 @@ subHeaderColor =
 
 
 lessonColor =
-    Palette.oldGold
+    Palette.lightOldGold
 
 
 
@@ -276,7 +276,13 @@ lesson =
         (\children ->
             el [] <|
                 column lessonStyle
-                    [ el [ chronicleSC ] <| text "Lärdomar:"
+                    [ el
+                        [ chronicleSC
+                        , Font.light
+                        , paddingEach { zeroPad | bottom = xxxs }
+                        ]
+                      <|
+                        text "Lärdomar:"
                     , paragraph [] (text "\u{2003}" :: children)
                     ]
         )

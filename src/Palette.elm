@@ -22,6 +22,10 @@ moss =
     Element.rgb255 105 118 85
 
 
+lightOldGold =
+    Element.rgb255 170 155 86
+
+
 oldGold =
     Element.rgb255 160 145 76
 
