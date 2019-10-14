@@ -8,67 +8,37 @@ import Element.Font as Font
 import Html exposing (Html)
 import Mark
 import Mark.Error
+import Palette
 import Source
+import Titles
 
 
 
----- Colors, descriptive
-
-
-palePaper =
-    rgb255 255 252 235
-
-
-moss =
-    rgb255 105 118 85
-
-
-darkMoss =
-    rgb255 85 98 65
-
-
-oldGold =
-    rgb255 160 145 76
-
-
-darkOldGold =
-    rgb255 140 125 56
-
-
-darkBrown =
-    rgb255 106 91 84
-
-
-
----- Colors, layout elements
+---- Colors ----
 
 
 backgroundColor =
-    palePaper
-
-
-titleColor =
-    darkMoss
+    Palette.palePaper
 
 
 creditsColor =
-    darkOldGold
+    Palette.darkOldGold
 
 
 headerColor =
-    darkBrown
+    Palette.darkBrown
 
 
 mainTextColor =
-    darkBrown
+    Palette.darkBrown
 
 
 subHeaderColor =
-    moss
+    Palette.moss
 
 
 lessonColor =
-    oldGold
+    Palette.oldGold
 
 
 
@@ -132,28 +102,6 @@ zeroPad =
 ---- Fonts ----
 
 
-chronicle =
-    Font.family
-        [ Font.typeface "Chronicle SSm A"
-        , Font.sansSerif
-        ]
-
-
-chronicleSC =
-    Font.family
-        [ Font.typeface "Chronicle SSm SC A"
-        , Font.sansSerif
-        ]
-
-
-chronicleConfig =
-    { normal = Font.light
-    , fat = Font.medium
-    , smallCaps = Just chronicleSC
-    , nonSC = chronicle
-    }
-
-
 chronicleDisplayCondensed =
     Font.family
         [ Font.typeface "Chronicle Cond A"
@@ -184,18 +132,26 @@ requiemConfig =
     }
 
 
-knockout70 =
+chronicle =
     Font.family
-        [ Font.typeface "Knockout 70 A"
+        [ Font.typeface "Chronicle SSm A"
         , Font.sansSerif
         ]
 
 
-knockout68 =
+chronicleSC =
     Font.family
-        [ Font.typeface "Knockout 68 A"
+        [ Font.typeface "Chronicle SSm SC A"
         , Font.sansSerif
         ]
+
+
+chronicleConfig =
+    { normal = Font.light
+    , fat = Font.medium
+    , smallCaps = Just chronicleSC
+    , nonSC = chronicle
+    }
 
 
 
@@ -245,6 +201,10 @@ lessonStyle =
     , centerX
     , paddingEach { zeroPad | bottom = xxs }
     ]
+
+
+
+---- Width ----
 
 
 widthInChars =
@@ -386,8 +346,8 @@ renderStyles fontConfig styles str =
                     Nothing ->
                         fontConfig.nonSC
 
-                    Just sc ->
-                        sc
+                    Just smallCapFont ->
+                        smallCapFont
 
             else
                 fontConfig.nonSC
@@ -501,38 +461,6 @@ viewErrors errors =
 
 main =
     let
-        titleAttrs font size =
-            [ Font.size size
-            , Font.color titleColor
-            , Font.center
-            , font
-            , width shrink
-            ]
-
-        -- Title looks good when the proportions are
-        -- width 715 px
-        -- knockout68 fontsize 134 px (135 for easier division)
-        -- knockout70 fontsize 144 px (145 for easier division)
-        -- spacing -32 px (-30 for easier division)
-        -- 143 - 27 - 29 - 6
-        altTitle x =
-            textColumn
-                [ centerX
-                , spacing (-6 * x)
-                , width <| px (143 * x)
-                ]
-                [ el (titleAttrs knockout68 (27 * x)) <|
-                    text "ORMKONUNGARNAS"
-                , el (titleAttrs knockout70 (29 * x)) <|
-                    text "KATAKOMBER"
-                ]
-
-        sizes =
-            List.range 5 15 |> List.reverse
-
-        titleList =
-            List.map altTitle sizes
-
         myLayout element =
             layout
                 [ Font.variant Font.ligatures
@@ -545,7 +473,7 @@ main =
                 ]
             <|
                 column [ centerX ] <|
-                    titleList
+                    Titles.list
                         ++ [ element ]
     in
     case Mark.compile document Source.source of
