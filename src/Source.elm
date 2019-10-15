@@ -67,7 +67,9 @@ ___Genom att inte hålla med så lär du dig i alla fall något om dina egna pre
 |> SubHeader
     Gruppstorlek och balans
 
-Den här grott-komp-lex-et är designat för första rangens roll-personer. Det engelska originalet är gjord så system-neutral som möjligt, men den här svenska versionen är anpassad till /Svärd & Svartkonst/. Du kan köra grott-komp-lex-et med en roll-person eller tio. Mötena är inte balans-erade. De har inte svår-ig-hets-nivå-er. Det finns väldigt få belön-ingar för strid och många för att genomföra en god plan.
+Den här grott-komp-lex-et är designat för första rangens roll-personer. Det engelska originalet är gjord så system-neutral som möjligt, men den här svenska versionen är anpassad till /Svärd & Svartkonst/. Du kan köra grott-komp-lex-et med en roll-person eller tio. 
+
+___Mötena är inte balans-erade. De har inte svår-ig-hets-nivå-er. Det finns väldigt få belön-ingar för strid och många för att genomföra en god plan.
 
 ___Värdet på skatterna är balanserade runt tanken att 2_000 silvermynt är tillräckligt för att en roll-person ska kunna stiga en rang. I slutet bör överlevande roll-person-er vara av andra eller tredje rangen, om vi antar vanliga nivåer av utnötning, förluster och panik. Justera värdet på skatterna därefter. Stora grupper kommer ha det lätt-are (och få mindre skatter per roll-person). En ensam roll-person som överlever kommer vara rik.
 
@@ -103,7 +105,9 @@ Här är några sätt att locka roll-person-er-na till grott-komp-lex-et, givet 
 |> SubHeader
     Lärdomar
 
-Alltigenom texten finns små avsnitt med ljusare brödtext ut-spridda; dessa signalerar lärdomar: Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en an-vänd-bar läxa. Några är all-männa lär-dom-ar, medan andra är spe-ci-fi-ka för den här grott-komp-lex-et. Grottkomplexets struk-tur, be-skaff-en-het och faror bör sakta bli för-ut-säg-bara och möjliga att utnyttja. Dessa lär-dom-ar kan te sig triviala för en er-far-en spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
+Alltigenom texten finns små avsnitt med ljusare brödtext ut-spridda; dessa signalerar lärdomar: Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en an-vänd-bar läxa. Några är all-männa lär-dom-ar, medan andra är spe-ci-fi-ka för den här grott-komp-lex-et. 
+
+___Grottkomplexets struk-tur, be-skaff-en-het och faror bör sakta bli för-ut-säg-bara och möjliga att utnyttja. Dessa lär-dom-ar kan te sig triviala för en er-far-en spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
 
 |> Header
     Struktur
@@ -113,17 +117,21 @@ Ormkonungarnas Katakomber är ett grottkomplex med tre nivå-er och fyra tematis
 |> SubHeader
     Nivå_1: Den falska kryptan
 
-Introducerar grunderna i utforming av grottkomplex och ut-forsk-ning av sju rum. Den är precis rätt storlek för ett första spel-möte, givet att skapandet av roll-person-er går nå-gor-lun-da fort och att du ger roll-person-er-na en god anledning till att utforska katakomben.
+Introducerar grunderna i design av grottkomplex och sju rum att ut-forska. Den är precis rätt storlek för ett första spel-möte, givet att skapandet av roll-person-er går nå-gor-lun-da fort och att du ger roll-person-er-na en god anledning till att utforska katakomben.
 
 |> SubHeader
     Nivå_2: Den övre kryptan
 
-Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg fram-åt, men sidorummen är frestande. Det är i den här sek-tion-en som lärdomarna från nivå_1 sätts på prov och tillämpas. Den kan ta två eller tre spelmöten att utforska och det kan möj-lig-en behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
+Fortfarande linjärt, men med fler förgrenande rum och några terrängrelaterade faror. Det finns fortfarande en klar väg fram-åt, men sidorummen är frestande. Det är i den här sek-tion-en som lärdomarna från nivå_1 sätts på prov och tillämpas. 
+
+___Den kan ta två eller tre spelmöten att utforska och det kan möj-lig-en behövas en färd till-baka till civilisationen för att fylla på förnödenheter.
 
 |> SubHeader
     Nivå_3: De lägre kryptorna
 
-Det finns två horisontella och tre vertikala huvudleder. Grott-komp-lex-et förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. Den här nivån är bet-yd-ligt far-lig-are än de före-gåen-de. Dip-lo-ma-ti och han-del blir också aktu-ellt, liksom ströv-ande väsen. Du kan ut-forska nivå_1 och 2 i lugn och ro, men spen-der-ar du för mycket tid på nivå_3 tar du en all-var-lig risk. 
+Det finns två horisontella och tre vertikala huvudleder. Grott-komp-lex-et förgrenar sig och bildar öglor. Du kan nå ytan. Du kan gå djupare. Du kan hamna där du börj-ade. 
+
+___Den här nivån är bet-yd-ligt far-lig-are än de före-gåen-de. Dip-lo-ma-ti och han-del blir också aktu-ellt, liksom ströv-ande väsen. Du kan ut-forska nivå_1 och 2 i lugn och ro, men spen-der-ar du för mycket tid på nivå_3 tar du en all-var-lig risk. 
 
 ___Nivå_3 är öppen. Du kan lägga till material för att utöka grott-komp-lex-et så långt du vill. I det här läget, om du är en ny spel-ledare eller ovan med ~osr~//-spel, bör du vara redo att skriva ditt eget material.
 
@@ -157,7 +165,7 @@ ___Beskriv avgrunden med ord som /bottenlös/ och /oro-ande/; ut-tryck såsom /t
 |> SubHeader
     Vättegrytet
 
-Representerar en spegel av roll-person-er-na. De lever i smuts, de återuppstår och gör samma misstag. De är hung-riga, dåraktiga, vidskepliga, mordiska och på något sätt sympatiska. Vätte-gytt-ret är ett intrång av livs-kraftig och hög-ljudd barb-ar-ism in i en kall och utdöende civilisation.
+Representerar en spegel av roll-person-er-na. De lever i smuts, de återuppstår och gör samma misstag. De är hung-riga, dår-akt-iga, vidskepliga, mordiska och på något sätt sympatiska. Vätte-gytt-ret är ett intrång av livs-kraftig och hög-ljudd barb-ar-ism in i en kall och utdöende civilisation.
 
 ___Beskriv grytet med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och /Orm-kon-ung-arnas Kata-komb-er/ har inga fria bad. Pytte-små röda vätte-ögon glöder i mörkret. Klapp-ran-de tänder och skar-pa kniv-ar vänt-ar i mörk-ret.
 
@@ -324,7 +332,7 @@ Den här kryptan är delvis ihoprasad; takets block har störtat in. Om roll-per
 
 Det här rummet är primitivare än de andra och har enklare målningar och ornament. Det rymmer en stor stenkista med de dåligt mumifierade kvarlevorna av /Franbinzar/, fästets sista makthavare. Mumifieringen gick inte alls bra; kvarlevorna räknas som en ~Svart Sörja~:
 
-~ff_3, f_12, st_5, m_12, a_#~: frätande pseudopod (~1t6_sp~).
+~ff_3, f_12, st_5, m_12, a_***~: frätande pseudopod (~1t6_sp~).
 
 |> List
     -- Halv skada av krossvapen.
@@ -358,7 +366,7 @@ Det här rummet är tomt, sånär som på några kasserade verk-tyg för stenarb
 |> SubHeader
     17: Keramikkrigarnas rum
 
-En samling av arton keramikstatyer föreställande orm-folks-krig-are i naturlig storlek i tre rader med sex i varje. Der-as svärd är sön-der-rost-ade till obruk-bar-het. Varje staty är i-hål-ig, men in-ne-hål-ler ingenting. Statyn längst bort i det södra hör-net står ov-an-på en hemlig gång vilken leder till *38:<>Basilisksalen*.
+En samling av arton keramikstatyer föreställande orm-folks-krig-are i naturlig storlek i tre rader med sex i varje. Der-as svärd är sön-der-rost-ade till obruk-bar-het. Varje staty är i-hål-ig, men in-ne-hål-ler ingenting. Statyn längst bort i det södra hörn-et står ov-an-på en hemlig gång som leder till *38:<>Basilisksalen*.
 
 |> Lesson
     Vissa rum ser mer hotfulla ut än de är. Titta under statyer för gömda passager.

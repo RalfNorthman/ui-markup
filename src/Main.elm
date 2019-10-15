@@ -58,6 +58,10 @@ scaleInt =
         >> round
 
 
+xxxxs =
+    scaleInt -5
+
+
 xxxs =
     scaleInt -4
 
@@ -124,11 +128,26 @@ requiemDisplay =
         ]
 
 
-requiemConfig =
+requiemDisplayConfig =
     { normal = Font.regular
     , fat = Font.regular
     , smallCaps = Nothing
     , nonSC = requiemDisplay
+    }
+
+
+requiemText =
+    Font.family
+        [ Font.typeface "Requiem Text A"
+        , Font.serif
+        ]
+
+
+requiemTextConfig =
+    { normal = Font.regular
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = requiemText
     }
 
 
@@ -190,6 +209,7 @@ subHeaderStyle =
     , paddingEach
         { zeroPad
             | top = large
+            , bottom = xxxxs
         }
     , Font.size large
     ]
@@ -260,7 +280,7 @@ header =
         (\children ->
             el [] <| paragraph headerStyle children
         )
-        (myText requiemConfig)
+        (myText requiemDisplayConfig)
 
 
 subHeader =
@@ -268,7 +288,7 @@ subHeader =
         (\children ->
             el [] <| paragraph subHeaderStyle children
         )
-        (myText requiemConfig)
+        (myText requiemTextConfig)
 
 
 lesson =
