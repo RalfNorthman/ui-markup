@@ -106,18 +106,18 @@ zeroPad =
 ---- Fonts ----
 
 
-chronicleDisplayCondensed =
+chronicleDeckCondensed =
     Font.family
-        [ Font.typeface "Chronicle Cond A"
+        [ Font.typeface "Chronicle DeckCond A"
         , Font.sansSerif
         ]
 
 
-chronicleDisplayCondensedConfig =
-    { normal = Font.light
-    , fat = Font.semiBold
+chronicleDeckCondConfig =
+    { normal = Font.regular
+    , fat = Font.bold
     , smallCaps = Nothing
-    , nonSC = chronicleDisplayCondensed
+    , nonSC = chronicleDeckCondensed
     }
 
 
@@ -179,7 +179,7 @@ chronicleConfig =
 
 creditsStyle =
     [ Font.color creditsColor
-    , Font.size large
+    , Font.size <| 2 * small
     , Font.center
     , width fill
     , spacing xs
@@ -322,7 +322,7 @@ credits =
         (\children ->
             el [] <| paragraph creditsStyle children
         )
-        (myText chronicleDisplayCondensedConfig)
+        (myText chronicleDeckCondConfig)
 
 
 
