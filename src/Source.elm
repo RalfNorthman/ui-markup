@@ -45,12 +45,12 @@ ___Det här grottkomplexet är designat för att vara klass-iskt, men utan att v
     - ~Sl~ som vill lära sig om design av äventyrsplatser.
     - Erfarna ~sl~ med erfarna spelare, men vilka är nykomlingar till ~osr~//-innehåll.
 
-Som en helt ny ~sl~ kan du ändå använda den här grott-komp-lexet och lära dig mycket från den, men den kom-mer omedel-bart pröva dina färdig-heter. Modulen kan även uppskattas av erfarna spelare.
+Som en helt ny ~sl~ kan du ändå använda det här grott-komp-lexet och lära dig mycket från den, men den kom-mer omedel-bart pröva dina färdig-heter. Modulen kan även uppskattas av erfarna spelare.
 
 |> SubHeader
     Jag håller inte med om…
 
-Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i den här grott-komp-lexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en ny-börjar-grotta. Det är bara /ett/ sätt att göra det.
+Chansen är stor att erfarna ~sl~ inte kommer hålla med om vissa lektioner, fällor eller möten i det här grott-komp-lexet. Det är helt okej! Det här är inte menat att vara en manual  över /det rätta sättet/ att köra en ny-börjar-grotta. Det är bara /ett/ sätt att göra det.
 
 ___Genom att inte hålla med så lär du dig i alla fall något om dina egna preferenser. Det är värde-full kun-skap. Att lära sig vad man inte gillar är lika värde-fullt som att lära sig vad man gillar. Kanske kan den här mod-ul-en inspirera dig att skriva din egen introduktions-grotta.
 
@@ -75,7 +75,7 @@ ___Värdet på skatterna är balanserade runt tanken att 2_000 silvermynt är ti
 
 ___Skadeangivelserna är skalade efter roll-person-er som har 4 till 16 kroppspoäng och dolkar som ger ~1t6~ i skada. Rädd-nings-kast är angivna i ~s&s~//-stil, exempel-vis: lyckas med ett fysikslag eller dö.
 
-___En grupp roll-person-er av mellanrang spelade av er-far-na spel-are kan till-int-et-göra den här grott-komp-lex-et på rekordtid. De kan ändå ha kul. En grupp roll-person-er av låg rang spelade av nybörjarspelare kommer för-hopp-nings-vis ha jätteroligt.
+___En grupp roll-person-er av mellanrang spelade av er-far-na spel-are kan till-int-et-göra det här grott-komp-lex-et på rekordtid. De kan ändå ha kul. En grupp roll-person-er av låg rang spelade av nybörjarspelare kommer för-hopp-nings-vis ha jätteroligt.
 
 ___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan det ta mellan 12 och 24 timmar spel-tid att full-ständ-igt utforska grott-komp-lex-et. På ett för-sta spelmöte som involverar rollpersonsskapande bör sällskapet kunna ut-forsk-a nivå_1 helt.
 
@@ -92,7 +92,7 @@ ___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan 
 |> SubHeader
     Locka roll-person-er-na
 
-Här är några sätt att locka roll-person-er-na till grott-komp-lex-et, givet att de startar panka och vet att kata-komb-er innehåller skatter (du kan placera den här grott-komp-lex-et var som helst):
+Här är några sätt att locka roll-person-er-na till grott-komp-lex-et, givet att de startar panka och vet att kata-komb-er innehåller skatter (du kan placera det här grott-komp-lex-et var som helst):
 
 |> List
     - De hittar en uråldrig karta till ett länge sedan bortglömt gravvalv.
@@ -105,7 +105,7 @@ Här är några sätt att locka roll-person-er-na till grott-komp-lex-et, givet 
 |> SubHeader
     Lärdomar
 
-Alltigenom texten finns små avsnitt med ljusare brödtext ut-spridda; dessa signalerar lärdomar: Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en an-vänd-bar läxa. Några är all-männa lär-dom-ar, medan andra är spe-ci-fi-ka för den här grott-komp-lex-et. 
+Alltigenom texten finns små avsnitt med ljusare brödtext ut-spridda; dessa signalerar lärdomar: Varje rum, fälla eller möte är designat för att lära nya spelare (och spel-ledare) en an-vänd-bar läxa. Några är all-männa lär-dom-ar, medan andra är spe-ci-fi-ka för det här grott-komp-lex-et. 
 
 ___Grottkomplexets struk-tur, be-skaff-en-het och faror bör sakta bli för-ut-säg-bara och möjliga att utnyttja. Dessa lär-dom-ar kan te sig triviala för en er-far-en spel-ledare, men jag tycker det är lämpligt att räkna upp dem ändå.
 
@@ -250,7 +250,7 @@ ___Vatten som läcker in har vittrat sönder golvet, vilk-et blottar en hemlig g
     Det finns /hemliga gångar/. De är associerade med /statyer/. Det här kan vara en /falsk krypta/.
 
 |> LessonMore
-    Genomgående i den här grott-komp-lex-et kommer statyer vara associerade med hemliga gångar och skatter.
+    Genomgående i det här grott-komp-lex-et kommer statyer vara associerade med hemliga gångar och skatter.
 
 
 |> Header

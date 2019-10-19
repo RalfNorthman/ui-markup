@@ -22,7 +22,7 @@ backgroundColor =
 
 
 creditsColor =
-    Palette.oldGold
+    Palette.lightOldGold
 
 
 headerColor =
@@ -496,6 +496,7 @@ main =
                 , Background.color backgroundColor
                 , padding large
                 , width fill
+                , clipX
                 ]
             <|
                 column [ centerX ] <|
