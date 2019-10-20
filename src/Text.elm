@@ -196,6 +196,9 @@ compile titleSize baseSize =
         myWidth =
             width <| px <| widthInChars * xs
 
+        myCustomWidth y =
+            width <| px <| (widthInChars - y) * xs
+
         ---- Document ----
         document : Mark.Document (Element msg)
         document =
@@ -370,7 +373,7 @@ compile titleSize baseSize =
                 [ paddingEach { zeroPad | bottom = xs }
                 ]
             <|
-                column [ myWidth, centerX ]
+                textColumn [ myWidth, centerX ]
                     (List.map (renderItem enum.icon) enum.items)
 
         renderSubList (Mark.Enumerated enum) =
@@ -397,8 +400,8 @@ compile titleSize baseSize =
 
                     Mark.Number ->
                         viewNumber index
-                , column [ width fill ]
-                    [ textColumn [] item.content
+                , column []
+                    [ textColumn [ myCustomWidth 5 ] item.content
                     , renderSubList item.children
                     ]
                 ]

@@ -83,7 +83,7 @@ ___Beroende på spelstil, sidoäventyr, avbrott och andra dist-rak-tion-er, kan 
     Innan du börjar:
 
 |> List
-    1. Läs hela modulen.
+    -- Läs hela modulen.
     -- Gör anteckningar över saker du gillar och inte gillar.
     -- Byt ut monstren till motsvarande från ditt val av system.
     -- Justera skatternas värde där det behövs.
@@ -168,6 +168,11 @@ ___Beskriv avgrunden med ord som /bottenlös/ och /oro-ande/; ut-tryck såsom /t
 Representerar en spegel av roll-person-er-na. De lever i smuts, de återuppstår och gör samma misstag. De är hung-riga, dår-akt-iga, vidskepliga, mordiska och på något sätt sympatiska. Vätte-gytt-ret är ett intrång av livs-kraftig och hög-ljudd barb-ar-ism in i en kall och utdöende civilisation.
 
 ___Beskriv grytet med lukter och ljud. Det stinker. Ni kommer själva stinka om ni tillbringar någon tid här och /Orm-kon-ung-arnas Kata-komb-er/ har inga fria bad. Pytte-små röda vätte-ögon glöder i dunklet. Klapp-ran-de tänder och skar-pa kniv-ar vänt-ar i mörk-ret.
+"""
+
+
+forts =
+    """
 
 
 |> Header
