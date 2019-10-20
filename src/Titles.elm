@@ -65,11 +65,11 @@ altTitle size color =
         ]
 
 
-sizes : List Int
-sizes =
-    List.range 5 15 |> List.reverse
+sizes : Int -> List Int
+sizes x =
+    List.range x (x + 10) |> List.reverse
 
 
-list : List (Element msg)
-list =
-    List.map2 altTitle sizes Palette.gradient
+list : Int -> List (Element msg)
+list smallestSize =
+    List.map2 altTitle (sizes smallestSize) Palette.gradient
