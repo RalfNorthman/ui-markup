@@ -20,6 +20,174 @@ type alias FontConfig msg =
     }
 
 
+
+---- Extras ----
+
+
+zeroPad =
+    { left = 0, right = 0, top = 0, bottom = 0 }
+
+
+
+---- Fonts ----
+
+
+chronicleDeckCondensed =
+    Font.family
+        [ Font.typeface "Chronicle DeckCond A"
+        , Font.sansSerif
+        ]
+
+
+chronicleDeckCondConfig =
+    { normal = Font.regular
+    , fat = Font.bold
+    , smallCaps = Nothing
+    , nonSC = chronicleDeckCondensed
+    }
+
+
+requiemDisplay =
+    Font.family
+        [ Font.typeface "Requiem Display A"
+        , Font.serif
+        ]
+
+
+requiemDisplayConfig =
+    { normal = Font.regular
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = requiemDisplay
+    }
+
+
+requiemText =
+    Font.family
+        [ Font.typeface "Requiem Text A"
+        , Font.serif
+        ]
+
+
+requiemTextConfig =
+    { normal = Font.regular
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = requiemText
+    }
+
+
+chronicle =
+    Font.family
+        [ Font.typeface "Chronicle SSm A"
+        , Font.sansSerif
+        ]
+
+
+chronicleSC =
+    Font.family
+        [ Font.typeface "Chronicle SSm SC A"
+        , Font.sansSerif
+        ]
+
+
+chronicleConfig =
+    { normal = Font.light
+    , fat = Font.medium
+    , smallCaps = Just chronicleSC
+    , nonSC = chronicle
+    }
+
+
+
+---- Innermost text functions ----
+
+
+myText : FontConfig msg -> Mark.Block (List (Element msg))
+myText fontConfig =
+    Mark.textWith
+        { view = renderStyles fontConfig
+        , replacements = myReplacements
+        , inlines = []
+        }
+
+
+myTextChronicle =
+    myText chronicleConfig
+
+
+renderStyles fontConfig styles str =
+    let
+        italicOrNo =
+            if styles.italic then
+                [ Font.italic ]
+
+            else
+                []
+
+        weight =
+            if styles.bold then
+                fontConfig.fat
+
+            else
+                fontConfig.normal
+
+        smallCapsOrNo =
+            if styles.strike then
+                case fontConfig.smallCaps of
+                    Nothing ->
+                        fontConfig.nonSC
+
+                    Just smallCapFont ->
+                        smallCapFont
+
+            else
+                fontConfig.nonSC
+
+        attrs =
+            [ weight, smallCapsOrNo ] ++ italicOrNo
+    in
+    el attrs <| text str
+
+
+myReplacements : List Mark.Replacement
+myReplacements =
+    [ Mark.replacement "..." "…"
+
+    -- normal hyphen
+    , Mark.replacement "//-" "-"
+
+    -- em dash
+    , Mark.replacement "---" "—"
+
+    -- en dash
+    , Mark.replacement "--" "–"
+    , Mark.replacement "//" "/"
+    , Mark.replacement "/[" "["
+    , Mark.replacement " /]" "]"
+    , Mark.replacement "'" "’"
+    , Mark.replacement "***" "*"
+
+    -- multiplication sign
+    , Mark.replacement "**" "×"
+
+    -- swedish quotation
+    , Mark.replacement "\"" "”"
+
+    -- non-breaking space
+    , Mark.replacement "<>" "\u{00A0}"
+
+    -- em space
+    , Mark.replacement "___" "\u{2003}"
+
+    -- non-breaking thin space
+    , Mark.replacement "_" "\u{202F}"
+
+    -- soft hyphen
+    , Mark.replacement "-" "\u{00AD}"
+    ]
+
+
 compile titleSize baseSize =
     let
         ---- Colors ----
@@ -83,69 +251,6 @@ compile titleSize baseSize =
         xxl =
             scaleInt 4
 
-        ---- Extras ----
-        zeroPad =
-            { left = 0, right = 0, top = 0, bottom = 0 }
-
-        ---- Fonts ----
-        chronicleDeckCondensed =
-            Font.family
-                [ Font.typeface "Chronicle DeckCond A"
-                , Font.sansSerif
-                ]
-
-        chronicleDeckCondConfig =
-            { normal = Font.regular
-            , fat = Font.bold
-            , smallCaps = Nothing
-            , nonSC = chronicleDeckCondensed
-            }
-
-        requiemDisplay =
-            Font.family
-                [ Font.typeface "Requiem Display A"
-                , Font.serif
-                ]
-
-        requiemDisplayConfig =
-            { normal = Font.regular
-            , fat = Font.regular
-            , smallCaps = Nothing
-            , nonSC = requiemDisplay
-            }
-
-        requiemText =
-            Font.family
-                [ Font.typeface "Requiem Text A"
-                , Font.serif
-                ]
-
-        requiemTextConfig =
-            { normal = Font.regular
-            , fat = Font.regular
-            , smallCaps = Nothing
-            , nonSC = requiemText
-            }
-
-        chronicle =
-            Font.family
-                [ Font.typeface "Chronicle SSm A"
-                , Font.sansSerif
-                ]
-
-        chronicleSC =
-            Font.family
-                [ Font.typeface "Chronicle SSm SC A"
-                , Font.sansSerif
-                ]
-
-        chronicleConfig =
-            { normal = Font.light
-            , fat = Font.medium
-            , smallCaps = Just chronicleSC
-            , nonSC = chronicle
-            }
-
         ---- Styles ----
         creditsStyle =
             [ Font.color creditsColor
@@ -188,48 +293,6 @@ compile titleSize baseSize =
             , centerX
             , paddingEach { zeroPad | bottom = xxs }
             ]
-
-        ---- Width ----
-        widthInChars =
-            65
-
-        myWidth =
-            width <| px <| widthInChars * xs
-
-        myCustomWidth y =
-            width <| px <| (widthInChars - y) * xs
-
-        ---- Document ----
-        document : Mark.Document (Element msg)
-        document =
-            Mark.document
-                (\stuff ->
-                    textColumn
-                        [ centerX
-                        , width fill
-                        ]
-                        stuff
-                )
-                (Mark.manyOf
-                    [ subHeader
-                    , header
-                    , list
-                    , lesson
-                    , lessonMore
-                    , credits
-                    , Mark.map
-                        (\x ->
-                            el [] <|
-                                paragraph
-                                    [ paddingEach { zeroPad | bottom = xxs }
-                                    , myWidth
-                                    , centerX
-                                    ]
-                                    x
-                        )
-                        myTextChronicle
-                    ]
-                )
 
         ---- Blocks ----
         header =
@@ -277,87 +340,47 @@ compile titleSize baseSize =
                 )
                 (myText chronicleDeckCondConfig)
 
-        ---- Innermost text functions ----
-        myText : FontConfig msg -> Mark.Block (List (Element msg))
-        myText fontConfig =
-            Mark.textWith
-                { view = renderStyles fontConfig
-                , replacements = myReplacements
-                , inlines = []
-                }
+        ---- Width ----
+        widthInChars =
+            65
 
-        myTextChronicle =
-            myText chronicleConfig
+        myWidth =
+            width <| px <| widthInChars * xs
 
-        renderStyles fontConfig styles str =
-            let
-                italicOrNo =
-                    if styles.italic then
-                        [ Font.italic ]
+        myCustomWidth y =
+            width <| px <| (widthInChars - y) * xs
 
-                    else
-                        []
-
-                weight =
-                    if styles.bold then
-                        fontConfig.fat
-
-                    else
-                        fontConfig.normal
-
-                smallCapsOrNo =
-                    if styles.strike then
-                        case fontConfig.smallCaps of
-                            Nothing ->
-                                fontConfig.nonSC
-
-                            Just smallCapFont ->
-                                smallCapFont
-
-                    else
-                        fontConfig.nonSC
-
-                attrs =
-                    [ weight, smallCapsOrNo ] ++ italicOrNo
-            in
-            el attrs <| text str
-
-        myReplacements : List Mark.Replacement
-        myReplacements =
-            [ Mark.replacement "..." "…"
-
-            -- normal hyphen
-            , Mark.replacement "//-" "-"
-
-            -- em dash
-            , Mark.replacement "---" "—"
-
-            -- en dash
-            , Mark.replacement "--" "–"
-            , Mark.replacement "//" "/"
-            , Mark.replacement "/[" "["
-            , Mark.replacement " /]" "]"
-            , Mark.replacement "'" "’"
-            , Mark.replacement "***" "*"
-
-            -- multiplication sign
-            , Mark.replacement "**" "×"
-
-            -- swedish quotation
-            , Mark.replacement "\"" "”"
-
-            -- non-breaking space
-            , Mark.replacement "<>" "\u{00A0}"
-
-            -- em space
-            , Mark.replacement "___" "\u{2003}"
-
-            -- non-breaking thin space
-            , Mark.replacement "_" "\u{202F}"
-
-            -- soft hyphen
-            , Mark.replacement "-" "\u{00AD}"
-            ]
+        ---- Document ----
+        document : Mark.Document (Element msg)
+        document =
+            Mark.document
+                (\stuff ->
+                    textColumn
+                        [ centerX
+                        , width fill
+                        ]
+                        stuff
+                )
+                (Mark.manyOf
+                    [ subHeader
+                    , header
+                    , list
+                    , lesson
+                    , lessonMore
+                    , credits
+                    , Mark.map
+                        (\x ->
+                            el [] <|
+                                paragraph
+                                    [ paddingEach { zeroPad | bottom = xxs }
+                                    , myWidth
+                                    , centerX
+                                    ]
+                                    x
+                        )
+                        myTextChronicle
+                    ]
+                )
 
         ---- Tree ----
         list =

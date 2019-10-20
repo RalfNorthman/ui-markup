@@ -3,6 +3,8 @@ module Main exposing (main)
 import Browser
 import Browser.Dom as Dom
 import Browser.Events
+import Html
+import Html.Lazy
 import Task
 import Text
 
@@ -17,7 +19,7 @@ type alias Model =
 
 init : () -> ( Model, Cmd Msg )
 init _ =
-    ( 5, initialScreenSize )
+    ( 0, initialScreenSize )
 
 
 emptyViewport =
@@ -67,7 +69,11 @@ update msg model =
 
 
 view model =
-    Text.compile model (toFloat model * 6 - 1)
+    if model == 0 then
+        Html.div [] []
+
+    else
+        Html.Lazy.lazy2 Text.compile model (toFloat model * 5.8)
 
 
 subscriptions _ =
