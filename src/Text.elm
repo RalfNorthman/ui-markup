@@ -444,7 +444,7 @@ compile titleSize baseSize =
                 column [ centerX ] [ element ]
 
         viewErrors errors =
-            List.map (Mark.Error.toHtml Mark.Error.Light)
+            List.map (Mark.Error.toHtml Mark.Error.Dark)
                 errors
     in
     case Mark.compile document Source.source of

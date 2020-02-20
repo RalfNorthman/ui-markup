@@ -27,10 +27,10 @@ På en *stark träff* lyckas du. Ta +1 ~driv~.
 På en *svag träff* lyckas du, men du ställs även inför en bekymmersam kostnad. Välj en:
 
 |> List
-    - Du offrar förnödenheter: utstå //-1 ~förråd~.
+    - Du offrar förnödenheter: lid //-1 ~förråd~.
     - Du är trött eller sårad: /Uthärda Skada/ (1 ~skada~).
     - Du är modfälld eller rädd: /Uthärda Stress/ (1 ~stress~).
-    - Du är sinkad, förlorar ett övertag eller ställs inför ett nytt hot: utstå //-1 ~driv~.
+    - Du är sinkad, förlorar ett övertag eller ställs inför ett nytt hot: lid //-1 ~driv~.
 
 På en *miss* antingen misslyckas du eller så undermineras dina framsteg av en dramatisk och kostsam händelse-utveckling. /Betala Priset/.
 
@@ -76,7 +76,7 @@ När /du behandlar ett sår eller åkomma,/ slå +~sinne~. Om du sköter om dina
 
 På en *stark träff* gör din omvårdnad nytta. Om du (eller den allierade som får vård) har statusen /sårad/, så kan du stryka den. Den vårdade får även +2 ~hälsa~.
 
-På en *svag träff*, som ovan, men du måste även utstå antingen //-1<>~förråd~ eller //-1 ~driv~ (du väljer).
+På en *svag träff*, som ovan, men du måste även lida antingen //-1<>~förråd~ eller //-1 ~driv~ (du väljer).
 
 På en *miss* är din vård verkningslös. /Betala Priset./
 
@@ -87,7 +87,25 @@ När /du jagar, samlar eller rotar runt,/ slå +~sinne~.
 
 På en *stark träff* bygger du på dina reserver. Ta +2 ~förråd~.
 
-På en *svag träff* kan du få upp till +2 ~förråd~, men du måste utstå //-1 ~driv~ för varje du tar.
+På en *svag träff* kan du få upp till +2 ~förråd~, men du måste lida //-1 ~driv~ för varje du tar.
 
 På en *miss* får du inte tag på något tjänligt. /Betala Priset./
+
+|> SubHeader
+    Slå Läger
+
+När /du vilar och återhämtar dig under åtskilliga timmar ute i vildmarken,/ slå +~förråd~. 
+
+På en *stark träff* väljer du och dina allierade två var. På en *svag träff* välj en var.
+
+|> List
+    - Samla kraft: ta +1 ~hälsa~ för dig och dina följeslagare.
+    - Inta föda: lid //-1 ~förråd~ och ta +1 ~hälsa~ för dig och dina följeslagare.
+    - Slappna av: ta +1 ~ande~.
+    - Fokusera: ta +1 ~driv~.
+    - Förbereda: När du bryter lägret, ta +1 om du /gör en vandring/.
+
+På en *miss* får du ingen respit. /Betala Priset./
+
+
 """
