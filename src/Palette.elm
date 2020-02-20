@@ -39,6 +39,18 @@ darkBrown =
 
 
 
+---- Ironsworn ----
+
+
+darkBackground =
+    Element.rgb255 0 0 0
+
+
+lightText =
+    Element.rgb255 200 200 200
+
+
+
 ---- Convert ----
 
 

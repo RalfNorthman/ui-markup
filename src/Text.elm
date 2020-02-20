@@ -192,19 +192,19 @@ compile titleSize baseSize =
     let
         ---- Colors ----
         backgroundColor =
-            Palette.palePaper
+            Palette.darkBackground
 
         creditsColor =
             Palette.lightOldGold
 
         headerColor =
-            Palette.darkBrown
+            Palette.lightText
 
         mainTextColor =
-            Palette.darkBrown
+            Palette.lightText
 
         subHeaderColor =
-            Palette.moss
+            Palette.lightText
 
         lessonColor =
             Palette.lightOldGold
@@ -441,9 +441,7 @@ compile titleSize baseSize =
                 , clipX
                 ]
             <|
-                column [ centerX ] <|
-                    Titles.list titleSize
-                        ++ [ element ]
+                column [ centerX ] [ element ]
 
         viewErrors errors =
             List.map (Mark.Error.toHtml Mark.Error.Light)
