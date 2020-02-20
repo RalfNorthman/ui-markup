@@ -74,9 +74,20 @@ ___På en *miss* gräver antingen dina eftersökningar upp ett ödesdigert hot e
 
 ___När /du behandlar ett sår eller åkomma,/ slå +~sinne~. Om du sköter om dina egna sår, slå den lägre av +~sinne~ och +~järn~.
 
-___På en *stark* träff gör din omvårdnad nytta. Om du (eller den allierade som får vård) har statusen /sårad/, så kan du stryka den. Den vårdade får även +2 ~hälsa~.
+___På en *stark träff* gör din omvårdnad nytta. Om du (eller den allierade som får vård) har statusen /sårad/, så kan du stryka den. Den vårdade får även +2 ~hälsa~.
 
 ___På en *svag träff*, som ovan, men du måste även utstå antingen //-1<>~förråd~ eller //-1 ~driv~ (du väljer).
 
 ___På en *miss* är din vård verkningslös. /Betala Priset./
+
+|> SubHeader
+    Bunkra Upp
+
+___När /du jagar, samlar eller rotar runt,/ slå +~sinne~. 
+
+På en *stark träff* bygger du på dina reserver. Ta +2 ~förråd~.
+
+På en *svag träff* kan du få upp till +2 ~förråd~, men du måste utstå //-1 ~driv~ för varje du tar.
+
+På en *miss* får du inte tag på något tjänligt. /Betala Priset./
 """
