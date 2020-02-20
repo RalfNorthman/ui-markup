@@ -282,7 +282,7 @@ compile titleSize baseSize =
             , paddingEach
                 { zeroPad
                     | top = large
-                    , bottom = xxxxs
+                    , bottom = xxs
                 }
             , Font.size large
             ]
@@ -372,7 +372,7 @@ compile titleSize baseSize =
                         (\x ->
                             el [] <|
                                 paragraph
-                                    [ paddingEach { zeroPad | bottom = xxs }
+                                    [ paddingEach { zeroPad | bottom = small }
                                     , myWidth
                                     , centerX
                                     ]
