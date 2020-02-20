@@ -56,5 +56,27 @@ På en *stark träff* säkrar du ett övertag. Välj en:
 
 På en *svag träff* är ditt övertag kortlivat. Ta +1 ~driv~.
 
-På en *miss* antingen misslyckas du eller så blir du förådd av dina antaganden . /Betala Priset/.
+___På en *miss* antingen misslyckas du eller så blir du förådd av dina antaganden. /Betala Priset./
+
+|> SubHeader
+    Samla Information
+
+___När /du finkammar ett område, ställer frågor, genomför en undersökning eller följer ett spår,/ slå +~sinne~. Om du agerar inom ett samhälle eller ställer frågor rörande en person med vilken du delar ~band~, slå med +1.
+
+___På en *stark träff* upptäcker du något användbart och specifikt. Vägen du måste följa eller handlingen du måste utföra för att göra framsteg är klarlagd. Föreställ dig vad du blir varse (/Fråga Oraklet/ om du är osäker) och ta +2 ~driv~.
+
+___På en *svag träff* komplicerar informationen din gärning eller avslöjar en ny fara. Föreställ dig vad du upptäcker (/Fråga Oraklet/ om du är osäker) och ta + 1 ~driv~.
+
+___På en *miss* gräver antingen dina eftersökningar upp ett ödesdigert hot eller så avslöjar du en ovälkommen sanning som underminerar din gärning. /Betala Priset./
+
+|> SubHeader
+    Hela
+
+___När /du behandlar ett sår eller åkomma,/ slå +~sinne~. Om du sköter om dina egna sår, slå den lägre av +~sinne~ och +~järn~.
+
+___På en *stark* träff gör din omvårdnad nytta. Om du (eller den allierade som får vård) har statusen /sårad/, så kan du stryka den. Den vårdade får även +2 ~hälsa~.
+
+___På en *svag träff*, som ovan, men du måste även utstå antingen //-1<>~förråd~ eller //-1 ~driv~ (du väljer).
+
+___På en *miss* är din vård verkningslös. /Betala Priset./
 """
