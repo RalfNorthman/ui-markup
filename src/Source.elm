@@ -61,7 +61,7 @@ På en *miss* antingen misslyckas du eller så blir du förådd av dina antagand
 |> SubHeader
     Samla Information
 
-När /du finkammar ett område, ställer frågor, genomför en undersökning eller följer ett spår,/ slå +~sinne~. Om du agerar inom ett samhälle eller ställer frågor rörande en person med vilken du delar ~band~, slå med +1.
+När /du finkammar ett område, ställer frågor, genomför en undersökning eller följer ett spår,/ slå +~sinne~. Om du agerar inom ett samhälle eller ställer frågor rörande en person du har ~band~ till, slå med +1.
 
 På en *stark träff* upptäcker du något användbart och specifikt. Vägen du måste följa eller handlingen du måste utföra för att göra framsteg är klarlagd. Föreställ dig vad du blir varse (/Fråga Oraklet/ om du är osäker) och ta +2 ~driv~.
 
@@ -107,5 +107,20 @@ På en *stark träff* väljer du och dina allierade två var. På en *svag träf
 
 På en *miss* får du ingen respit. /Betala Priset./
 
+|> SubHeader
+    Göra En Vandring
+
+När /du vandrar genom förrädiska eller obekanta trakter,/ sätt rangen på din färd.
+
+|> List
+    - En mödosam vandring: 3 framsteg per etappslut.
+    - En farlig vandring: 2 framsteg per etappslut.
+    - En formidabel vandring: 1 framsteg per etappslut.
+    - En extrem vandring: 2 streck per etappslut.
+    - En episk vandring: 1 streck per etappslut.
+
+Sedan, för varje etapp på din vandring, slå +~sinne~. Om du ger dig av från ett samhälle som du har ett ~band~ till, ta +1 på ditt första slag.
+
+På en *stark träff* når du ett slutet på en etapp. Om etappslutet är okänt för dig,
 
 """
