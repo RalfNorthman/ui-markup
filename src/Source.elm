@@ -196,7 +196,27 @@ På en *träff* kan du och dina allierade var och en välja att fokusera på en 
 |> List
     - Finn ett nytt kall: föreställ dig vad det här samhället behöver eller vilka svårigheter de står inför (/Fråga Oraklet/ om du är osäker). Om du väljer att hjälpa till, /Svär En Järned/ med +1.
 
-På en *miss* får du ingen hjälp här. /Betala Priset./
+På en *miss* finner du ingen hjälp här. /Betala Priset./
+
+|> SubHeader
+    Dra Cirkeln
+
+När /du utmanar någon på formell tvekamp eller antar en utmaning,/ slå<>+~hjärta~. Om du har ~band~ till samhället ni vistas i, slå med +1.
+
+På en *stark träff*, ta +1 ~driv~. Du kan även välja upp till två skrytsamheter och ta +1 ~driv~ för varje.
+
+På en *svag träff* kan du välja en skrytsamhet och få +1 ~driv~.
+
+|> List
+    - Håll inget järn: du strider utan vapen; din ~skada~ är 1.
+    - Försaka första slaget: din motståndare har initiativet.
+    - Blottlägg dig själv: dra ingen fördel av varken rustning eller sköld; din motståndares ~skada~ får +1.
+    - Till döds: envigen kan bara sluta med döden.
+    - Bloda dig själv: /Lid Skada/ (1 ~skada~).
+
+På en *miss* börjar du tvekampen i underläge. Din<>motståndare har initiativet. /Betala Priset./
+
+Sedan, gör drag för att avgöra kampen. Om du står som segrare kan du göra en rättmätig begäran och din mot-stånd-are måste foga sig eller förverka sin ställning och heder. Om du avböjer utmaningen, ger dig eller blir besegrad ställer de krav på dig istället.
 
 |> Header
     <>
