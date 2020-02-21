@@ -373,6 +373,7 @@ compile titleSize baseSize =
                             el [] <|
                                 paragraph
                                     [ paddingEach { zeroPad | bottom = small }
+                                    , spacing xxs
                                     , myWidth
                                     , centerX
                                     ]
@@ -393,7 +394,7 @@ compile titleSize baseSize =
 
         renderList (Mark.Enumerated enum) =
             el
-                [ paddingEach { zeroPad | bottom = xs }
+                [ paddingEach { zeroPad | bottom = small }
                 ]
             <|
                 textColumn [ myWidth, centerX ]

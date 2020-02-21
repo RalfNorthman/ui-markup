@@ -32,7 +32,7 @@ På en *svag träff* lyckas du, men du ställs även inför en bekymmersam kostn
     - Du är modfälld eller rädd: /Uthärda Stress/ (1 ~stress~).
     - Du är sinkad, förlorar ett övertag eller ställs inför ett nytt hot: lid //-1 ~driv~.
 
-På en *miss* antingen misslyckas du eller så undermineras dina framsteg av en dramatisk och kostsam händelse-utveckling. /Betala Priset/.
+På en *miss* antingen misslyckas du eller så undermineras dina framsteg av en dramatisk och kostsam händelse-utveckling. /Betala Priset./
 
 |> SubHeader
     Säkra Övertag
@@ -51,7 +51,7 @@ Om du handlar...
 På en *stark träff* säkrar du ett övertag. Välj en:
 
 |> List
-    - Ta kontroll: gör ett till drag omedelbart (ej ett framstegsdrag) med +1.
+    - Ta kontroll: gör omedelbart ett till drag med +1 (ej<>ett<>framstegsdrag).
     - Förbered senare handling: ta +2 ~driv~.
 
 På en *svag träff* är ditt övertag kortlivat. Ta +1 ~driv~.
@@ -65,16 +65,16 @@ När /du finkammar ett område, ställer frågor, genomför en undersökning ell
 
 På en *stark träff* upptäcker du något användbart och specifikt. Vägen du måste följa eller handlingen du måste utföra för att göra framsteg är klarlagd. Föreställ dig vad du blir varse (/Fråga Oraklet/ om du är osäker) och ta +2 ~driv~.
 
-På en *svag träff* komplicerar informationen din gärning eller avslöjar en ny fara. Föreställ dig vad du upptäcker (/Fråga Oraklet/ om du är osäker) och ta + 1 ~driv~.
+På en *svag träff* komplicerar informationen ditt kall eller avslöjar en ny fara. Föreställ dig vad du upptäcker (/Fråga Oraklet/ om du är osäker) och ta +1 ~driv~.
 
-På en *miss* gräver antingen dina eftersökningar upp ett ödesdigert hot eller så avslöjar du en ovälkommen sanning som underminerar din gärning. /Betala Priset./
+På en *miss* gräver antingen dina eftersökningar upp ett ödesdigert hot eller så avslöjar du en ovälkommen sanning som underminerar ditt kall. /Betala Priset./
 
 |> SubHeader
     Hela
 
 När /du behandlar ett sår eller åkomma,/ slå +~sinne~. Om du sköter om dina egna sår, slå den lägre av +~sinne~ och +~järn~.
 
-På en *stark träff* gör din omvårdnad nytta. Om du (eller den allierade som får vård) har statusen /sårad/, så kan du stryka den. Den vårdade får även +2 ~hälsa~.
+På en *stark träff* gör din omvårdnad nytta. Om du (eller den allierade som får vård) har statusen /sårad,/ så kan du stryka den. Den vårdade får även +2 ~hälsa~.
 
 På en *svag träff*, som ovan, men du måste även lida antingen //-1<>~förråd~ eller //-1 ~driv~ (du väljer).
 
@@ -99,28 +99,108 @@ När /du vilar och återhämtar dig under åtskilliga timmar ute i vildmarken,/ 
 På en *stark träff* väljer du och dina allierade två var. På en *svag träff* välj en var.
 
 |> List
+    - Förbereda: När du bryter lägret, slå med +1 på /Vandra./
     - Samla kraft: ta +1 ~hälsa~ för dig och dina följeslagare.
     - Inta föda: lid //-1 ~förråd~ och ta +1 ~hälsa~ för dig och dina följeslagare.
-    - Slappna av: ta +1 ~ande~.
     - Fokusera: ta +1 ~driv~.
-    - Förbereda: När du bryter lägret, ta +1 om du /gör en vandring/.
+    - Slappna av: ta +1 ~anda~.
 
 På en *miss* får du ingen respit. /Betala Priset./
 
 |> SubHeader
-    Göra En Vandring
+    Vandra
 
 När /du vandrar genom förrädiska eller obekanta trakter,/ sätt rangen på din färd.
 
 |> List
-    - En mödosam vandring: 3 framsteg per etappslut.
-    - En farlig vandring: 2 framsteg per etappslut.
-    - En formidabel vandring: 1 framsteg per etappslut.
-    - En extrem vandring: 2 streck per etappslut.
-    - En episk vandring: 1 streck per etappslut.
+    - En mödosam vandring: 3 framsteg per etapp.
+    - En farofylld vandring: 2 framsteg per etapp.
+    - En formidabel vandring: 1 framsteg per etapp.
+    - En extrem vandring: 2 streck per etapp.
+    - En episk vandring: 1 streck per etapp.
 
-Sedan, för varje etapp på din vandring, slå +~sinne~. Om du ger dig av från ett samhälle som du har ett ~band~ till, ta +1 på ditt första slag.
+Sedan, för varje etapp på din vandring, slå +~sinne~. Om du ger dig av från ett samhälle som du har ~band~ till, slå ditt första slag med +1.
 
-På en *stark träff* når du ett slutet på en etapp. Om etappslutet är okänt för dig,
+På en *stark träff* når du slutet på etappen. Om den här deldestinationen är okänd för dig, föreställ dig den (/Fråga<>Oraklet/ om du är osäker). Sedan, välj en:
 
+|> List
+    - Du är sparsam med dina resurser: markera framsteg.
+    - Du färdas utan dröjsmål: markera framsteg och ta<>+1<>~driv~, men lid //-1 ~förråd~.
+
+På en *svag träff*, når du slutet på etappen och markerar framsteg, men lider //-1 ~förråd~.
+
+På en *miss* blir du fördröjd av ett missöde eller en vådlig incident. /Betala Priset./
+
+|> SubHeader
+    Nå Din Slutdestination
+
+/*Framstegsdrag*/
+
+När /din vandring lider mot sitt slut,/ slå prövnings-tärn-ing-arna och jämför med dina framsteg. ~Driv~<>ignoreras vid detta slag.
+
+På en *stark träff* är läget vid din destination i din favör. Välj<>en:
+
+|> List
+    - Gör ett till drag genast (ej ett framstegsdrag) med +1.
+    - Ta +1 ~driv~.
+
+På en *svag träff* anländer du, men ställs inför en oförutsedd risk eller komplikation. Föreställ dig vad du möter (/Fråga Oraklet/ om du är osäker).
+
+På en *miss* har du gått hopplöst vilse, ditt mål är förlorat eller så har du blivit vilseledd om din destination. Om din vandring fortsätter, radera alla framsteg utom ett och höj vandringens rang med ett steg (om inte redan episk).
+
+|> Header
+    Relationsdrag
+
+|> SubHeader
+    Intala
+
+När /du försöker intala någon att göra något,/ föreställ dig ditt tillvägagångssätt och slå. Om du...
+
+|> List
+    - Charmar, blidkar, köpslår eller övertalar: slå +~hjärta~ (med +1 om ni har ~band~ till varandra).
+    - Ljuger eller vilseleder: slå +~skugga~.
+    - Hotar eller sporrar: slå +~järn~.
+
+På en *stark träff* gör de som du vill eller delar med sig vad de vet. Ta +1 ~driv~. Om du använder det här utbytet till att /Samla Information,/ gör det draget nu med +1.
+
+På en *svag träff*, som ovan, men de kräver något i utbyte. Föreställ dig vad de vill (/Fråga Oraklet/ om du är osäker).
+
+På en *miss* vägrar de eller ställer krav som står dig dyrt. /Betala Priset./
+
+|> SubHeader
+    Vistas
+
+När /du tillbringar tid i ett samhälle och försöker få hjälp där,/ slå<>+~hjärta~. Om du har ~band~ till samhället, slå med +1.
+
+På en *stark träff* kan du och dina allierade välja två var från punkterna i kategorierna nedan. På en *svag träff*, välj en. Om du har ~band~ till samhället, välj ytterligare en.
+
+På en *träff* kan du och dina allierade var och en välja att fokusera på en av era valda punkter och slå<>+~hjärta~ igen. Om du delar ~band~ med samhället, slå<>med +1. På en stark träff, ta ytterligare +2 på den punkten. På en svag träff, ta ytterligare +1. På en miss går det åt skogen och du förlorar all gagn av den punkten.
+
+~*Slippa Ett Tillstånd*~
+
+|> List
+    - Läka sig: radera /sårad/ och ta +1 ~hälsa~.
+    - Samla sig: radera /uppriven/ och ta +1 ~anda~.
+    - Utrusta sig: radera /nödställd/ och ta +1 ~förråd~.
+
+~*Återhämtning*~
+
+|> List
+    - Tillfriskna: ta +2 ~hälsa~ för dig och dina följeslagare.
+    - Bunkra: ta +2 ~förråd~.
+    - Planera: ta +2 ~driv~.
+    - Umgås: ta +2 ~anda~.
+
+~*Erbjud Hjälp*~
+
+|> List
+    - Finn ett nytt kall: föreställ dig vad det här samhället behöver eller vilka svårigheter de står inför (/Fråga Oraklet/ om du är osäker). Om du väljer att hjälpa till, /Svär En Järned/ med +1.
+
+På en *miss* får du ingen hjälp här. /Betala Priset./
+
+|> Header
+    <>
+
+|> Header
+    <>
 """
