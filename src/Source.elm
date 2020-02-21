@@ -110,18 +110,18 @@ På en *miss* får du ingen respit. /Betala Priset./
 |> SubHeader
     Vandra
 
-När /du vandrar genom förrädiska eller obekanta trakter,/ sätt rangen på din färd.
+När /du vandrar genom förrädiska eller obekanta trakter,/ ange rangen på din färd.
 
 |> List
-    - En mödosam vandring: 3 framsteg per etapp.
-    - En farofylld vandring: 2 framsteg per etapp.
+    - En besvärlig vandring: 3 framsteg per etapp.
+    - En farlig vandring: 2 framsteg per etapp.
     - En formidabel vandring: 1 framsteg per etapp.
     - En extrem vandring: 2 streck per etapp.
     - En episk vandring: 1 streck per etapp.
 
-Sedan, för varje etapp på din vandring, slå +~sinne~. Om du ger dig av från ett samhälle som du har ~band~ till, slå ditt första slag med +1.
+Sedan: för varje etapp på din vandring, slå +~sinne~. Om du ger dig av från ett samhälle som du har ~band~ till, slå ditt första slag med +1.
 
-På en *stark träff* når du slutet på etappen. Om den här deldestinationen är okänd för dig, föreställ dig den (/Fråga<>Oraklet/ om du är osäker). Sedan, välj en:
+På en *stark träff* når du slutet på etappen. Om den här deldestinationen är okänd för dig, föreställ dig den (/Fråga<>Oraklet/ om du är osäker). Sedan väljer du en:
 
 |> List
     - Du är sparsam med dina resurser: markera framsteg.
@@ -208,15 +208,47 @@ På en *stark träff*, ta +1 ~driv~. Du kan även välja upp till två skrytsamh
 På en *svag träff* kan du välja en skrytsamhet och få +1 ~driv~.
 
 |> List
-    - Håll inget järn: du strider utan vapen; din ~skada~ är 1.
     - Försaka första slaget: din motståndare har initiativet.
-    - Blottlägg dig själv: dra ingen fördel av varken rustning eller sköld; din motståndares ~skada~ får +1.
+    - Håll inget järn: du strider utan vapen -- din ~skada~ är 1.
+    - Blottlägg dig själv: dra ingen fördel av varken rustning eller sköld -- din motståndares ~skada~ får +1.
     - Till döds: envigen kan bara sluta med döden.
     - Bloda dig själv: /Lid Skada/ (1 ~skada~).
 
 På en *miss* börjar du tvekampen i underläge. Din<>motståndare har initiativet. /Betala Priset./
 
-Sedan, gör drag för att avgöra kampen. Om du står som segrare kan du göra en rättmätig begäran och din mot-stånd-are måste foga sig eller förverka sin ställning och heder. Om du avböjer utmaningen, ger dig eller blir besegrad ställer de krav på dig istället.
+Sedan: gör drag för att avgöra kampen. Om du står som segrare kan du göra en rättmätig begäran och din mot-stånd-are måste foga sig eller förverka sin ställning och heder. Om du avböjer utmaningen, ger dig eller blir besegrad ställer de krav på dig istället.
+
+|> Header
+    Stridsdrag
+
+|> SubHeader
+    Ta Strid
+
+När /du ger dig in i stridens hetta,/ ange rangen på var och en av dina motståndare.
+
+|> List
+    - En besvärlig motståndare: 3<>framsteg<>per<>~skada~<>--<>utdelar<>1<>~skada~.
+    - En farlig motståndare: 2<>framsteg<>per<>~skada~<>--<>utdelar<>2<>~skada~.
+    - En formidabel motståndare: 1<>framsteg<>per<>~skada~<>--<>utdelar<>3<>~skada~.
+    - En extrem motståndare: 2<>streck<>per<>~skada~<>--<>utdelar<>4<>~skada~.
+    - En episk motståndare: 1<>streck<>per<>~skada~<>--<>utdelar<>5<>~skada~.
+
+Sedan: slå för att avgöra vem som har kontroll. Om du...
+
+|> List
+    - Står öga mot öga med motståndaren: slå +~hjärta~.
+    - Rör dig i position mot en aningslös motståndare eller slår till utan varning: slå +~skugga~.
+    - Är utsatt för ett bakhåll: slå +~sinne~.
+
+På en *stark träff*, ta +2 ~driv~. Du har initiativet.
+
+På en *svag träff*, välj en:
+
+|> List
+    - Stärk din position: ta +2 ~driv~.
+    - Gå till handling: ta initiativet.
+
+På en *miss* börjar du striden i underläge. Din<>motståndare har initiativet. /Betala Priset./
 
 |> Header
     <>
