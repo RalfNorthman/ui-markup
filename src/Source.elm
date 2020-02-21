@@ -16,11 +16,11 @@ När /du försöker någonting riskabelt eller reagerar på ett omedelbart hot,/
 Om du handlar...
 
 |> List
-    - Med charm, lojalitet eller mod: slå +~hjärta~.
-    - Med snabbhet, vighet eller precision: slå +~egg~.
-    - Med expertis, insikt eller observation: slå +~sinne~.
-    - Med bedräglighet, förstulenhet eller list: slå +~skugga~.
-    - Med styrka, uthållighet, aggression eller kraftfullt försvar: slå +~järn~.
+    - Med mod, charm eller lojalitet: slå +~hjärta~.
+    - Med vighet, snabbhet eller precision: slå +~egg~.
+    - Med expertis, observation eller insikt : slå +~sinne~.
+    - Med förstulenhet, bedräglighet eller list: slå +~skugga~.
+    - Med aggression, styrka, uthållighet eller kraftfullt försvar: slå +~järn~.
 
 På en *stark träff* lyckas du. Ta +1 ~driv~.
 
@@ -42,11 +42,11 @@ När /du bedömmer en situation, gör förberedelser eller försöker få inflyt
 Om du handlar...
 
 |> List
-    - Med charm, lojalitet eller mod: slå +~hjärta~.
-    - Med snabbhet, vighet eller precision: slå +~egg~.
-    - Med expertis, insikt eller observation: slå +~sinne~.
-    - Med bedräglighet, förstulenhet eller list: slå +~skugga~.
-    - Med styrka, uthållighet, aggression eller kraftfullt försvar: slå +~järn~.
+    - Med mod, charm eller lojalitet: slå +~hjärta~.
+    - Med vighet, snabbhet eller precision: slå +~egg~.
+    - Med expertis, observation eller insikt : slå +~sinne~.
+    - Med förstulenhet, bedräglighet eller list: slå +~skugga~.
+    - Med aggression, styrka, uthållighet eller kraftfullt försvar: slå +~järn~.
 
 På en *stark träff* säkrar du ett övertag. Välj en:
 
@@ -172,11 +172,11 @@ På en *miss* vägrar de eller ställer krav som står dig dyrt. /Betala Priset.
 
 När /du tillbringar tid i ett samhälle och försöker få hjälp där,/ slå<>+~hjärta~. Om du har ~band~ till samhället, slå med +1.
 
-På en *stark träff* kan du och dina allierade välja två var från punkterna i kategorierna nedan. På en *svag träff*, välj en. Om du har ~band~ till samhället, välj ytterligare en.
+På en *stark träff* kan du och dina allierade välja två val var från listorna nedan. På en *svag träff*, välj en. Om du har ~band~ till samhället, välj ytterligare en.
 
-På en *träff* kan du och dina allierade var och en välja att fokusera på en av era valda punkter och slå<>+~hjärta~ igen. Om du delar ~band~ med samhället, slå<>med +1. På en stark träff, ta ytterligare +2 på den punkten. På en svag träff, ta ytterligare +1. På en miss går det åt skogen och du förlorar all gagn av den punkten.
+På en *träff* kan du och dina allierade var och en välja att fokusera på en av era val och slå<>+~hjärta~ igen. Om du delar ~band~ med samhället, slå<>med +1. På en stark träff, ta +2 till på det valet. På en svag träff, ta +1 till. På en miss går det dåligt och du förlorar alla fördelar från det valet.
 
-~*Slippa Ett Tillstånd*~
+~*Åtgärda Ett Tillstånd*~
 
 |> List
     - Läka sig: radera /sårad/ och ta +1 ~hälsa~.
@@ -233,7 +233,7 @@ När /du ger dig in i stridens hetta,/ ange rangen på var och en av dina motst�
     - En extrem motståndare: 2<>streck<>per<>~skada~<>--<>utdelar<>4<>~skada~.
     - En episk motståndare: 1<>streck<>per<>~skada~<>--<>utdelar<>5<>~skada~.
 
-Sedan: slå för att avgöra vem som har kontroll. Om du...
+Sedan: slå för att avgöra vem som har kontrollen. Om du...
 
 |> List
     - Står öga mot öga med motståndaren: slå +~hjärta~.
