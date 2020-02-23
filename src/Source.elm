@@ -1,4 +1,4 @@
-module Source exposing (source)
+module Source exposing (source, wipSource)
 
 
 source : String
@@ -241,7 +241,13 @@ Sedan: slå för att avgöra vem som har kontrollen. Om du...
     - Är utsatt för ett bakhåll: slå +~sinne~.
 
 På en *stark träff*, ta +2 ~driv~. Du har initiativet.
+"""
 
+
+wipSource : String
+wipSource =
+    String.trim
+        """
 På en *svag träff*, välj en:
 
 |> List
@@ -249,6 +255,19 @@ På en *svag träff*, välj en:
     - Gå till handling: ta initiativet.
 
 På en *miss* börjar du striden i underläge. Din<>motståndare har initiativet. /Betala Priset./
+
+|> SubHeader
+    Angripa
+
+När /du har initiativet och anfaller i närstrid,/ slå +~järn~. När<>/du har initiativet och attackerar på håll,/ slå +~egg~.
+
+På en *stark träff*, vålla +1 ~skada~. Du behåller initiativet.
+
+På en *svag träff*, vålla din ~skada~, men förlora initiativet.
+
+På en *miss* misslyckas din attack. Du måste /Betala Priset./ Din motståndare har initiativet.
+
+
 
 |> Header
     <>

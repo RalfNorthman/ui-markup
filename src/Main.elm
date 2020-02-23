@@ -5,6 +5,7 @@ import Browser.Dom as Dom
 import Browser.Events
 import Html
 import Html.Lazy
+import Source
 import Task
 import Text
 
@@ -73,7 +74,18 @@ view model =
         Html.div [] []
 
     else
-        Html.Lazy.lazy2 Text.compile model (toFloat model * 5.8)
+        Html.div []
+            (List.map
+                (\x ->
+                    Html.Lazy.lazy3
+                        Text.compile
+                        model
+                        (toFloat model * 5.8)
+                        x
+                )
+                [ Source.wipSource
+                ]
+            )
 
 
 subscriptions _ =

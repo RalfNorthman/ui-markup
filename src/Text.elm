@@ -188,7 +188,7 @@ myReplacements =
     ]
 
 
-compile titleSize baseSize =
+compile titleSize baseSize sourceArg =
     let
         ---- Colors ----
         backgroundColor =
@@ -448,7 +448,7 @@ compile titleSize baseSize =
             List.map (Mark.Error.toHtml Mark.Error.Dark)
                 errors
     in
-    case Mark.compile document Source.source of
+    case Mark.compile document sourceArg of
         Mark.Success element ->
             myLayout element
 
