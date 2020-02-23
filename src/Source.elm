@@ -267,7 +267,48 @@ På en *svag träff*, vålla din ~skada~, men förlora initiativet.
 
 På en *miss* misslyckas din attack. Du måste /Betala Priset./ Din motståndare har initiativet.
 
+|> SubHeader
+    Drabba Samman
 
+När /din motståndare har initiativet och du slåss med dem i närstrid,/ slå +~järn~. När /ni utväxlar avståndsattacker eller du skjuter mot en framryckande motståndare,/ slå +~egg~.
+
+På en *stark träff*, vålla din ~skada~ och välj en. Du<>har<>initiativet.
+
+|> List
+    - Du förstärker din position: ta +1 ~driv~.
+    - Du hittar en blotta: vålla +1 ~skada~.
+
+På en *svag träff*, vålla din ~skada~, men sedan måste du /Betala Priset./ Din motståndare har initiativet.
+
+På en *miss* är du utklassad och måste /Betala Priset./ Din<>motståndare har initiativet.
+
+|> SubHeader
+    Vända På Underläge
+
+En gång per strid, när /du riskerar allt,/ kan du stjäla initia-tivet från din motståndare och göra ett drag (ej ett fram-stegs-drag). Gör draget med +1 och ta +1 ~driv~ på en träff.
+
+Om du misslyckas med att få en träff på detta drag måste du<>lida ett ödesdigert utfall. /Betala Priset./
+
+|> SubHeader
+    Avsluta Striden
+
+/*Framstegsdrag*/
+
+När /du gör ett drag för att utföra en utslagsgivande handling/ och får en stark träff, så kan du avgöra utfallet av striden. Om du gör det: slå prövningstärningarna och jämför dem med dina framsteg. ~Driv~ ignoreras för detta slag.
+
+På en *stark träff* är inte din motståndare längre i striden. De<>är dräpta, oskadliggjorda, flyr eller ger sig, beroende på vad som är passande för situationen och din avsikt (/Fråga Oraklet/ om du är osäker).
+
+På en *svag träff*, som ovan, men du måste även välja en:
+
+|> List
+    - Andra kommer inte glömma. Du är märkt för hämnd.
+    - Du lider indirekt skada: något värdefullt är förstört eller förlorat, eller någon viktig måste betala priset.
+    - Din seger är kortlivad: en ny fara eller motståndare dyker upp, eller en befintlig fara förvärras.
+    - Det är värre än du trodde: /Uthärda Skada/.
+    - Du är överväldigad: /Uthärda Stress/.
+    - Du kommer få betala för det här: ett av<>dina<>mål<>hamnar utom räckhåll.
+
+På en *miss* har du förlorat den här striden. /Betala Priset./
 
 |> Header
     <>
