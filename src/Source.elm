@@ -241,13 +241,7 @@ Sedan: slå för att avgöra vem som har kontrollen. Om du...
     - Är utsatt för ett bakhåll: slå +~sinne~.
 
 På en *stark träff*, ta +2 ~driv~. Du har initiativet.
-"""
 
-
-wipSource : String
-wipSource =
-    String.trim
-        """
 På en *svag träff*, välj en:
 
 |> List
@@ -309,6 +303,30 @@ På en *svag träff*, som ovan, men du måste även välja en:
     - Du kommer få betala för det här: ett av<>dina<>mål<>hamnar utom räckhåll.
 
 På en *miss* har du förlorat den här striden. /Betala Priset./
+"""
+
+
+wipSource : String
+wipSource =
+    String.trim
+        """
+|> SubHeader
+    Strida
+
+När /du strider i ett slag/ och allt händer så snabbt och i ett<>enda virrvarr, före-ställ dig din målsättning och slå. Om<>du<>huvudsakligen...
+
+|> List
+    - Strider på avstånd eller genom att använda din snabbhet och terrängen till din fördel: slå +~egg~.
+    - Strider och använder omsorgsfull taktik för att överlista dina motståndare: slå +~sinne~.
+    - Strider och använder knep eller trick för att förvirra<>dina motståndare: slå +~skugga~.
+    - Strider med stöd av ditt mod, allierade eller<>följeslagare: slå +~hjärta~.
+    - Strider på nära håll för att överväldiga dina<>motståndare: slå +~järn~.
+
+På en *stark träff* uppnår du din målsättning villkorslöst. Ta<>+2 ~driv~.
+
+På en *svag träff* uppnår du din målsättning, men<>inte<>utan<>kostnad. /Betala Priset./
+
+På en *miss* blir du besegrad och din målsättning går<>om<>intet. /Betala Priset./
 
 |> Header
     <>
