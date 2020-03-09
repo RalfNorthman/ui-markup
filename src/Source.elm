@@ -313,13 +313,13 @@ wipSource =
 |> SubHeader
     Strida
 
-När /du strider i ett slag/ och allt händer så snabbt och i ett<>enda virrvarr, före-ställ dig din målsättning och slå. Om<>du<>huvudsakligen...
+När /du strider i ett slag/ och allt händer snabbt och i ett<>enda<>virrvarr, före-ställ dig din målsättning och slå. Om<>du<>huvudsakligen...
 
 |> List
     - Strider på avstånd eller genom att använda din snabbhet och terrängen till din fördel: slå +~egg~.
     - Strider och använder omsorgsfull taktik för att överlista dina motståndare: slå +~sinne~.
     - Strider och använder knep eller trick för att förvirra<>dina motståndare: slå +~skugga~.
-    - Strider med stöd av ditt mod, allierade eller<>följeslagare: slå +~hjärta~.
+    - Strider med stöd av ditt mod, dina allierade eller<>dina<>följeslagare: slå +~hjärta~.
     - Strider på nära håll för att överväldiga dina<>motståndare: slå +~järn~.
 
 På en *stark träff* uppnår du din målsättning villkorslöst. Ta<>+2 ~driv~.
