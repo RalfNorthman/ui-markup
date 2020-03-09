@@ -9,7 +9,7 @@ source =
     Äventyrsdrag
 
 |> SubHeader
-    Möta Fara
+    Trotsa Fara
 
 När /du försöker någonting riskabelt eller reagerar på ett omedelbart hot,/ föreställ dig din handling och slå.
 
@@ -311,7 +311,7 @@ wipSource =
     String.trim
         """
 |> SubHeader
-    Strida
+    Delta I Batalj
 
 När /du strider i ett slag/ och allt händer snabbt och i ett<>enda<>virrvarr, före-ställ dig din målsättning och slå. Om<>du<>huvudsakligen...
 
@@ -327,6 +327,29 @@ På en *stark träff* uppnår du din målsättning villkorslöst. Ta<>+2 ~driv~.
 På en *svag träff* uppnår du din målsättning, men<>inte<>utan<>kostnad. /Betala Priset./
 
 På en *miss* blir du besegrad och din målsättning går<>om<>intet. /Betala Priset./
+
+|> SubHeader
+    Andra drag i strid
+
+/*Säkra Övertag:*/ när du överlistar eller ut-man-öv-rerar din motståndare eller när du förbereder ett annat drag.
+
+/*Trotsa Fara:*/ när du övervinner ett hinder, undkommer en fara, flyr eller undviker en attack (utan att slå tillbaka).
+
+/*Hjälpa Din Allierade:*/ när du gör ett drag för att ge din allierade ett övertag.
+
+/*Intala:*/ när du kapitulerar, förhandlar fram en vapenvila eller tvingar din motståndare att ge upp.
+
+*Alla lida\\-drag:* när du uthärdar fysisk skada, mentalt trauma eller brist på förnödenheter.
+
+/*Betala Priset:*/ när du utstår konsekvensen av ett drag.
+
+/*Fråga Oraklet:*/ när du ställer frågor om händelser i striden eller din motståndares handlingar och avsikt.
+
+|> Header
+    Lida\\-drag
+
+|> SubHeader
+    Lida Skada
 
 |> Header
     <>
