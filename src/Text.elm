@@ -49,15 +49,15 @@ creditsConfig =
 
 headerConfig =
     { normal = Font.heavy
-    , fat = Font.regular
+    , fat = Font.heavy
     , smallCaps = Nothing
     , nonSC = alegreyaSansSC
     }
 
 
 subHeaderConfig =
-    { normal = Font.heavy
-    , fat = Font.regular
+    { normal = Font.bold
+    , fat = Font.bold
     , smallCaps = Nothing
     , nonSC = alegreyaSansSC
     }
