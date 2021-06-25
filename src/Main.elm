@@ -83,7 +83,8 @@ view model =
                         (toFloat model * 5.8)
                         x
                 )
-                [ Source.wipSource
+                [ Source.source
+                |> String.replace "\u{000D}\n" "\n" 
                 ]
             )
 
