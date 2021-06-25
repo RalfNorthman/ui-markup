@@ -303,13 +303,7 @@ På en *svag träff*, som ovan, men du måste även välja en:
     - Du kommer få betala för det här: ett av<>dina<>mål<>hamnar utom räckhåll.
 
 På en *miss* har du förlorat den här striden. /Betala Priset./
-"""
 
-
-wipSource : String
-wipSource =
-    String.trim
-        """
 |> SubHeader
     Delta I Batalj
 
@@ -356,4 +350,11 @@ På en *miss* blir du besegrad och din målsättning går<>om<>intet. /Betala Pr
 
 |> Header
     <>
+
+"""
+
+wipSource : String
+wipSource =
+    String.trim
+        """
 """

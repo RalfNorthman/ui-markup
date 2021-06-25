@@ -32,70 +32,56 @@ zeroPad =
 ---- Fonts ----
 
 
-chronicleDeckCondensed =
+alegreyaSansSC =
     Font.family
-        [ Font.typeface "Chronicle DeckCond A"
+        [ Font.typeface "Alegreya Sans SC"
         , Font.sansSerif
         ]
 
 
-chronicleDeckCondConfig =
+creditsConfig =
     { normal = Font.regular
     , fat = Font.bold
     , smallCaps = Nothing
-    , nonSC = chronicleDeckCondensed
+    , nonSC = alegreyaSansSC
     }
 
 
-requiemDisplay =
+headerConfig =
+    { normal = Font.heavy
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = alegreyaSansSC
+    }
+
+
+subHeaderConfig =
+    { normal = Font.heavy
+    , fat = Font.regular
+    , smallCaps = Nothing
+    , nonSC = alegreyaSansSC
+    }
+
+
+alegreya =
     Font.family
-        [ Font.typeface "Requiem Display A"
+        [ Font.typeface "Alegreya"
         , Font.serif
         ]
 
 
-requiemDisplayConfig =
-    { normal = Font.regular
-    , fat = Font.regular
-    , smallCaps = Nothing
-    , nonSC = requiemDisplay
-    }
-
-
-requiemText =
+alegreyaSC =
     Font.family
-        [ Font.typeface "Requiem Text A"
+        [ Font.typeface "Alegreya SC"
         , Font.serif
         ]
 
 
-requiemTextConfig =
+textConfig =
     { normal = Font.regular
-    , fat = Font.regular
-    , smallCaps = Nothing
-    , nonSC = requiemText
-    }
-
-
-chronicle =
-    Font.family
-        [ Font.typeface "Chronicle SSm A"
-        , Font.sansSerif
-        ]
-
-
-chronicleSC =
-    Font.family
-        [ Font.typeface "Chronicle SSm SC A"
-        , Font.sansSerif
-        ]
-
-
-chronicleConfig =
-    { normal = Font.light
-    , fat = Font.medium
-    , smallCaps = Just chronicleSC
-    , nonSC = chronicle
+    , fat = Font.bold
+    , smallCaps = Just alegreyaSC
+    , nonSC = alegreya
     }
 
 
@@ -103,17 +89,13 @@ chronicleConfig =
 ---- Innermost text functions ----
 
 
-myText : FontConfig msg -> Mark.Block (List (Element msg))
-myText fontConfig =
+textWith : FontConfig msg -> Mark.Block (List (Element msg))
+textWith fontConfig =
     Mark.textWith
         { view = renderStyles fontConfig
         , replacements = myReplacements
         , inlines = []
         }
-
-
-myTextChronicle =
-    myText chronicleConfig
 
 
 renderStyles fontConfig styles str =
@@ -300,14 +282,14 @@ compile titleSize baseSize sourceArg =
                 (\children ->
                     el [] <| paragraph headerStyle children
                 )
-                (myText requiemDisplayConfig)
+                (textWith headerConfig)
 
         subHeader =
             Mark.block "SubHeader"
                 (\children ->
                     el [] <| paragraph subHeaderStyle children
                 )
-                (myText requiemTextConfig)
+                (textWith subHeaderConfig)
 
         lesson =
             Mark.block "Lesson"
@@ -315,7 +297,7 @@ compile titleSize baseSize sourceArg =
                     el [] <|
                         column lessonStyle
                             [ el
-                                [ chronicleSC
+                                [ alegreyaSansSC
                                 , Font.light
                                 , paddingEach { zeroPad | bottom = xxxs }
                                 ]
@@ -324,21 +306,21 @@ compile titleSize baseSize sourceArg =
                             , paragraph [] (text "\u{2003}" :: children)
                             ]
                 )
-                myTextChronicle
+                (textWith textConfig)
 
         lessonMore =
             Mark.block "LessonMore"
                 (\children ->
                     el [] <| paragraph lessonStyle (text "\u{2003}" :: children)
                 )
-                myTextChronicle
+                (textWith textConfig)
 
         credits =
             Mark.block "Credits"
                 (\children ->
                     el [] <| paragraph creditsStyle children
                 )
-                (myText chronicleDeckCondConfig)
+                (textWith creditsConfig)
 
         ---- Width ----
         widthInChars =
@@ -379,7 +361,7 @@ compile titleSize baseSize sourceArg =
                                     ]
                                     x
                         )
-                        myTextChronicle
+                        (textWith textConfig)
                     ]
                 )
 
@@ -389,7 +371,7 @@ compile titleSize baseSize sourceArg =
                 renderList
                 (Mark.map
                     (\x -> paragraph [] x)
-                    myTextChronicle
+                    (textWith textConfig)
                 )
 
         renderList (Mark.Enumerated enum) =
